@@ -35,7 +35,7 @@
 
 	<button onclick="wowTrackMainPane()">Submit</button>
 
-	<!-- <button onclick="setup()">getJSON</button><br><br> -->
+	<button onclick="setup()">getJSON</button><br><br>
 
 	<a href="https://www.worldofwarcraft.com" target="_blank" id = "blizz">
 		<img border="0" alt="armory" src="https://s-media-cache-ak0.pinimg.com/236x/18/f2/c2/18f2c237688c6a4395e0f6a702743a7c.jpg
@@ -63,6 +63,23 @@ var battleNetApiKey = "b7pycu6727tfgrnzawp6sn5bxeerh92z"; // Battle Net Api Key
 var warcraftLogsApiKey = "bff965ef8c377f175a671dacdbdbc822"; // Warcraftlogs Api Key
 
 var localeCode;
+
+// function getValues(){
+
+// 	var charName = document.getElementById('char').value;
+// 	charName = charName.charAt(0).toUpperCase() + charName.slice(1);
+// 	var realm = toTitleCase(document.getElementById('realm').value);
+// 	var locale = document.getElementById('locale').value;
+// 	var metric = document.getElementById('metric').value;
+
+// 	return {
+// 		charName: charName,
+// 		realm: realm,
+// 		locale: locale,
+// 		metric: metric
+// 	};
+
+// }
 
 // function setup(){
 
@@ -92,9 +109,6 @@ function localeTransform(locale){
 	else
 		return localeCode = "us/"; // handle kr??
 }
-
-
-
 function wowTrackMainPane(){
 	
 
@@ -108,20 +122,12 @@ function wowTrackMainPane(){
 
 	localeCode=localeTransform(locale);
 
-
-	var grabUrl = "https://wowtrack.org/characters" + "/" + locale + "/"	 + realm + "/" + charName;
+	var wowTrackLink = "https://wowtrack.org/characters" + "/" + locale + "/" + realm + "/" + charName;
 	var base = "https://wowtrack.org/characters/"
 
 	img.onclick = function() {
-	    window.location.href = grabUrl;
+	    window.location.href = wowTrackLink;
 	};
-
-	$.ajax({
-   	url: "https://github.com/Saccarab/JF-WarcraftData/blob/master/grabAlts.py",
-   	success: function(response) {
-    	console.log(response);
-   }
-});
 
 	img.setAttribute('target', '_blank')
 	var response = "?response=signature&fields=progression,averageItemLevel,mythicDungeonLevel"
@@ -165,9 +171,10 @@ function wowTrackMainPane(){
 		wclCharacterId = bdata[0].specs[0].data[0].character_id;
 		warcraftLogsText = "https://www.warcraftlogs.com/character/id/" + wclCharacterId;
 		document.getElementById("wlogs").href = warcraftLogsText;
+        //https://www.warcraftlogs.com/character/id/8709705
 		}
 	});
-
+    	//https://www.wowprogress.com/character/eu/twisting-nether/Xebitial
 	var wowProgressText = "https://www.wowprogress.com/character/" + locale + "/" + realm.replace(/\s+/g, '-') + "/" + charName;
 	var armoryText = "https://worldofwarcraft.com/en-" + localeCode + "character/" + realm.replace(/\s+/g, '-') + "/" + charName;
 
