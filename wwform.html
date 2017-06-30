@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<style>
+	.center {
+	    margin: auto;
+	    width: 80%;
+	    border: 3px solid #000001;
+	    background-color: #808080;
+	    padding: 10px;
+	}
+</style>
+
+<head class = "center">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+
+<div id= "divid1" class = "center">
+
+    Character Name <input type = "text" name = "characterName" id = "char" value = "inrainbows"><br><br>
+
+    Locale <select name = "locale" id = "locale"><br><br>
+	 	<option value="EU">EU</option>
+	    <option value="US" >US</option>
+	    <option value="KR">KR</option>
+	</select><br><br>
+
+	Realm <input type = "text" name = "realm" id = "realm" value = "twisting nether" ><br><br>
+
+
+	Main Role <select name = "metric" id = "metric"><br><br>
+	  <option value="hps">Healer</option>
+	  <option value="dps">Damage Dealer</option>
+	  <option value="dps">Tank</option>
+	</select><br><br>
+
+	<button onclick="wowTrackMainPane()">Submit</button>
+
+	<button onclick="setup()">getJSON</button><br><br>
+
+	<a href="https://www.worldofwarcraft.com" target="_blank" id = "blizz">
+		<img border="0" alt="armory" src="https://s-media-cache-ak0.pinimg.com/236x/18/f2/c2/18f2c237688c6a4395e0f6a702743a7c.jpg
+" width="100" height="100">
+	</a>
+
+	<a href = "https://www.wowprogress.com" target="_blank" id = "progress">
+		<img border="0" alt="wowprogress" src="https://media-curse.cursecdn.com/attachments/238/259/ab2186b65b0528595ada31a0f3054643.png" width="100" height="100"></a>
+	</a>
+
+	<a href = "https://www.warcraftlogs.com" target="_blank" id = "wlogs">
+		<img border="0" alt="warcraftLogs" src="https://www.warcraftlogs.com/img/common/warcraft-logo.png
+" width="100" height="100">
+	</a>
+
+</div>
+<div id = "characterPane" class = "center">
+	</div>
+
+<div id = "artifact" class = "center">
+</div>
+<script>
+
+var battleNetApiKey = "b7pycu6727tfgrnzawp6sn5bxeerh92z"; // Battle Net Api Key
+var warcraftLogsApiKey = "bff965ef8c377f175a671dacdbdbc822"; // Warcraftlogs Api Key
+
+var localeCode;
+
+// function getValues(){
+
+// 	var charName = document.getElementById('char').value;
+// 	charName = charName.charAt(0).toUpperCase() + charName.slice(1);
+// 	var realm = toTitleCase(document.getElementById('realm').value);
+// 	var locale = document.getElementById('locale').value;
+// 	var metric = document.getElementById('metric').value;
+
+// 	return {
+// 		charName: charName,
+// 		realm: realm,
+// 		locale: locale,
+// 		metric: metric
+// 	};
+
+// }
+
+// function setup(){
+
+// 	var charName = document.getElementById('char').value;
+// 	charName = charName.charAt(0).toUpperCase() + charName.slice(1);
+// 	var realm = toTitleCase(document.getElementById('realm').value);
+// 	var locale = document.getElementById('locale').value;
+// 	var metric = document.getElementById('metric').value;
+
+// 	// getValues(charName,realm,locale,metric);
+
+// 	// $.getJSON("https://raider.io/api/v1/guilds/profile?region=eu&realm=twisting-nether&name=CATASTROPHE&fields=raid_progression%2Craid_rankings", 
+// 	// 	function(data) {
+//  //        	var guild = data.name;
+
+//  //        	var ranking = data.raid_rankings["the-nighthold"].mythic.world;
+
+// 	// 		var src = document.getElementById("divid1");
+// 	// 		src.innerHTML = src.innerHTML + guild + " World Rank " + ranking;
+// 	// });
+		
+// }
+
+function localeTransform(locale){
+	if (locale == "EU")
+		return localeCode = "gb/";
+	else
+		return localeCode = "us/"; // handle kr??
+}
+function wowTrackMainPane(){
+	
+
+
+	var charName = document.getElementById('char').value;
+	charName = charName.charAt(0).toUpperCase() + charName.slice(1);
+	var realm = toTitleCase(document.getElementById('realm').value);
+	var locale = document.getElementById('locale').value;
+	var metric = document.getElementById('metric').value;
+	var img = document.createElement("img");
+
+	localeCode=localeTransform(locale);
+
+	var wowTrackLink = "https://wowtrack.org/characters" + "/" + locale + "/" + realm + "/" + charName;
+	var base = "https://wowtrack.org/characters/"
+
+	img.onclick = function() {
+	    window.location.href = wowTrackLink;
+	};
+
+	img.setAttribute('target', '_blank')
+	var response = "?response=signature&fields=progression,averageItemLevel,mythicDungeonLevel"
+	img.src = base + locale + "/" + realm + "/" + charName + response;
+
+	img.href = "https://wowtrack.org/characters/" + locale + "/" + realm + "/" + charName;
+	
+	img.alt = "signature image";
+	var div = document.createElement("div");
+	div.appendChild(img);
+
+	document.getElementById("characterPane").innerHTML="";
+	document.getElementById("characterPane").appendChild(div);
+
+	var artifactJSON = "https://raider.io/api/v1/characters/profile?region=" + locale + "&realm=" + realm + "&name=" + charName + "&fields=gear";
+
+	$.ajax({
+     async: true,
+     type: 'GET',
+     url: artifactJSON,
+     success: function(data) {
+			var art = document.getElementById("artifact");
+        	var artifactTraits = data.gear.artifact_traits;
+			var artifactText = "Currently " + artifactTraits + " artifact points are allocated.";
+			document.getElementById("artifact").innerHTML = "";
+			art.innerHTML = art.innerHTML + "\n" + artifactText;
+		}
+	});
+
+	var wlogsBody = "https://www.warcraftlogs.com:443/v1/parses/character/" + charName + "/" + realm.replace(/\s+/g, '-') + "/" + locale + "?metric=" + metric + "&api_key=" + warcraftLogsApiKey;
+	 
+	var warcraftLogsText = "https://www.warcraftlogs.com/";
+
+	$.ajax({
+     async: true,
+     type: 'GET',
+     url: wlogsBody,
+     success: function(bdata) {
+	//$.getJSON(wlogsBody, 
+	//  function(bdata) {
+		wclCharacterId = bdata[0].specs[0].data[0].character_id;
+		warcraftLogsText = "https://www.warcraftlogs.com/character/id/" + wclCharacterId;
+		document.getElementById("wlogs").href = warcraftLogsText;
+        //https://www.warcraftlogs.com/character/id/8709705
+		}
+	});
+    	//https://www.wowprogress.com/character/eu/twisting-nether/Xebitial
+	var wowProgressText = "https://www.wowprogress.com/character/" + locale + "/" + realm.replace(/\s+/g, '-') + "/" + charName;
+	var armoryText = "https://worldofwarcraft.com/en-" + localeCode + "character/" + realm.replace(/\s+/g, '-') + "/" + charName;
+
+	document.getElementById("blizz").href = armoryText;
+	document.getElementById("progress").href = wowProgressText;
+	
+}
+
+function toTitleCase(str){
+    return str.replace(/\w\S*/g, function(txt){
+    	return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+}
+
+</script>
