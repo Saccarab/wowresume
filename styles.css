@@ -1,0 +1,16 @@
+.center {
+    margin: auto;
+    width: 80%;
+    border: 3px solid #000001;
+    background-color: #808080;
+    padding: 10px;
+	}
+.charLink {
+    margin: auto;
+    width: 80%;
+    border: 3px solid #000001;
+    background-color: #808080;
+    padding: 10px;
+    font-family: "Calibri";
+    font-weight: bold;
+}
