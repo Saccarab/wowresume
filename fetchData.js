@@ -13,7 +13,7 @@ function buildArmoryLink(locale, realm, character){
 }
 
 function buildTrackUrl(locale, realm, character){ //<3
-	var track = "https://wowtrack.org/characters" + "/" + locale + "/"	 + realm + "/" + character; 
+	var track = "https://wowtrack.org/characters" + "/" + locale + "/"	 + realm + "/" + character;
 	return track;
 }
 
@@ -72,11 +72,11 @@ function getClassColor(className){
 		case "warrior":
 			return "#C79C6E";
 			break;
-	}		
+	}
 }
 
 function wowTrackMainPane(){
-	
+
 	var charName = document.getElementById('char').value;
 	charName = upperCaseFirstL(charName);
 	var realm = toTitleCase(document.getElementById('realm').value);
@@ -85,7 +85,7 @@ function wowTrackMainPane(){
 	var img = document.createElement("img");
 	var proxy = "https://cors-anywhere.herokuapp.com/"; //"http://crossorigin.me/"
 	var url = proxy + buildTrackUrl(locale, toTitleCase(realm.replace("-", "%20")), charName);
-	
+
 	$.ajax({
 	  url: url,
 	  success: function(data){
@@ -123,7 +123,7 @@ function wowTrackMainPane(){
 				 	else if (j == 4){ // Grab Class & Char Name
 
 				 		//-----------------NAME----------------
-				 		temp = grab[4];	
+				 		temp = grab[4];
 				 		temp = temp.split("\"");
 				 		name = temp[3].replace(/['"]+/g, '');
 				 		name = name.replace("<", "");
@@ -146,23 +146,23 @@ function wowTrackMainPane(){
 						text.innerHTML = "         " + ilvl + " item level"
 						div.appendChild(text);
 						alts.appendChild(div);
-				 	} 	
+				 	}
 				}
 			}
 		}
 	  },
 	  error: function (){ // Reset on fail
-	  	$("#divid1").html(divClone); 
+	  	$("#divid1").html(divClone);
 	  	document.getElementById("alts").innerHTML = "ALTS";
 	  	document.getElementById("artifact").innerHTML = "";
 	  	alert("Invalid Character");
-	  } 
+	  }
 	});
 
 	var base = "https://wowtrack.org/characters/"
 
 	img.onclick = function() {
-	    window.location.href = buildTrackUrl(locale, realm, charName);
+	    window.open(buildTrackUrl(locale, realm, charName));
 	};
 
 	img.setAttribute('target', '_blank')
@@ -170,7 +170,7 @@ function wowTrackMainPane(){
 	img.src = base + locale + "/" + realm + "/" + charName + response;
 
 	img.href = "https://wowtrack.org/characters/" + locale + "/" + realm + "/" + charName;
-	
+
 	img.alt = "Invalid Character";
 	var div = document.createElement("div");
 	div.appendChild(img);
@@ -194,7 +194,7 @@ function wowTrackMainPane(){
 	});
 
 	var wlogsBody = "https://www.warcraftlogs.com:443/v1/parses/character/" + charName + "/" + realm.replace(/\s+/g, '-') + "/" + locale + "?metric=" + metric + "&api_key=" + warcraftLogsApiKey;
-	 
+
 	var warcraftLogsText = "https://www.warcraftlogs.com/"; //<3
 
 	$.ajax({
@@ -210,9 +210,9 @@ function wowTrackMainPane(){
 
 	var wowProgressText = "https://www.wowprogress.com/character/" + locale + "/" + realm.replace(/\s+/g, '-') + "/" + charName;
 
-	var armoryText = buildArmoryLink(locale, realm, charName); 
+	var armoryText = buildArmoryLink(locale, realm, charName);
 
 	document.getElementById("blizz").href = armoryText;
 	document.getElementById("progress").href = wowProgressText;
-	
+
 }
