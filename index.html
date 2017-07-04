@@ -3,8 +3,9 @@
 
 <head class = "center">
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="http://js.jotform.com/JotFormCustomWidget.min.js"></script>
 </head>
-
+	
 	<body>
 		<div id= "divid1" class = "center">
 		    Character Name <input type = "text" name = "characterName" id = "char" value = "inrainbows"><br><br> 
@@ -22,7 +23,7 @@
 			  <option value="dps">Tank</option>
 			</select><br><br>
 
-			<button onclick="wowTrackMainPane()">Submit</button><br><br>
+			<button onclick="mainPane()">Get my character</button><br><br>
 
 			<a href="https://www.worldofwarcraft.com" target="_blank" id = "blizz">
 				<img border="0" alt="armory" src="https://s-media-cache-ak0.pinimg.com/236x/18/f2/c2/18f2c237688c6a4395e0f6a702743a7c.jpg
@@ -48,8 +49,9 @@
 		<div class = "charLink" id = "alts" class = "center"> ALTS
 		</div>
 
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="fetchData.js"></script>	
+		<script src="fetchData.js"></script>
 
 	</body>
 </html>
