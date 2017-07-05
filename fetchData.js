@@ -1,9 +1,10 @@
 var divClone;
 var battleNetApiKey = "b7pycu6727tfgrnzawp6sn5bxeerh92z"; // Battle Net Api Key
 var warcraftLogsApiKey = "bff965ef8c377f175a671dacdbdbc822"; // Warcraftlogs Api Key
+var clicked;
 
 $(document).ready(function(){
-
+    clicked = false;
     divClone = $("#divid1").html();
 
     JFCustomWidget.subscribe("ready", function(){
@@ -12,7 +13,6 @@ $(document).ready(function(){
     fontFamily= JFCustomWidget.getWidgetSetting('fontFamily');
     fontColor= JFCustomWidget.getWidgetSetting('fontColor');
 
-	console.log(value);
 	});
 });
 
