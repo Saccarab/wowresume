@@ -17,10 +17,12 @@ $(document).ready(function(){
 
     JFCustomWidget.subscribe("submit", function(){
 
-			 var result = {}
+		     var result = {}
 
 		     result.valid = true;
-		     result.value = "my precious data\n line2 \n line 3 \n https://www.google.com" ;
+		     result.value = '<div><a href="https://www.worldofwarcraft.com" target="_blank" id = "blizz">
+				<img border="0" alt="armory" src="https://s-media-cache-ak0.pinimg.com/236x/18/f2/c2/18f2c237688c6a4395e0f6a702743a7c.jpg
+		" width="100" height="100"></a></div>'; 
 		     JFCustomWidget.sendSubmit(result);
 
 });
