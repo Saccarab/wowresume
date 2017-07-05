@@ -13,19 +13,7 @@ $(document).ready(function(){
     fontColor= JFCustomWidget.getWidgetSetting('fontColor');
 
 	console.log(value);
-});
-
-    JFCustomWidget.subscribe("submit", function(){
-
-			 var result = {}
-
-		     result.valid = true;
-		     result.value = '<div><a href="https://www.worldofwarcraft.com" target="_blank" id = "blizz">' +
-			 '<img border="0" alt="armory" src="https://s-media-cache-ak0.pinimg.com/236x/18/f2/c2/18f2c237688c6a4395e0f6a702743a7c.jpg"</a></div>';
-		     JFCustomWidget.sendSubmit(result);
-
-});
-
+	});
 });
 
 function buildArmoryLink(locale, realm, character){
@@ -261,5 +249,25 @@ function mainPane(){
 
 	document.getElementById("blizz").href = armoryText;
 	document.getElementById("progress").href = wowProgressText;
+	JFCustomWidget.subscribe("submit", function(){
 
+	var blizzString = document.getElementById("blizz").outerHTML;
+	var progressString = document.getElementById("progress").outerHTML;
+	var wlogsString = document.getElementById("wlogs").outerHTML;
+	var altsString = document.getElementById("alts").outerHTML;
+
+	var result = {}
+	result.valid = false;
+
+	if(charName != "" && realm != "" && clicked == true)
+		result.valid = true;
+
+    	result.value = "Armory Link " + blizzString + progressString + wlogsString + altsString;
+
+
+  //    '<div><a href="https://www.worldofwarcraft.com" target="_blank" id = "blizz">' +
+	 // '<img border="0" alt="armory" src="https://s-media-cache-ak0.pinimg.com/236x/18/f2/c2/18f2c237688c6a4395e0f6a702743a7c.jpg"></a></div>';
+
+        JFCustomWidget.sendSubmit(result);
+	});
 }
