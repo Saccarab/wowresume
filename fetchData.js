@@ -267,8 +267,14 @@ function mainPane(){
 
 		var altsString = document.getElementById("alts").outerHTML;
 		var blizzString = document.getElementById("blizz").outerHTML;
+		blizzString.width = "40";
+		blizzString.height = "40";
 		var progressString = document.getElementById("progress").outerHTML;
+		progressString.width = "40";
+		progressString.height = "40";
 		var wlogsString = document.getElementById("wlogs").outerHTML;
+		progressString.width = "40";
+		progressString.height = "40";
 		
 			
 		var result = {}
