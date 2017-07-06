@@ -268,7 +268,7 @@ function mainPane(){
 	JFCustomWidget.subscribe("submit", function(){
 
 		var altsString = document.getElementById("alts").outerHTML;   
-		altsString.style.backgroundColor = rgb(0, 0, 0);          
+		altsString.style.backgroundColor = 'rgb(' + 0 + ',' + 0 + ',' + 0 + ')';        
 		var blizzString = document.getElementById("blizz").outerHTML;
 		blizzString.children.width = "40"; //wont work
 		blizzString.children.height = "40";
