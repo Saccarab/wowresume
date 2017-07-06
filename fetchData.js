@@ -192,7 +192,7 @@ function mainPane(){
 						link.style.color = getClassColor(wClass);
 						div.appendChild(link);
 						div.appendChild(text);	
-						div.appendChild(button);
+						div.appendChild(button);  //button on submission
 						alts.appendChild(div);
 				 	} 	
 				}
@@ -265,10 +265,11 @@ function mainPane(){
 
 	JFCustomWidget.subscribe("submit", function(){
 
-		var altsString = document.getElementById("alts").outerHTML;
+		var altsString = document.getElementById("alts").outerHTML;             
 		var blizzString = document.getElementById("blizz").outerHTML;
-		blizzString.width = "40";
+		blizzString.width = "40"; //wont work
 		blizzString.height = "40";
+		var pane = document.getElementById("characterPane");
 		var progressString = document.getElementById("progress").outerHTML;
 		progressString.width = "40";
 		progressString.height = "40";
@@ -283,7 +284,7 @@ function mainPane(){
 		if(charName != "" && realm != "" && clicked == true)
 	    	result.valid = true;
 
-	    result.value = "Armory Link " + blizzString + progressString + wlogsString + altsString;
+	    result.value = "Armory Link " + pane + blizzString + progressString + wlogsString + altsString;
 
 
 	  //    '<div><a href="https://www.worldofwarcraft.com" target="_blank" id = "blizz">' +
