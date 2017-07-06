@@ -5,10 +5,10 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script src="https://js.jotform.com/JotFormCustomWidget.min.js"></script>
 </head>
-
+	
 	<body>
 		<div id= "divid1" class = "center">
-		    Character Name <input type = "text" name = "characterName" id = "char" value = "inrainbows"><br><br>
+		    Character Name <input type = "text" name = "characterName" id = "char" value = "inrainbows"><br><br> 
 
 		    Locale <select name = "locale" id = "locale"><br><br>
 			 	<option value="EU">EU</option>
@@ -16,7 +16,7 @@
 			    <option value="KR">KR</option>
 			</select><br><br>
 
-			Realm <input type = "text" name = "realm" id = "realm" value = "twisting nether" ><br><br>
+			Realm <input type = "text" name = "realm" id = "realm" value = "twisting nether" ><br><br> 
 			Main Role <select name = "metric" id = "metric"><br><br>
 			  <option value="hps">Healer</option>
 			  <option value="dps">Damage Dealer</option>
@@ -46,12 +46,16 @@
 		<div id = "artifact" class = "center">
 		</div>
 
-		<div class = "charLink" id = "alts" class = "center"> ALTS
+		<div id = "alts" class = "alts"> ALTS
 		</div>
 
-
+		<div id= "addAlt" class = "center"> Add another alt <br><br>	
+		    Name <input type = "text" name = "characterName" id = "char" value = "inrainbows">
+		    Realm <input type = "text" name = "realm" id = "realm" value = "twisting nether" ><br><br>
+		    <button onclick="mainPane()">Add alt</button>
+		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="fetchData.js"></script>
+		<script src="fetchData.js"></script>	
 
 	</body>
 </html>
