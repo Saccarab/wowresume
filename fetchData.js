@@ -1,3 +1,5 @@
+//fix 195 270 284
+
 var divClone;
 var battleNetApiKey = "b7pycu6727tfgrnzawp6sn5bxeerh92z"; // Battle Net Api Key
 var warcraftLogsApiKey = "bff965ef8c377f175a671dacdbdbc822"; // Warcraftlogs Api Key
@@ -192,7 +194,7 @@ function mainPane(){
 						link.style.color = getClassColor(wClass);
 						div.appendChild(link);
 						div.appendChild(text);	
-						div.appendChild(button);  //button on submission
+						div.appendChild(button);  //button on submission 
 						alts.appendChild(div);
 				 	} 	
 				}
@@ -265,23 +267,24 @@ function mainPane(){
 
 	JFCustomWidget.subscribe("submit", function(){
 
-		var altsString = document.getElementById("alts").outerHTML;             
+		var altsString = document.getElementById("alts").outerHTML;   
+		altsString.style.backgroundColor = rgb(0, 0, 0);          
 		var blizzString = document.getElementById("blizz").outerHTML;
-		blizzString.width = "40"; //wont work
-		blizzString.height = "40";
+		blizzString.children.width = "40"; //wont work
+		blizzString.children.height = "40";
 		var pane = document.getElementById("characterPane");
 		var progressString = document.getElementById("progress").outerHTML;
-		progressString.width = "40";
-		progressString.height = "40";
+		progressString.children.width = "40";
+		progressString.children.height = "40";
 		var wlogsString = document.getElementById("wlogs").outerHTML;
-		progressString.width = "40";
-		progressString.height = "40";
+		progressString.children.width = "40";
+		progressString.children.height = "40";
 		
 			
 		var result = {}
 		result.valid = false;
 		 
-		if(charName != "" && realm != "" && clicked == true)
+		if(charName != "" && realm != "" && clicked == true) /// this? 
 	    	result.valid = true;
 
 	    result.value = "Armory Link " + pane + blizzString + progressString + wlogsString + altsString;
