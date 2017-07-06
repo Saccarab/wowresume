@@ -2,16 +2,15 @@ var divClone;
 var battleNetApiKey = "b7pycu6727tfgrnzawp6sn5bxeerh92z"; // Battle Net Api Key
 var warcraftLogsApiKey = "bff965ef8c377f175a671dacdbdbc822"; // Warcraftlogs Api Key
 var clicked;
-
 $(document).ready(function(){
 	clicked = false;
-	divClone = $("#divid1").html();
+    divClone = $("#divid1").html();
 
-	JFCustomWidget.subscribe("ready", function(){
+    JFCustomWidget.subscribe("ready", function(){
 
-	fontSize= parseInt(JFCustomWidget.getWidgetSetting('fontSize'));
-	fontFamily= JFCustomWidget.getWidgetSetting('fontFamily');
-	fontColor= JFCustomWidget.getWidgetSetting('fontColor');
+    fontSize= parseInt(JFCustomWidget.getWidgetSetting('fontSize'));
+    fontFamily= JFCustomWidget.getWidgetSetting('fontFamily');
+    fontColor= JFCustomWidget.getWidgetSetting('fontColor');
 	});
 });
 
@@ -27,9 +26,9 @@ function buildTrackUrl(locale, realm, character){ //<3
 }
 
 function toTitleCase(str){
-	return str.replace(/\w\S*/g, function(txt){
-	return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-	});
+    return str.replace(/\w\S*/g, function(txt){
+    	return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
 }
 
 function upperCaseFirstL(word){
@@ -115,6 +114,7 @@ function mainPane(){
 
 		var lineLength = lines.length;
 
+
 		document.getElementById("alts").innerHTML = "ALTS"; //Refresh on new submit
 
 		var merge = 0;
@@ -170,12 +170,12 @@ function mainPane(){
 							url: request,
 							success: function(data) {
 								var averageilvl = data.items.averageItemLevelEquipped;
-								text.innerHTML = "         " + averageilvl + " item level";
+								text.innerHTML = "         " + averageilvl + " item level                               	";
 							}
 						});
 
-						
-						text.innerHTML = "         " + ilvl + " item level" + "                                	";
+						if (merge != 1)
+							text.innerHTML = "         " + ilvl + " item level                               	";
 						
 
 						button.src = "images/remove.png";
@@ -229,12 +229,12 @@ function mainPane(){
 	var artifactJSON = "https://raider.io/api/v1/characters/profile?region=" + locale + "&realm=" + realm + "&name=" + charName + "&fields=gear"; // <3
 
 	$.ajax({
-	     async: true,
-	     type: 'GET',
-	     url: artifactJSON,
-	     success: function(data) {
+     async: true,
+     type: 'GET',
+     url: artifactJSON,
+     success: function(data) {
 			var art = document.getElementById("artifact");
-        		var artifactTraits = data.gear.artifact_traits;
+        	var artifactTraits = data.gear.artifact_traits;
 			var artifactText = "Currently " + artifactTraits + " artifact points are allocated.";
 			document.getElementById("artifact").innerHTML = "";
 			art.innerHTML = art.innerHTML + "\n" + artifactText;
@@ -246,10 +246,10 @@ function mainPane(){
 	var warcraftLogsText = "https://www.warcraftlogs.com/"; //<3
 
 	$.ajax({
-	     async: true,
-	     type: 'GET',
-	     url: wlogsBody,
-	     success: function(bdata) {
+     async: true,
+     type: 'GET',
+     url: wlogsBody,
+     success: function(bdata) {
 		wclCharacterId = bdata[0].specs[0].data[0].character_id;
 		warcraftLogsText = "https://www.warcraftlogs.com/character/id/" + wclCharacterId;
 		document.getElementById("wlogs").href = warcraftLogsText;
@@ -277,7 +277,7 @@ function mainPane(){
 		if(charName != "" && realm != "" && clicked == true)
 	    	result.valid = true;
 
-	    	result.value = "Armory Link " + blizzString + progressString + wlogsString + altsString;
+	    result.value = "Armory Link " + blizzString + progressString + wlogsString + altsString;
 
 
 	  //    '<div><a href="https://www.worldofwarcraft.com" target="_blank" id = "blizz">' +
