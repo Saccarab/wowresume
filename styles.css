@@ -5,17 +5,12 @@
     background-color: #808080;
     padding: 10px;
 	}
-
 .alts {
     margin: auto;
     width: 80%;
     padding: 10px;
     background-color: #808080;
     border: 3px solid #000001;
+    font-weight: bold;
+    font-family:"Calibri ";
 }
-
-.alts div{
-    padding: 10px;
-    background-color: #808080;
-}
-
