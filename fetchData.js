@@ -4,15 +4,14 @@ var warcraftLogsApiKey = "bff965ef8c377f175a671dacdbdbc822"; // Warcraftlogs Api
 var clicked;
 
 $(document).ready(function(){
-    clicked = false;
-    divClone = $("#divid1").html();
+	clicked = false;
+	divClone = $("#divid1").html();
 
-    JFCustomWidget.subscribe("ready", function(){
+	JFCustomWidget.subscribe("ready", function(){
 
-    fontSize= parseInt(JFCustomWidget.getWidgetSetting('fontSize'));
-    fontFamily= JFCustomWidget.getWidgetSetting('fontFamily');
-    fontColor= JFCustomWidget.getWidgetSetting('fontColor');
-
+	fontSize= parseInt(JFCustomWidget.getWidgetSetting('fontSize'));
+	fontFamily= JFCustomWidget.getWidgetSetting('fontFamily');
+	fontColor= JFCustomWidget.getWidgetSetting('fontColor');
 	});
 });
 
@@ -23,14 +22,14 @@ function buildArmoryLink(locale, realm, character){
 }
 
 function buildTrackUrl(locale, realm, character){ //<3
-	var track = "https://wowtrack.org/characters" + "/" + locale + "/"	 + realm + "/" + character;
+	var track = "https://wowtrack.org/characters" + "/" + locale + "/"	 + realm + "/" + character; 
 	return track;
 }
 
 function toTitleCase(str){
-    return str.replace(/\w\S*/g, function(txt){
-    	return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    });
+	return str.replace(/\w\S*/g, function(txt){
+	return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+	});
 }
 
 function upperCaseFirstL(word){
@@ -82,11 +81,17 @@ function getClassColor(className){
 		case "warrior":
 			return "#C79C6E";
 			break;
-	}
+	}		
 }
 
+function removeDiv(tag){
+	console.log("xxx");
+	var elem = document.getElementById(tag.id);
+	elem.parentNode.parentNode.removeChild(tag.parentNode);
+}
 function mainPane(){
-
+	
+	var clicked = true;
 	var charName = document.getElementById('char').value;
 	charName = upperCaseFirstL(charName);
 	var realm = toTitleCase(document.getElementById('realm').value);
@@ -95,7 +100,7 @@ function mainPane(){
 	var img = document.createElement("img");
 	var proxy = "https://cors-anywhere.herokuapp.com/"; //"http://crossorigin.me/"
 	var url = proxy + buildTrackUrl(locale, toTitleCase(realm.replace("-", "%20")), charName);
-
+	
 	$.ajax({
 	  url: url,
 	  success: function(data){
@@ -134,7 +139,7 @@ function mainPane(){
 				 	else if (j == 4){ // Grab Class & Char Name
 
 				 		//-----------------NAME----------------
-				 		temp = grab[4];
+				 		temp = grab[4];	
 				 		temp = temp.split("\"");
 				 		name = temp[3].replace(/['" ]+/g, '');
 				 		name = name.replace("<", "");
@@ -150,12 +155,14 @@ function mainPane(){
 				 			}
 				 			else if (locale == "US"){
 				 				request = "https://us.api.battle.net/wow/character/" + realm + "/" + name + "?fields=items&locale=en_US&apikey=" + battleNetApiKey;
-				 			}
+				 			}	 
 				 		}
 				 		var alts = document.getElementById("alts");
 						var link = document.createElement("a");
 						var text = document.createElement('td1');
 						var div = document.createElement("div");
+						var button = document.createElement("img");
+						
 
 						$.ajax({
 							async: false,
@@ -167,45 +174,51 @@ function mainPane(){
 							}
 						});
 
-						if (merge!=1){
-							if (ilvl>800)
-								text.innerHTML = "         " + ilvl + " item level";
-							else
-								text.innerHTML = " Below Legion " + ilvl + " item level";
-						}
+						
+						text.innerHTML = "         " + ilvl + " item level" + "                                	";
+						
+
+						button.src = "images/remove.png";
+						button.id = "button" + i;
+						button.width = "13";
+						button.height = "13";
+						button.addEventListener("click", function(e){
+							removeDiv(this);
+						});	
 
 						link.setAttribute('target', '_blank')
 						link.href = buildArmoryLink(loc, realm , name);
 						link.innerHTML = upperCaseFirstL(name);
 						link.style.color = getClassColor(wClass);
 						div.appendChild(link);
-						div.appendChild(text);
+						div.appendChild(text);	
+						div.appendChild(button);
 						alts.appendChild(div);
-				 	}
+				 	} 	
 				}
 			}
 		}
 	  },
 	  error: function (){ // Reset on fail
-	  	$("#divid1").html(divClone);
+	  	$("#divid1").html(divClone); 
 	  	document.getElementById("alts").innerHTML = "ALTS";
 	  	document.getElementById("artifact").innerHTML = "";
 	  	alert("Invalid Character");
-	  }
+	  } 
 	});
 
-	var base = "https://wowtrack.org/characters/"
+	var base = "https://wowtrack.org/characters/";
 
 	img.onclick = function() {
 	    window.open(buildTrackUrl(locale, realm, charName));
 	};
 
-	img.setAttribute('target', '_blank')
-	var response = "?response=signature&fields=progression,averageItemLevel,mythicDungeonLevel"
+	img.setAttribute('target', '_blank');
+	var response = "?response=signature&fields=progression,averageItemLevel,mythicDungeonLevel";
 	img.src = base + locale + "/" + realm + "/" + charName + response;
 
 	img.href = "https://wowtrack.org/characters/" + locale + "/" + realm + "/" + charName;
-
+	
 	img.alt = "Invalid Character";
 	var div = document.createElement("div");
 	div.appendChild(img);
@@ -216,12 +229,12 @@ function mainPane(){
 	var artifactJSON = "https://raider.io/api/v1/characters/profile?region=" + locale + "&realm=" + realm + "&name=" + charName + "&fields=gear"; // <3
 
 	$.ajax({
-     async: true,
-     type: 'GET',
-     url: artifactJSON,
-     success: function(data) {
+	     async: true,
+	     type: 'GET',
+	     url: artifactJSON,
+	     success: function(data) {
 			var art = document.getElementById("artifact");
-        	var artifactTraits = data.gear.artifact_traits;
+        		var artifactTraits = data.gear.artifact_traits;
 			var artifactText = "Currently " + artifactTraits + " artifact points are allocated.";
 			document.getElementById("artifact").innerHTML = "";
 			art.innerHTML = art.innerHTML + "\n" + artifactText;
@@ -229,14 +242,14 @@ function mainPane(){
 	});
 
 	var wlogsBody = "https://www.warcraftlogs.com:443/v1/parses/character/" + charName + "/" + realm.replace(/\s+/g, '-') + "/" + locale + "?metric=" + metric + "&api_key=" + warcraftLogsApiKey;
-
+	 
 	var warcraftLogsText = "https://www.warcraftlogs.com/"; //<3
 
 	$.ajax({
-     async: true,
-     type: 'GET',
-     url: wlogsBody,
-     success: function(bdata) {
+	     async: true,
+	     type: 'GET',
+	     url: wlogsBody,
+	     success: function(bdata) {
 		wclCharacterId = bdata[0].specs[0].data[0].character_id;
 		warcraftLogsText = "https://www.warcraftlogs.com/character/id/" + wclCharacterId;
 		document.getElementById("wlogs").href = warcraftLogsText;
@@ -245,29 +258,33 @@ function mainPane(){
 
 	var wowProgressText = "https://www.wowprogress.com/character/" + locale + "/" + realm.replace(/\s+/g, '-') + "/" + charName;
 
-	var armoryText = buildArmoryLink(locale, realm, charName);
+	var armoryText = buildArmoryLink(locale, realm, charName); 
 
 	document.getElementById("blizz").href = armoryText;
 	document.getElementById("progress").href = wowProgressText;
+
 	JFCustomWidget.subscribe("submit", function(){
 
-	var blizzString = document.getElementById("blizz").outerHTML;
-	var progressString = document.getElementById("progress").outerHTML;
-	var wlogsString = document.getElementById("wlogs").outerHTML;
-	var altsString = document.getElementById("alts").outerHTML;
+		var altsString = document.getElementById("alts").outerHTML;
+		var blizzString = document.getElementById("blizz").outerHTML;
+		var progressString = document.getElementById("progress").outerHTML;
+		var wlogsString = document.getElementById("wlogs").outerHTML;
+		
+			
+		var result = {}
+		result.valid = false;
+		 
+		if(charName != "" && realm != "" && clicked == true)
+	    	result.valid = true;
 
-	var result = {}
-	result.valid = false;
-
-	if(charName != "" && realm != "" && clicked == true)
-		result.valid = true;
-
-    	result.value = "Armory Link " + blizzString + progressString + wlogsString + altsString;
+	    	result.value = "Armory Link " + blizzString + progressString + wlogsString + altsString;
 
 
-  //    '<div><a href="https://www.worldofwarcraft.com" target="_blank" id = "blizz">' +
-	 // '<img border="0" alt="armory" src="https://s-media-cache-ak0.pinimg.com/236x/18/f2/c2/18f2c237688c6a4395e0f6a702743a7c.jpg"></a></div>';
+	  //    '<div><a href="https://www.worldofwarcraft.com" target="_blank" id = "blizz">' +
+		 // '<img border="0" alt="armory" src="https://s-media-cache-ak0.pinimg.com/236x/18/f2/c2/18f2c237688c6a4395e0f6a702743a7c.jpg"></a></div>';
+		
+	     JFCustomWidget.sendSubmit(result);
 
-        JFCustomWidget.sendSubmit(result);
 	});
+	
 }
