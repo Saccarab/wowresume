@@ -1,7 +1,12 @@
+//blizzString.children.width = "40" (charName != "" && realm != "" && clicked == true)  div.appendChild(button);  //button on submission  submission
+	//	254	328	342
+
 var divClone;
 var battleNetApiKey = "b7pycu6727tfgrnzawp6sn5bxeerh92z"; // Battle Net Api Key
 var warcraftLogsApiKey = "bff965ef8c377f175a671dacdbdbc822"; // Warcraftlogs Api Key
 var clicked;
+var submitAlts = document.getElementById("alts");
+
 $(document).ready(function(){
 	clicked = false;
     divClone = $("#divid1").html();
@@ -35,6 +40,7 @@ function upperCaseFirstL(word){
 	return word.charAt(0).toUpperCase() + word.slice(1);
 }
 
+
 function localeTransform(locale){
 	if (locale == "EU")
 		return localeCode = "gb/";
@@ -42,8 +48,8 @@ function localeTransform(locale){
 		return localeCode = "us/"; // handle kr??
 }
 
-function getClassColor(className){
-	switch(className) {
+function getClassColor(spec){
+	switch(spec) {
 		case "priest":
 			return "#FFFFFF";
 			break;
@@ -83,14 +89,125 @@ function getClassColor(className){
 	}		
 }
 
+
+function getClassName(id){
+	switch(id) {
+		case 5:
+			return "priest";
+			break;
+		case 6:
+			return "death knight";
+			break;
+		case 12:
+			return "demon hunter";
+			break;
+		case 3:
+			return "hunter";
+			break;
+		case 11:
+			return "druid";
+			break;
+		case 8:
+			return "mage";
+			break;
+		case 10:
+			return "monk";
+			break;
+		case 2:
+			return "paladin";
+			break;
+		case 4:
+			return "rogue";
+			break;
+		case 7:
+			return "shaman";
+			break;
+		case 9:
+			return "warlock";
+			break;
+		case 1:
+			return "warrior";
+			break;
+	}		
+}
+
 function removeDiv(tag){
-	console.log("xxx");
 	var elem = document.getElementById(tag.id);
 	elem.parentNode.parentNode.removeChild(tag.parentNode);
 }
+
+function getItemLevel(locale, realm, name , func){ //, div
+	var request;
+
+	if (locale == "EU")
+		request = "https://eu.api.battle.net/wow/character/" + realm + "/" + name + "?fields=items&locale=en_GB&apikey=" + battleNetApiKey;
+	else if (locale == "US")
+		request = "https://us.api.battle.net/wow/character/" + realm + "/" + name + "?fields=items&locale=en_US&apikey=" + battleNetApiKey;
+
+	$.ajax({
+		async: true,
+		type: 'GET',
+		url: request,
+		success: function(data) {
+			var averageilvl = data.items.averageItemLevelEquipped;
+			var classnm = getClassName(data.class);
+			var obj = { 
+				characterClass: classnm,
+				characterilvl: averageilvl
+			}
+			func(obj);
+		}
+	});
+
+}
+
+function temp(){
+	var altDiv = document.getElementById("alts");
+	var altName = document.getElementById('altName').value;
+	altName = upperCaseFirstL(altName);
+	var locale = document.getElementById('locale').value;
+	var altRealm = toTitleCase(document.getElementById('altRealm').value);
+	getItemLevel( locale, altRealm, altName, addAltx); //(altDiv)
+}
+
+function addAltx(obj){ //, divid
+
+	var altName = upperCaseFirstL(document.getElementById('altName').value);
+	var locale = document.getElementById('locale').value;
+	var altRealm = toTitleCase(document.getElementById('altRealm').value);
+
+	var alts = document.getElementById("alts");
+	var link = document.createElement("a");
+	var text = document.createElement('td1');
+	var div = document.createElement("div");
+	var button = document.createElement("img");
+
+	button.style.border = "1.7px solid #000000"
+	button.src = "images/remove.png";
+	button.id = "button";
+	button.width = "11";
+	button.height = "11";
+
+	button.addEventListener("click", function(e){
+		removeDiv(this);
+	});	
+
+	text.innerHTML = " " + obj.characterilvl + " item level                               	"; //ilvl api
+
+	link.setAttribute('target', '_blank');
+	link.href = buildArmoryLink(locale, altRealm, altName);
+	link.innerHTML = altName
+	link.style.color = getClassColor(obj.characterClass);
+	div.appendChild(link);
+	div.appendChild(text);	
+	submitAlts.appendChild(div);
+	div.appendChild(button);  //button on submission 
+	alts.appendChild(div);	
+}
+
 function mainPane(){
 	
-	var clicked = true;
+	clicked = true;
 	var charName = document.getElementById('char').value;
 	charName = upperCaseFirstL(charName);
 	var realm = toTitleCase(document.getElementById('realm').value);
@@ -109,14 +226,12 @@ function mainPane(){
 		var wClass;
 		var grab;
 		var ilvl;
-
 		var lines = data.split("\n");
-
 		var lineLength = lines.length;
+		var merge = 0;
 
 		document.getElementById("alts").innerHTML = "ALTS"; //Refresh on new submit
-
-		var merge = 0;
+		
 		for (i = 0; i < lineLength; i++){
 			if (lines[i].indexOf("<a href=\"/characters") != -1 ) { // ALTS
 				merge ++;
@@ -147,20 +262,21 @@ function mainPane(){
 				 		wClass = temp[2].replace("\"", "");
 				 		wClass = wClass.substring(wClass.indexOf("-") + 1, wClass.length);
 				 		wClass = wClass.replace("-"," ");
+
 				 		var request;
 				 		if (merge == 1){
-				 			if (locale == "EU"){
+				 			if (locale == "EU")
 				 				request = "https://eu.api.battle.net/wow/character/" + realm + "/" + name + "?fields=items&locale=en_GB&apikey=" + battleNetApiKey;
-				 			}
-				 			else if (locale == "US"){
+				 			else if (locale == "US")
 				 				request = "https://us.api.battle.net/wow/character/" + realm + "/" + name + "?fields=items&locale=en_US&apikey=" + battleNetApiKey;
-				 			}	 
 				 		}
+
 				 		var alts = document.getElementById("alts");
 						var link = document.createElement("a");
 						var text = document.createElement('td1');
 						var div = document.createElement("div");
 						var button = document.createElement("img");
+						
 						
 
 						$.ajax({
@@ -169,16 +285,17 @@ function mainPane(){
 							url: request,
 							success: function(data) {
 								var averageilvl = data.items.averageItemLevelEquipped;
-								text.innerHTML = "         " + averageilvl + " item level";
+								text.innerHTML = "         " + averageilvl + " item level                               	";
 							}
 						});
 
-						
-						text.innerHTML = "         " + ilvl + " item level" + "                                	";
-						
+						if (merge != 1)
+							text.innerHTML = "         " + ilvl + " item level                               	";
+						// getItemLevel(loc, realm, name, addAltx);
 
 						button.src = "images/remove.png";
 						button.id = "button" + i;
+						button.style.border = "1.7px solid #000000"
 						button.width = "13";
 						button.height = "13";
 						button.addEventListener("click", function(e){
@@ -191,7 +308,8 @@ function mainPane(){
 						link.style.color = getClassColor(wClass);
 						div.appendChild(link);
 						div.appendChild(text);	
-						div.appendChild(button);
+						submitAlts.appendChild(div);
+						div.appendChild(button);  //button on submission 
 						alts.appendChild(div);
 				 	} 	
 				}
@@ -209,7 +327,9 @@ function mainPane(){
 	var base = "https://wowtrack.org/characters/";
 
 	img.onclick = function() {
-	    window.open(buildTrackUrl(locale, realm, charName));
+		var image = (buildTrackUrl(locale, realm, charName));
+	    window.open(image);
+
 	};
 
 	img.setAttribute('target', '_blank');
@@ -235,7 +355,7 @@ function mainPane(){
 			var art = document.getElementById("artifact");
         	var artifactTraits = data.gear.artifact_traits;
 			var artifactText = "Currently " + artifactTraits + " artifact points are allocated.";
-			document.getElementById("artifact").innerHTML = "";
+			// document.getElementById("characterPane").innerHTML = "";
 			art.innerHTML = art.innerHTML + "\n" + artifactText;
 		}
 	});
@@ -259,30 +379,40 @@ function mainPane(){
 
 	var armoryText = buildArmoryLink(locale, realm, charName); 
 
+
 	document.getElementById("blizz").href = armoryText;
 	document.getElementById("progress").href = wowProgressText;
 
+	var blizzString = document.getElementById("blizz").children[0].text;
 	JFCustomWidget.subscribe("submit", function(){
 
-		var altsString = document.getElementById("alts").outerHTML;
+		var metric = document.getElementById("metric").value + "Application \n";
+		var altsString = document.getElementById("alts").outerHTML;   
+		document.body.style.backgroundColor = "black";
 		var blizzString = document.getElementById("blizz").outerHTML;
+		blizzString.children.width = "40"; //wont work
+		blizzString.children.height = "40";
+		
+		var pane = document.getElementById("characterPane");
+
 		var progressString = document.getElementById("progress").outerHTML;
+		progressString.children.width = "40";
+		progressString.children.height = "40";
+
 		var wlogsString = document.getElementById("wlogs").outerHTML;
+		progressString.children.width = "40";
+		progressString.children.height = "40";
 		
 			
 		var result = {}
 		result.valid = false;
 		 
-		if(charName != "" && realm != "" && clicked == true)
+		if(charName != "" && realm != "" && clicked == true) /// this? 
 	    	result.valid = true;
 
-	    result.value = "Armory Link " + blizzString + progressString + wlogsString + altsString;
+	    result.value = metric+ pane + blizzString + progressString + wlogsString + altsString;
 
-
-	  //    '<div><a href="https://www.worldofwarcraft.com" target="_blank" id = "blizz">' +
-		 // '<img border="0" alt="armory" src="https://s-media-cache-ak0.pinimg.com/236x/18/f2/c2/18f2c237688c6a4395e0f6a702743a7c.jpg"></a></div>';
-		
-	     JFCustomWidget.sendSubmit(result);
+	    JFCustomWidget.sendSubmit(result);
 
 	});
 	
