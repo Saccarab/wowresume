@@ -1,16 +1,60 @@
 .center {
     margin: auto;
     width: 80%;
-    border: 3px solid #000001;
-    background-color: #808080;
+    border: 3px solid #000001; 
     padding: 10px;
-	}
+    color: rgba(255,255,255,.7);
+    font-weight: bold;
+    font-family:"Calibri ";
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    border-left-width :2px;
+    border-left-right :2px;
+    font-size: 0.8625rem;
+    font-family: sans-serif;
+    }
+
+.background{
+    background: url("file:///C:/Users/saccarab/Desktop/background-wow-top.jpg");
+}
+button{
+    background-color: rgba(0,0,0,.4);
+    border-color: #c77e19;
+    color: #f8b700;
+    box-shadow: 0 0 0 1px #000;
+    border-radius: 0;
+    border-width: 0.1px;
+    font-family: sans-serif;
+
+}
+input, textarea {
+
+    background-color : black; 
+    color: white;
+    border: 1px solid #504137;
+    font-family: Blizzard,sans-serif;
+
+}
+
+select{    
+    background-color : black; 
+    color: white;
+    font-family: sans-serif;
+    border: 1px solid #504137;
+}
+
 .alts {
+    font-size: 1.0625rem;
     margin: auto;
+    border-color: rgba(255,255,255,.7);
     width: 80%;
     padding: 10px;
     background-color: #808080;
+    color: rgba(255,255,255,.7);
     border: 3px solid #000001;
+    
     font-weight: bold;
     font-family:"Calibri ";
 }
+
+
