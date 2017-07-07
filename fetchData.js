@@ -161,15 +161,6 @@ function getItemLevel(locale, realm, name , func){ //, div
 
 }
 
-function temp(){
-	var altDiv = document.getElementById("alts");
-	var altName = document.getElementById('altName').value;
-	altName = upperCaseFirstL(altName);
-	var locale = document.getElementById('locale').value;
-	var altRealm = toTitleCase(document.getElementById('altRealm').value);
-	getItemLevel( locale, altRealm, altName, addAltx); //(altDiv)
-}
-
 function addAltx(obj){ //, divid
 
 	var altName = upperCaseFirstL(document.getElementById('altName').value);
@@ -204,6 +195,17 @@ function addAltx(obj){ //, divid
 	div.appendChild(button);  //button on submission 
 	alts.appendChild(div);	
 }
+
+
+function temp(){
+	var altDiv = document.getElementById("alts");
+	var altName = document.getElementById('altName').value;
+	altName = upperCaseFirstL(altName);
+	var locale = document.getElementById('locale').value;
+	var altRealm = toTitleCase(document.getElementById('altRealm').value);
+	getItemLevel( locale, altRealm, altName, addAltx); //(altDiv)
+}
+
 
 function mainPane(){
 	

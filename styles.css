@@ -12,10 +12,10 @@
     border-left-right :2px;
     font-size: 0.8625rem;
     font-family: sans-serif;
-    }
+	}
 
 .background{
-    background: url("images/background-wow-top.jpg");
+    background: url("file:///C:/Users/saccarab/Desktop/background-wow-top.jpg");
 }
 button{
     background-color: rgba(0,0,0,.4);
