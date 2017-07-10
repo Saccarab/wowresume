@@ -8,9 +8,9 @@ var clicked;
 var submitAlts = document.getElementById("alts");
 
 $(document).ready(function(){
+	submitAlts.innerHTML = "";
 	clicked = false;
     divClone = $("#divid1").html();
-
     JFCustomWidget.subscribe("ready", function(){
 
     fontSize= parseInt(JFCustomWidget.getWidgetSetting('fontSize'));
@@ -209,7 +209,6 @@ function temp(){
 
 function mainPane(){
 	
-	clicked = true;
 	var charName = document.getElementById('char').value;
 	charName = upperCaseFirstL(charName);
 	var realm = toTitleCase(document.getElementById('realm').value);
@@ -222,6 +221,7 @@ function mainPane(){
 	$.ajax({
 	  url: url,
 	  success: function(data){
+	  	clicked = true;
 	  	var loc;
 		var name;
 		var realm;
@@ -319,6 +319,7 @@ function mainPane(){
 		}
 	  },
 	  error: function (){ // Reset on fail
+	  	clicked = false;
 	  	$("#divid1").html(divClone); 
 	  	document.getElementById("alts").innerHTML = "ALTS";
 	  	document.getElementById("artifact").innerHTML = "";
@@ -336,9 +337,10 @@ function mainPane(){
 
 	img.setAttribute('target', '_blank');
 	var response = "?response=signature&fields=progression,averageItemLevel,mythicDungeonLevel";
-	img.src = base + locale + "/" + realm + "/" + charName + response;
+	var realmNonSpace = realm.replace(" ", "%20");
+	img.src = base + locale + "/" + realmNonSpace + "/" + charName + response;
 
-	img.href = "https://wowtrack.org/characters/" + locale + "/" + realm + "/" + charName;
+	img.href = "https://wowtrack.org/characters/" + locale + "/" + realmNonSpace + "/" + charName;
 	
 	img.alt = "Invalid Character";
 	var div = document.createElement("div");
@@ -357,7 +359,7 @@ function mainPane(){
 			var art = document.getElementById("artifact");
         	var artifactTraits = data.gear.artifact_traits;
 			var artifactText = "Currently " + artifactTraits + " artifact points are allocated.";
-			// document.getElementById("characterPane").innerHTML = "";
+			document.getElementById("artifact").innerHTML = "";
 			art.innerHTML = art.innerHTML + "\n" + artifactText;
 		}
 	});
@@ -388,31 +390,30 @@ function mainPane(){
 	var blizzString = document.getElementById("blizz").children[0].text;
 	JFCustomWidget.subscribe("submit", function(){
 
-		var metric = document.getElementById("metric").value + "Application \n";
-		var altsString = document.getElementById("alts").outerHTML;   
+		//var altsString = document.getElementById("alts").outerHTML;   
 		document.body.style.backgroundColor = "black";
 		var blizzString = document.getElementById("blizz").outerHTML;
-		blizzString.children.width = "40"; //wont work
-		blizzString.children.height = "40";
+		// blizzString.children.width = "40"; //wont work
+		// blizzString.children.height = "40";
 		
-		var pane = document.getElementById("characterPane");
+		var pane = document.getElementById("characterPane").outerHTML
 
 		var progressString = document.getElementById("progress").outerHTML;
-		progressString.children.width = "40";
-		progressString.children.height = "40";
+		// progressString.children.width = "40";
+		// progressString.children.height = "40";
 
 		var wlogsString = document.getElementById("wlogs").outerHTML;
-		progressString.children.width = "40";
-		progressString.children.height = "40";
+		// progressString.children.width = "40";
+		// progressString.children.height = "40";
 		
 			
 		var result = {}
 		result.valid = false;
 		 
-		if(charName != "" && realm != "" && clicked == true) /// this? 
+		if(clicked) /// this?  charName != "" && realm != "" && 
 	    	result.valid = true;
-
-	    result.value = metric+ pane + blizzString + progressString + wlogsString + altsString;
+	    	
+	    result.value = pane + blizzString + progressString + wlogsString + submitAlts.outerHTML;
 
 	    JFCustomWidget.sendSubmit(result);
 
