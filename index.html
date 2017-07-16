@@ -4,12 +4,13 @@
 <head class = "center">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script src="https://js.jotform.com/JotFormCustomWidget.min.js"></script>
-</head>
+	</head>
+<!-- <script type="text/javascript" src="https://wow.zamimg.com/widgets/power.js"></script><script>var wowhead_tooltips = { "colorlinks": true, "iconizelinks": true, "renamelinks": true }</script> -->
 	
 	<body>
 		<div class = "background">
 			<div id = "divid1" class = "center">
-			    Character Name <input type = "text" name = "characterName" id = "char"><br><br> 
+			    Character Name <input type = "text" name = "characterName" id = "char" value = "inrainbows"><br><br> 
 
 			    Locale <select name = "locale" id = "locale"><br><br>
 				 	<option value="EU">EU</option>
@@ -17,7 +18,7 @@
 				    <option value="KR">KR</option>
 				</select><br><br>
 
-				Realm <input type = "text" name = "realm" id = "realm" ><br><br> 
+				Realm <input type = "text" name = "realm" id = "realm" value = "twisting nether" ><br><br> 
 				Main Role <select name = "metric" id = "metric"><br><br>
 				  <option value="hps">Healer</option>
 				  <option value="dps">Damage Dealer</option>
@@ -30,6 +31,10 @@
 					<img border="0" alt="armory" src="https://s-media-cache-ak0.pinimg.com/236x/18/f2/c2/18f2c237688c6a4395e0f6a702743a7c.jpg
 			" width="100" height="100">
 				</a>
+
+				<a href="http://www.wowhead.com/achievement=8511 " target="_blank" id = "blizz">
+				</a>
+				
 
 				<a href = "https://www.wowprogress.com" target="_blank" id = "progress">
 					<img border="0" alt="wowprogress" src="https://media-curse.cursecdn.com/attachments/238/259/ab2186b65b0528595ada31a0f3054643.png" width="100" height="100"></a>
@@ -50,9 +55,12 @@
 			<div id = "alts" class = "center"> ALTS <br>
 			</div>
 
+			<div id = "kills" class = "center"> Legion Raider.io First Kill Rankings <br><br>
+			</div>
+
 			<div id= "addAlt" class = "center"> Add another alt <br><br>	
-			    Name <input type = "text" name = "altName" id = "altName">
-			    Realm <input type = "text" name = "altRealm" id = "altRealm" ><br><br>
+			    Name <input type = "text" name = "altName" id = "altName" value = "inrainbows">
+			    Realm <input type = "text" name = "altRealm" id = "altRealm" value = "twisting nether" ><br><br>
 			    <button id = "tempid" >Add alt</button>
 			</div>
 		</div>	
