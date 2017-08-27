@@ -1,0 +1,671 @@
+/** @type {Array} */
+var _0x4b31 = ["b7pycu6727tfgrnzawp6sn5bxeerh92z", "bff965ef8c377f175a671dacdbdbc822", "https://cors-anywhere.herokuapp.com/", "alts", "getElementById", "Alts \n\n", "innerHTML", "", "html", "#divid1", "ready", "subscribe", "https://worldofwarcraft.com/en-", "character/", "-", "replace", "/", "https://wowtrack.org/characters", "toUpperCase", "charAt", "toLowerCase", "substr", "slice", "EU", "gb/", "us/", "#FFFFFF", "priest", "#C41F3B", "death knight", "#A330C9", "demon hunter", "#ABD473", "hunter", 
+"#FF7D0A", "druid", "#69CCF0", "mage", "#00FF96", "monk", "#F58CBA", "paladin", "#FFF569", "rogue", "#0070DE", "shaman", "#9482C9", "warlock", "#C79C6E", "warrior", ",", 's"', "lastIndexOf", "</", "substring", " ", "split", "getTime", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "id", "parentNode", "removeChild", "%20", "https://eu.api.battle.net/wow/character/", "?fields=items&locale=en_GB&apikey=", "US", "https://us.api.battle.net/wow/character/", "?fields=items&locale=en_US&apikey=", 
+"GET", "averageItemLevelEquipped", "items", "class", "ajax", "a", "createElement", "td1", "div", "img", "border", "style", "1.7px solid #000000", "src", "images/remove2.png", "button", "width", "11", "height", "click", "addEventListener", "characterilvl", " item level                               \t", "target", "_blank", "setAttribute", "href", "color", "characterClass", "appendChild", "outerHTML", "\n", "value", "altName", "locale", "altRealm", "trim", "length", "achievementsCompleted", "achievements", 
+"achievementsCompletedTimestamp", "dateLeave", "dateJoin", "guildLocale", "eu", "https://eu.api.battle.net/wow/guild/", "guildRealm", "guildName", "?fields=achievements&locale=en_GB&apikey=", "us", "https://us.api.battle.net/wow/guild/", "?fields=achievements&locale=en_US&apikey=", "guildIndex", "abs", "rankings/", ".txt", "https://github.com/Saccarab/JF-WDDevelop/blob/gh-pages/images/", ".jpg", "alt", " in guild ", "kills", "ff", "log", "First Kill Rankings\n", "char", "realm", "metric", "ALTS", 
+'<a href="/characters', "indexOf", "<td>", "</td>", '"', "<", ">", "guilds", '" ', "push", "   Nighthold Nightmare Mythic world rank ", "guldan", "Trial of Valor Mythic world rank ", "helya", "   Emerald Nightmare Mythic world rank ", "xavius", "   Hellfire Citadel Mythic world rank ", "archimonde", "   Blackrock Foundry Mythic world rank ", "blackhand", "   Highmaul Mythic world rank ", "imperator", "Invalid Character", "https://wowtrack.org/characters/", "onclick", "open", "?response=signature&fields=progression,averageItemLevel,mythicDungeonLevel", 
+"https://raider.io/api/v1/characters/profile?region=", "&realm=", "&name=", "&fields=gear", "artifact", "artifact_traits", "gear", "Currently ", " artifact points are allocated.", "https://www.warcraftlogs.com/character/", "wlogs", "https://www.wowprogress.com/character/", "blizz", "progress", "text", "children", "submit", "backgroundColor", "body", "black", "characterPane", "valid", "sendSubmit"];
+/** @type {Array} */
+var _0x81cc = [_0x4b31[0], _0x4b31[1], _0x4b31[2], _0x4b31[3], _0x4b31[4], _0x4b31[5], _0x4b31[6], _0x4b31[7], _0x4b31[8], _0x4b31[9], _0x4b31[10], _0x4b31[11], _0x4b31[12], _0x4b31[13], _0x4b31[14], _0x4b31[15], _0x4b31[16], _0x4b31[17], _0x4b31[18], _0x4b31[19], _0x4b31[20], _0x4b31[21], _0x4b31[22], _0x4b31[23], _0x4b31[24], _0x4b31[25], _0x4b31[26], _0x4b31[27], _0x4b31[28], _0x4b31[29], _0x4b31[30], _0x4b31[31], _0x4b31[32], _0x4b31[33], _0x4b31[34], _0x4b31[35], _0x4b31[36], _0x4b31[37], _0x4b31[38], 
+_0x4b31[39], _0x4b31[40], _0x4b31[41], _0x4b31[42], _0x4b31[43], _0x4b31[44], _0x4b31[45], _0x4b31[46], _0x4b31[47], _0x4b31[48], _0x4b31[49], _0x4b31[50], _0x4b31[51], _0x4b31[52], _0x4b31[53], _0x4b31[54], _0x4b31[55], _0x4b31[56], _0x4b31[57], _0x4b31[58], _0x4b31[59], _0x4b31[60], _0x4b31[61], _0x4b31[62], _0x4b31[63], _0x4b31[64], _0x4b31[65], _0x4b31[66], _0x4b31[67], _0x4b31[68], _0x4b31[69], _0x4b31[70], _0x4b31[71], _0x4b31[72], _0x4b31[73], _0x4b31[74], _0x4b31[75], _0x4b31[76], _0x4b31[77], 
+_0x4b31[78], _0x4b31[79], _0x4b31[80], _0x4b31[81], _0x4b31[82], _0x4b31[83], _0x4b31[84], _0x4b31[85], _0x4b31[86], _0x4b31[87], _0x4b31[88], _0x4b31[89], _0x4b31[90], _0x4b31[91], _0x4b31[92], _0x4b31[93], _0x4b31[94], _0x4b31[95], _0x4b31[96], _0x4b31[97], _0x4b31[98], _0x4b31[99], _0x4b31[100], _0x4b31[101], _0x4b31[102], _0x4b31[103], _0x4b31[104], _0x4b31[105], _0x4b31[106], _0x4b31[107], _0x4b31[108], _0x4b31[109], _0x4b31[110], _0x4b31[111], _0x4b31[112], _0x4b31[113], _0x4b31[114], _0x4b31[115], 
+_0x4b31[116], _0x4b31[117], _0x4b31[118], _0x4b31[119], _0x4b31[120], _0x4b31[121], _0x4b31[122], _0x4b31[123], _0x4b31[124], _0x4b31[125], _0x4b31[126], _0x4b31[127], _0x4b31[128], _0x4b31[129], _0x4b31[130], _0x4b31[131], _0x4b31[132], _0x4b31[133], _0x4b31[134], _0x4b31[135], _0x4b31[136], _0x4b31[137], _0x4b31[138], _0x4b31[139], _0x4b31[140], _0x4b31[141], _0x4b31[142], _0x4b31[143], _0x4b31[144], _0x4b31[145], _0x4b31[146], _0x4b31[147], _0x4b31[148], _0x4b31[149], _0x4b31[150], _0x4b31[151], 
+_0x4b31[152], _0x4b31[153], _0x4b31[154], _0x4b31[155], _0x4b31[156], _0x4b31[157], _0x4b31[158], _0x4b31[159], _0x4b31[160], _0x4b31[161], _0x4b31[162], _0x4b31[163], _0x4b31[164], _0x4b31[165], _0x4b31[166], _0x4b31[167], _0x4b31[168], _0x4b31[169], _0x4b31[170], _0x4b31[171], _0x4b31[172], _0x4b31[173], _0x4b31[174], _0x4b31[175], _0x4b31[176], _0x4b31[177], _0x4b31[178], _0x4b31[179], _0x4b31[180], _0x4b31[181], _0x4b31[182], _0x4b31[183], _0x4b31[184], _0x4b31[185], _0x4b31[186], _0x4b31[187], 
+_0x4b31[188], _0x4b31[189], _0x4b31[190], _0x4b31[191], _0x4b31[192], _0x4b31[193], _0x4b31[194], _0x4b31[195], _0x4b31[196]];
+/** @type {number} */
+var ragnarosPersonal = 5803;
+/** @type {number} */
+var ragnarosGuild = 5984;
+/** @type {number} */
+var imperatorPersonal = 8965;
+/** @type {number} */
+var imperatorGuild = 9420;
+/** @type {number} */
+var blackhandPersonal = 8973;
+/** @type {number} */
+var blackhandGuild = 9421;
+/** @type {number} */
+var archimondePersonal = 10043;
+/** @type {number} */
+var archimondeGuild = 10176;
+/** @type {number} */
+var xaviusPersonal = 10827;
+/** @type {number} */
+var xaviusGuild = 11238;
+/** @type {number} */
+var helyaPersonal = 11398;
+/** @type {number} */
+var helyaGuild = 11404;
+/** @type {number} */
+var guldanPersonal = 10850;
+/** @type {number} */
+var guldanGuild = 11239;
+var divClone;
+var battleNetApiKey = _0x81cc[0];
+var warcraftLogsApiKey = _0x81cc[1];
+var proxy = _0x81cc[2];
+var clicked;
+var submitAlts = document[_0x81cc[4]](_0x81cc[3]);
+var altsHtml = _0x81cc[5];
+/** @type {Array} */
+var playerGuilds = [];
+$(document)[_0x81cc[10]](function() {
+  submitAlts[_0x81cc[6]] = _0x81cc[7];
+  /** @type {boolean} */
+  clicked = false;
+  divClone = $(_0x81cc[9])[_0x81cc[8]]();
+  JFCustomWidget[_0x81cc[11]](_0x81cc[10], function() {
+  });
+});
+/**
+ * @param {Array} regex
+ * @param {?} family
+ * @param {Array} deepDataAndEvents
+ * @return {?}
+ */
+function buildArmoryLink(regex, family, deepDataAndEvents) {
+  regex = localeTransform(regex);
+  var buildArmoryLink = _0x81cc[12] + regex + _0x81cc[13] + family[_0x81cc[15]](/\s+/g, _0x81cc[14]) + _0x81cc[16] + deepDataAndEvents;
+  return buildArmoryLink;
+}
+/**
+ * @param {?} regex
+ * @param {?} family
+ * @param {?} callback
+ * @return {?}
+ */
+function buildTrackUrl(regex, family, callback) {
+  var handleCallback = _0x81cc[17] + _0x81cc[16] + regex + _0x81cc[16] + family + _0x81cc[16] + callback;
+  return handleCallback;
+}
+/**
+ * @param {?} str
+ * @return {?}
+ */
+function toTitleCase(str) {
+  return str[_0x81cc[15]](/\w\S*/g, function(dataAndEvents) {
+    return dataAndEvents[_0x81cc[19]](0)[_0x81cc[18]]() + dataAndEvents[_0x81cc[21]](1)[_0x81cc[20]]();
+  });
+}
+/**
+ * @param {Array} deepDataAndEvents
+ * @return {?}
+ */
+function upperCaseFirstL(deepDataAndEvents) {
+  return deepDataAndEvents[_0x81cc[19]](0)[_0x81cc[18]]() + deepDataAndEvents[_0x81cc[22]](1);
+}
+/**
+ * @param {?} dataAndEvents
+ * @return {?}
+ */
+function lowerCaseFirstL(dataAndEvents) {
+  return dataAndEvents[_0x81cc[19]](0)[_0x81cc[20]]() + dataAndEvents[_0x81cc[22]](1);
+}
+/**
+ * @param {Array} var_args
+ * @return {?}
+ */
+function localeTransform(var_args) {
+  if (var_args == _0x81cc[23]) {
+    return localeCode = _0x81cc[24];
+  } else {
+    return localeCode = _0x81cc[25];
+  }
+}
+/**
+ * @param {?} dataAndEvents
+ * @return {?}
+ */
+function getClassColor(dataAndEvents) {
+  switch(dataAndEvents) {
+    case _0x81cc[27]:
+      return _0x81cc[26];
+      break;
+    case _0x81cc[29]:
+      return _0x81cc[28];
+      break;
+    case _0x81cc[31]:
+      return _0x81cc[30];
+      break;
+    case _0x81cc[33]:
+      return _0x81cc[32];
+      break;
+    case _0x81cc[35]:
+      return _0x81cc[34];
+      break;
+    case _0x81cc[37]:
+      return _0x81cc[36];
+      break;
+    case _0x81cc[39]:
+      return _0x81cc[38];
+      break;
+    case _0x81cc[41]:
+      return _0x81cc[40];
+      break;
+    case _0x81cc[43]:
+      return _0x81cc[42];
+      break;
+    case _0x81cc[45]:
+      return _0x81cc[44];
+      break;
+    case _0x81cc[47]:
+      return _0x81cc[46];
+      break;
+    case _0x81cc[49]:
+      return _0x81cc[48];
+      break;
+  }
+}
+/**
+ * @param {?} e
+ * @return {?}
+ */
+function getClassName(e) {
+  switch(e) {
+    case 5:
+      return _0x81cc[27];
+      break;
+    case 6:
+      return _0x81cc[29];
+      break;
+    case 12:
+      return _0x81cc[31];
+      break;
+    case 3:
+      return _0x81cc[33];
+      break;
+    case 11:
+      return _0x81cc[35];
+      break;
+    case 8:
+      return _0x81cc[37];
+      break;
+    case 10:
+      return _0x81cc[39];
+      break;
+    case 2:
+      return _0x81cc[41];
+      break;
+    case 4:
+      return _0x81cc[43];
+      break;
+    case 7:
+      return _0x81cc[45];
+      break;
+    case 9:
+      return _0x81cc[47];
+      break;
+    case 1:
+      return _0x81cc[49];
+      break;
+  }
+}
+/**
+ * @param {?} d
+ * @return {?}
+ */
+function formatDate(d) {
+  var _0x3899x2c = d[_0x81cc[54]](d[_0x81cc[52]](_0x81cc[51]) + 3, d[_0x81cc[52]](_0x81cc[53]))[_0x81cc[15]](_0x81cc[50], _0x81cc[7]);
+  splitted = _0x3899x2c[_0x81cc[56]](_0x81cc[55]);
+  formattedJoin = getMonth(splitted[0]) + _0x81cc[16] + splitted[1] + _0x81cc[16] + splitted[2];
+  return(new Date(formattedJoin))[_0x81cc[57]]();
+}
+/**
+ * @param {?} n
+ * @return {?}
+ */
+function getMonth(n) {
+  switch(n) {
+    case _0x81cc[58]:
+      return 1;
+      break;
+    case _0x81cc[59]:
+      return 2;
+      break;
+    case _0x81cc[60]:
+      return 3;
+      break;
+    case _0x81cc[61]:
+      return 4;
+      break;
+    case _0x81cc[62]:
+      return 5;
+      break;
+    case _0x81cc[63]:
+      return 6;
+      break;
+    case _0x81cc[64]:
+      return 7;
+      break;
+    case _0x81cc[65]:
+      return 8;
+      break;
+    case _0x81cc[66]:
+      return 9;
+      break;
+    case _0x81cc[67]:
+      return 10;
+      break;
+    case _0x81cc[68]:
+      return 11;
+      break;
+    case _0x81cc[69]:
+      return 12;
+      break;
+  }
+}
+/**
+ * @param {?} dataAndEvents
+ * @return {undefined}
+ */
+function removeDiv(dataAndEvents) {
+  var _0x3899x31 = document[_0x81cc[4]](dataAndEvents[_0x81cc[70]]);
+  _0x3899x31[_0x81cc[71]][_0x81cc[71]][_0x81cc[72]](dataAndEvents[_0x81cc[71]]);
+}
+/**
+ * @param {?} dataAndEvents
+ * @return {?}
+ */
+function spaceToBlizzspace(dataAndEvents) {
+  return dataAndEvents[_0x81cc[15]](_0x81cc[55], _0x81cc[73]);
+}
+/**
+ * @param {?} dataAndEvents
+ * @return {?}
+ */
+function blizzspaceToSpace(dataAndEvents) {
+  return dataAndEvents[_0x81cc[15]](_0x81cc[73], _0x81cc[55]);
+}
+/**
+ * @param {?} regex
+ * @param {?} obj
+ * @param {?} deepDataAndEvents
+ * @param {Function} add
+ * @return {undefined}
+ */
+function getItemLevel(regex, obj, deepDataAndEvents, add) {
+  var appFrontendUrl;
+  if (regex == _0x81cc[23]) {
+    appFrontendUrl = _0x81cc[74] + obj + _0x81cc[16] + deepDataAndEvents + _0x81cc[75] + battleNetApiKey;
+  } else {
+    if (regex == _0x81cc[76]) {
+      appFrontendUrl = _0x81cc[77] + obj + _0x81cc[16] + deepDataAndEvents + _0x81cc[78] + battleNetApiKey;
+    }
+  }
+  $[_0x81cc[83]]({
+    async : true,
+    type : _0x81cc[79],
+    url : appFrontendUrl,
+    /**
+     * @param {?} textStatus
+     * @return {undefined}
+     */
+    success : function(textStatus) {
+      var characterilvl = textStatus[_0x81cc[81]][_0x81cc[80]];
+      var CSS_MENU_LABEL_MENUVISIBLE = getClassName(textStatus[_0x81cc[82]]);
+      var a3 = {
+        characterClass : CSS_MENU_LABEL_MENUVISIBLE,
+        characterilvl : characterilvl
+      };
+      add(regex, obj, deepDataAndEvents, a3);
+    }
+  });
+}
+/**
+ * @param {Array} cx
+ * @param {(Error|string)} t
+ * @param {Array} deepDataAndEvents
+ * @param {?} dataAndEvents
+ * @return {undefined}
+ */
+function addAltx(cx, t, deepDataAndEvents, dataAndEvents) {
+  deepDataAndEvents = upperCaseFirstL(deepDataAndEvents);
+  t = toTitleCase(t.toString());
+  var collection = document[_0x81cc[4]](_0x81cc[3]);
+  var propertyValues = document[_0x81cc[85]](_0x81cc[84]);
+  var r20 = document[_0x81cc[85]](_0x81cc[86]);
+  var resp = document[_0x81cc[85]](_0x81cc[87]);
+  var restoreScript = document[_0x81cc[85]](_0x81cc[88]);
+  restoreScript[_0x81cc[90]][_0x81cc[89]] = _0x81cc[91];
+  restoreScript[_0x81cc[92]] = _0x81cc[93];
+  restoreScript[_0x81cc[70]] = _0x81cc[94];
+  restoreScript[_0x81cc[95]] = _0x81cc[96];
+  restoreScript[_0x81cc[97]] = _0x81cc[96];
+  restoreScript[_0x81cc[99]](_0x81cc[98], function(dataAndEvents) {
+    removeDiv(this);
+  });
+  r20[_0x81cc[6]] = _0x81cc[55] + dataAndEvents[_0x81cc[100]] + _0x81cc[101];
+  propertyValues[_0x81cc[104]](_0x81cc[102], _0x81cc[103]);
+  propertyValues[_0x81cc[105]] = buildArmoryLink(cx, t, deepDataAndEvents);
+  /** @type {Array} */
+  propertyValues[_0x81cc[6]] = deepDataAndEvents;
+  propertyValues[_0x81cc[90]][_0x81cc[106]] = getClassColor(dataAndEvents[_0x81cc[107]]);
+  resp[_0x81cc[108]](propertyValues);
+  resp[_0x81cc[108]](r20);
+  altsHtml = altsHtml + resp[_0x81cc[109]] + _0x81cc[110];
+  submitAlts[_0x81cc[108]](resp);
+  resp[_0x81cc[108]](restoreScript);
+  collection[_0x81cc[108]](resp);
+}
+/**
+ * @return {undefined}
+ */
+function temp() {
+  var _0x3899x45 = document[_0x81cc[4]](_0x81cc[3]);
+  var deepDataAndEvents = document[_0x81cc[4]](_0x81cc[112])[_0x81cc[111]];
+  deepDataAndEvents = upperCaseFirstL(deepDataAndEvents);
+  var r20 = document[_0x81cc[4]](_0x81cc[113])[_0x81cc[111]];
+  var suiteView = toTitleCase(document[_0x81cc[4]](_0x81cc[114])[_0x81cc[111]]);
+  getItemLevel(r20, suiteView, deepDataAndEvents, addAltx);
+}
+/**
+ * @param {?} object
+ * @return {?}
+ */
+function fixName(object) {
+  return upperCaseFirstL(object[_0x81cc[20]]())[_0x81cc[115]]();
+}
+/**
+ * @param {?} textStatus
+ * @param {?} dataAndEvents
+ * @param {number} deepDataAndEvents
+ * @param {number} elt
+ * @param {number} value
+ * @return {undefined}
+ */
+function guildRank(textStatus, dataAndEvents, deepDataAndEvents, elt, value) {
+  var resp = document[_0x81cc[85]](_0x81cc[87]);
+  var r20 = document[_0x81cc[85]](_0x81cc[88]);
+  var restoreScript = document[_0x81cc[85]](_0x81cc[86]);
+  var bits = textStatus[_0x81cc[118]][_0x81cc[117]][_0x81cc[116]];
+  for (;bits-- && bits >= 0;) {
+    if (textStatus[_0x81cc[118]][_0x81cc[117]][bits] == deepDataAndEvents) {
+      break;
+    }
+  }
+  if (bits != -1) {
+    var max = textStatus[_0x81cc[118]][_0x81cc[119]][bits];
+    /** @type {number} */
+    p = 0;
+    for (;p < playerGuilds[_0x81cc[116]];p++) {
+      if (max < playerGuilds[p][_0x81cc[120]] && max > playerGuilds[p][_0x81cc[121]]) {
+        if (playerGuilds[p][_0x81cc[122]] == _0x81cc[123]) {
+          request = _0x81cc[124] + playerGuilds[p][_0x81cc[125]] + _0x81cc[16] + playerGuilds[p][_0x81cc[126]] + _0x81cc[127] + battleNetApiKey;
+        } else {
+          if (playerGuilds[p][_0x81cc[122]] == _0x81cc[128]) {
+            request = _0x81cc[129] + playerGuilds[p][_0x81cc[125]] + _0x81cc[16] + playerGuilds[p][_0x81cc[126]] + _0x81cc[130] + battleNetApiKey;
+          }
+        }
+        $[_0x81cc[83]]({
+          async : true,
+          type : _0x81cc[79],
+          url : request,
+          guildIndex : p,
+          /**
+           * @param {?} textStatus
+           * @return {undefined}
+           */
+          success : function(textStatus) {
+            var unlock = this[_0x81cc[131]];
+            var i = textStatus[_0x81cc[118]][_0x81cc[117]][_0x81cc[116]];
+            for (;i--;) {
+              if (textStatus[_0x81cc[118]][_0x81cc[117]][i] == elt) {
+                break;
+              }
+            }
+            if (i != -1) {
+              var min = textStatus[_0x81cc[118]][_0x81cc[119]][i];
+              var c;
+              if (Math[_0x81cc[132]](max - min) <= 15E4) {
+                $[_0x81cc[83]]({
+                  async : true,
+                  type : _0x81cc[79],
+                  url : _0x81cc[133] + dataAndEvents + _0x81cc[134],
+                  /**
+                   * @param {?} textStatus
+                   * @return {undefined}
+                   */
+                  success : function(textStatus) {
+                    var prevSources = textStatus[_0x81cc[56]](_0x81cc[110]);
+                    lineCount = prevSources[_0x81cc[116]];
+                    /** @type {number} */
+                    i = 0;
+                    for (;i < lineCount;i++) {
+                      if (prevSources[i][_0x81cc[115]]() === playerGuilds[unlock][_0x81cc[122]] + playerGuilds[unlock][_0x81cc[125]] + playerGuilds[unlock][_0x81cc[126]]) {
+                        /** @type {number} */
+                        c = i + 1;
+                        r20[_0x81cc[92]] = _0x81cc[135] + dataAndEvents + _0x81cc[136];
+                        r20[_0x81cc[137]] = _0x81cc[135] + dataAndEvents + _0x81cc[136];
+                        resp[_0x81cc[108]](r20);
+                        restoreScript[_0x81cc[6]] = value + c + _0x81cc[138] + blizzspaceToSpace(playerGuilds[unlock][_0x81cc[126]]) + _0x81cc[14] + blizzspaceToSpace(playerGuilds[unlock][_0x81cc[125]]);
+                        resp[_0x81cc[108]](restoreScript);
+                        var collection = document[_0x81cc[4]](_0x81cc[139]);
+                        collection[_0x81cc[108]](resp);
+                        break;
+                      }
+                    }
+                  },
+                  /**
+                   * @return {undefined}
+                   */
+                  error : function() {
+                    console[_0x81cc[141]](_0x81cc[140]);
+                  }
+                });
+              }
+            }
+          }
+        });
+      }
+    }
+  }
+}
+/**
+ * @return {undefined}
+ */
+function mainPane() {
+  /** @type {Array} */
+  playerGuilds = [];
+  var _0x3899x58 = document[_0x81cc[4]](_0x81cc[139])[_0x81cc[6]] = _0x81cc[142];
+  var which = document[_0x81cc[4]](_0x81cc[143])[_0x81cc[111]];
+  which = fixName(which);
+  var family = toTitleCase(document[_0x81cc[4]](_0x81cc[144])[_0x81cc[111]])[_0x81cc[115]]();
+  var r20 = document[_0x81cc[4]](_0x81cc[113])[_0x81cc[111]];
+  var _0x3899x5b = document[_0x81cc[4]](_0x81cc[145])[_0x81cc[111]];
+  var resp = document[_0x81cc[85]](_0x81cc[88]);
+  var appFrontendUrl = proxy + buildTrackUrl(r20, toTitleCase(family[_0x81cc[15]](_0x81cc[14], _0x81cc[73])), which);
+  $[_0x81cc[83]]({
+    url : appFrontendUrl,
+    async : true,
+    /**
+     * @param {?} textStatus
+     * @return {undefined}
+     */
+    success : function(textStatus) {
+      /** @type {boolean} */
+      clicked = true;
+      var el;
+      var deepDataAndEvents;
+      var suiteView;
+      var action;
+      var allEls;
+      var _0x3899x61;
+      var spec = textStatus[_0x81cc[56]](_0x81cc[110]);
+      var padLength = spec[_0x81cc[116]];
+      /** @type {number} */
+      var _0x3899x63 = 0;
+      /** @type {number} */
+      var _0x3899x64 = 0;
+      document[_0x81cc[4]](_0x81cc[3])[_0x81cc[6]] = _0x81cc[146];
+      /** @type {number} */
+      i = 0;
+      for (;i < padLength;i++) {
+        if (spec[i][_0x81cc[148]](_0x81cc[147]) != -1) {
+          _0x3899x63++;
+          allEls = spec[i][_0x81cc[56]](_0x81cc[16]);
+          _0x3899x61 = spec[i + 1][_0x81cc[54]](spec[i + 1][_0x81cc[52]](_0x81cc[149]) + 4, spec[i + 1][_0x81cc[52]](_0x81cc[150]));
+          var subLn = allEls[_0x81cc[116]];
+          /** @type {number} */
+          j = 0;
+          for (;j < subLn;j++) {
+            if (j == 2) {
+              el = allEls[j];
+            } else {
+              if (j == 3) {
+                suiteView = allEls[j][_0x81cc[15]](/%20/g, _0x81cc[14]);
+              } else {
+                if (j == 4) {
+                  temp = allEls[4];
+                  temp = temp[_0x81cc[56]](_0x81cc[151]);
+                  deepDataAndEvents = temp[3][_0x81cc[15]](/['" ]+/g, _0x81cc[7]);
+                  deepDataAndEvents = deepDataAndEvents[_0x81cc[15]](_0x81cc[152], _0x81cc[7]);
+                  deepDataAndEvents = deepDataAndEvents[_0x81cc[15]](_0x81cc[153], _0x81cc[7]);
+                  action = temp[2][_0x81cc[15]](_0x81cc[151], _0x81cc[7]);
+                  action = action[_0x81cc[54]](action[_0x81cc[148]](_0x81cc[14]) + 1, action[_0x81cc[116]]);
+                  action = action[_0x81cc[15]](_0x81cc[14], _0x81cc[55]);
+                  getItemLevel(r20, suiteView, deepDataAndEvents, addAltx);
+                }
+              }
+            }
+          }
+        } else {
+          if (spec[i][_0x81cc[148]](_0x81cc[154]) != -1) {
+            _0x3899x64++;
+            /** @type {Date} */
+            var against = new Date;
+            var mid = against[_0x81cc[57]]();
+            var groupedSelectors = spec[i][_0x81cc[54]](spec[i][_0x81cc[52]](_0x81cc[154]) + 7, spec[i][_0x81cc[52]](_0x81cc[155]));
+            groupedSelectors = groupedSelectors[_0x81cc[56]](_0x81cc[16]);
+            var high = formatDate(spec[i + 3]);
+            if (isNaN(high)) {
+              high = mid;
+            }
+            var lines = groupedSelectors[2][_0x81cc[56]](_0x81cc[73]);
+            var line = lines[_0x81cc[116]];
+            var selector = _0x81cc[7];
+            if (line > 1) {
+              /** @type {number} */
+              g = 0;
+              for (;g < line - 1;g++) {
+                selector = selector + lines[g] + _0x81cc[73];
+              }
+              selector = selector + lines[line - 1];
+            } else {
+              selector = groupedSelectors[2];
+            }
+            guild = {
+              guildLocale : groupedSelectors[0][_0x81cc[20]](),
+              guildRealm : groupedSelectors[1][_0x81cc[20]](),
+              guildName : selector,
+              dateJoin : formatDate(spec[i + 2]),
+              dateLeave : high
+            };
+            if (_0x3899x64 != 1) {
+              playerGuilds[_0x81cc[156]](guild);
+            }
+          } else {
+          }
+        }
+      }
+      if (r20 == _0x81cc[23]) {
+        request = _0x81cc[74] + family + _0x81cc[16] + which + _0x81cc[127] + battleNetApiKey;
+      } else {
+        if (r20 == _0x81cc[76]) {
+          request = _0x81cc[77] + family + _0x81cc[16] + which + _0x81cc[130] + battleNetApiKey;
+        }
+      }
+      $[_0x81cc[83]]({
+        async : true,
+        type : _0x81cc[79],
+        url : request,
+        /**
+         * @param {?} textStatus
+         * @return {undefined}
+         */
+        success : function(textStatus) {
+          var udataCur = _0x81cc[157];
+          guildRank(textStatus, _0x81cc[158], guldanPersonal, guldanGuild, udataCur);
+          udataCur = _0x81cc[159];
+          guildRank(textStatus, _0x81cc[160], helyaPersonal, helyaGuild, udataCur);
+          udataCur = _0x81cc[161];
+          guildRank(textStatus, _0x81cc[162], xaviusPersonal, xaviusGuild, udataCur);
+          udataCur = _0x81cc[163];
+          guildRank(textStatus, _0x81cc[164], archimondePersonal, archimondeGuild, udataCur);
+          udataCur = _0x81cc[165];
+          guildRank(textStatus, _0x81cc[166], blackhandPersonal, blackhandGuild, udataCur);
+          udataCur = _0x81cc[167];
+          guildRank(textStatus, _0x81cc[168], imperatorPersonal, imperatorGuild, udataCur);
+        }
+      });
+    },
+    /**
+     * @return {undefined}
+     */
+    error : function() {
+      /** @type {boolean} */
+      clicked = false;
+      $(_0x81cc[9])[_0x81cc[8]](divClone);
+      alert(_0x81cc[169]);
+    }
+  });
+  var _0x3899x6e = _0x81cc[170];
+  /**
+   * @return {undefined}
+   */
+  resp[_0x81cc[171]] = function() {
+    var myPanel = buildTrackUrl(r20, family, which);
+    window[_0x81cc[172]](myPanel);
+  };
+  resp[_0x81cc[104]](_0x81cc[102], _0x81cc[103]);
+  var i = _0x81cc[173];
+  var _0x3899x71 = family[_0x81cc[15]](_0x81cc[55], _0x81cc[73]);
+  resp[_0x81cc[92]] = _0x3899x6e + r20 + _0x81cc[16] + _0x3899x71 + _0x81cc[16] + which + i;
+  resp[_0x81cc[105]] = _0x81cc[170] + r20 + _0x81cc[16] + _0x3899x71 + _0x81cc[16] + which;
+  resp[_0x81cc[137]] = _0x81cc[169];
+  var collection = document[_0x81cc[85]](_0x81cc[87]);
+  collection[_0x81cc[108]](resp);
+  var userUrl = _0x81cc[174] + r20 + _0x81cc[175] + family + _0x81cc[176] + which + _0x81cc[177];
+  $[_0x81cc[83]]({
+    async : true,
+    type : _0x81cc[79],
+    url : userUrl,
+    /**
+     * @param {?} textStatus
+     * @return {undefined}
+     */
+    success : function(textStatus) {
+      var result = document[_0x81cc[4]](_0x81cc[178]);
+      var _0x3899x74 = textStatus[_0x81cc[180]][_0x81cc[179]];
+      var value = _0x81cc[181] + _0x3899x74 + _0x81cc[182];
+      document[_0x81cc[4]](_0x81cc[178])[_0x81cc[6]] = _0x81cc[7];
+      result[_0x81cc[6]] = result[_0x81cc[6]] + _0x81cc[110] + value;
+    }
+  });
+  var _0x3899x76 = _0x81cc[183] + r20 + _0x81cc[16] + family[_0x81cc[15]](/\s+/g, _0x81cc[14]) + _0x81cc[16] + which;
+  document[_0x81cc[4]](_0x81cc[184])[_0x81cc[105]] = _0x3899x76;
+  var _0x3899x77 = _0x81cc[185] + r20 + _0x81cc[16] + family[_0x81cc[15]](/\s+/g, _0x81cc[14]) + _0x81cc[16] + which;
+  var wrap = buildArmoryLink(r20, family, which);
+  document[_0x81cc[4]](_0x81cc[186])[_0x81cc[105]] = wrap;
+  document[_0x81cc[4]](_0x81cc[187])[_0x81cc[105]] = _0x3899x77;
+  var _0x3899x79 = document[_0x81cc[4]](_0x81cc[186])[_0x81cc[189]][0][_0x81cc[188]];
+  JFCustomWidget[_0x81cc[11]](_0x81cc[190], function() {
+    document[_0x81cc[192]][_0x81cc[90]][_0x81cc[191]] = _0x81cc[193];
+    var t = document[_0x81cc[4]](_0x81cc[186])[_0x81cc[109]];
+    var prefix = document[_0x81cc[4]](_0x81cc[194])[_0x81cc[109]];
+    var name = document[_0x81cc[4]](_0x81cc[187])[_0x81cc[109]];
+    var s = document[_0x81cc[4]](_0x81cc[184])[_0x81cc[109]];
+    var inner = document[_0x81cc[4]](_0x81cc[139])[_0x81cc[109]];
+    var r20 = {};
+    /** @type {boolean} */
+    r20[_0x81cc[195]] = false;
+    if (clicked) {
+      /** @type {boolean} */
+      r20[_0x81cc[195]] = true;
+    }
+    r20[_0x81cc[111]] = prefix + t + name + s + inner + altsHtml;
+    /** @type {boolean} */
+    r20[_0x81cc[195]] = false;
+    JFCustomWidget[_0x81cc[196]](r20);
+  });
+}
+;
