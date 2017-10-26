@@ -1,72 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang = "en">
 
 <head class = "center">
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<script src="https://js.jotform.com/JotFormCustomWidget.min.js"></script>
-	</head>
-<!-- <script type="text/javascript" src="https://wow.zamimg.com/widgets/power.js"></script><script>var wowhead_tooltips = { "colorlinks": true, "iconizelinks": true, "renamelinks": true }</script> -->
-	
+	<link rel = "stylesheet" type = "text/css" href = "css/styles.css">
+	<script src = "https://js.jotform.com/JotFormCustomWidget.min.js"></script>
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src = "src/achievementCodes.js"></script>
+	<script src = "src/getters.js"></script>
+	<script src = "src/helpers.js"></script>
+	<script src = "src/fetchData.js"></script>	
+</head>
+		
 	<body>
 		<div class = "background">
-			<div id = "divid1" class = "center">
-			    Character Name <input type = "text" name = "characterName" id = "char" ><br><br> 
+			<div id = "divid1" class = "center" >
+			    Character Name <input type = "text" name = "characterName" id = "char" value = "inrainbows"><br><br>
 
-			    Locale <select name = "locale" id = "locale"><br><br>
+				Locale <select name = "locale" id = "locale"><br><br>
 				 	<option value="EU">EU</option>
 				    <option value="US" >US</option>
-				    <option value="KR">KR</option>
 				</select><br><br>
 
-				Realm <input type = "text" name = "realm" id = "realm" ><br><br> 
-				Main Role <select name = "metric" id = "metric"><br><br>
+				Realm <input type = "text" name = "realm" id = "realm" value = "twisting nether" ><br><br> 
+		  		Main Role <select name = "metric" id = "metric"><br><br>
 				  <option value="hps">Healer</option>
 				  <option value="dps">Damage Dealer</option>
 				  <option value="dps">Tank</option>
 				</select><br><br>
 
-				<button onclick="mainPane()">Get my character</button><br><br>
+				<button onclick="mainPane()">Fetch</button><br>
+			</div>
 
+			<div id = "w/e" class = "center">
 				<a href="https://www.worldofwarcraft.com" target="_blank" id = "blizz">
 					<img border="0" alt="armory" src="https://s-media-cache-ak0.pinimg.com/236x/18/f2/c2/18f2c237688c6a4395e0f6a702743a7c.jpg
-			" width="100" height="100">
-				</a>
-
-				<a href="http://www.wowhead.com/achievement=8511 " target="_blank" id = "blizz">
-				</a>
-				
-
+			" width="100" height="100"></a>
 				<a href = "https://www.wowprogress.com" target="_blank" id = "progress">
 					<img border="0" alt="wowprogress" src="https://media-curse.cursecdn.com/attachments/238/259/ab2186b65b0528595ada31a0f3054643.png" width="100" height="100"></a>
-				</a>
-
 				<a href = "https://www.warcraftlogs.com" target="_blank" id = "wlogs">
 					<img border="0" alt="warcraftLogs" src="https://www.warcraftlogs.com/img/common/warcraft-logo.png
-			" width="100" height="100">
-				</a>
-
-			</div>
-			<div id = "characterPane" class = "center">
+			" width="100" height="100"></a>
 			</div>
 
 			<div id = "artifact" class = "center">
 			</div>
 
-			<div id = "alts" class = "center"> ALTS <br>
+			<div id = "alts" class = "center"> <br>
 			</div>
 
-			<div id = "kills" class = "center"> Legion Raider.io First Kill Rankings <br><br>
+			<div id = "kills" class = "center"> First Kill Rankings <br><br>
 			</div>
 
 			<div id= "addAlt" class = "center"> Add another alt <br><br>	
-			    Name <input type = "text" name = "altName" id = "altName" >
-			    Realm <input type = "text" name = "altRealm" id = "altRealm" ><br><br>
-			    <button id = "tempid" >Add alt</button>
+			    Name <input type = "text" name = "altName" id = "altName" value = "inrainbows">
+			    Realm <input type = "text" name = "altRealm" id = "altRealm" value = "twisting nether"><br><br>
+			    <button id = "tempid">Add alt</button>
 			</div>
 		</div>	
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script src="fetchData.js"></script>	
+		
 		<script> document.getElementById("tempid").addEventListener("click",temp);
-		 </script>
+		</script>
 	</body>
 </html>
