@@ -627,7 +627,7 @@ function loopThrough(){
 								success: function(sData){
 									if (first){
 										first = false
-										document.getElementById("loading").parentNode.removeChild("loading");
+										// document.getElementById("loading").parentNode.removeChild("loading");
 									}
 									let div = document.getElementById(boss);
 									let bufferDiv = document.createElement("div")
@@ -646,6 +646,11 @@ function loopThrough(){
 										//rank check for migrated guild names as well. 
 										//can put this out in a cleaner way sometime
 										if (lines[i].trim() === guild.guildLocale + guildMigrateBlocker + guild.guildName){ //temp fix??
+											// -------------------- TO DO ----------------
+											// if even though all conditions met but it wont manage to execute this if
+											// either wprogress rankings are missing this guild 
+											// or guild has the wrong realmName in rankings.txt due to migrate 
+											// ask user to report this guild so rankings.txt can be modified appropriately
 											sizeObject.height = sizeObject.height + 44.1 //JF frame size request for a wowhead tooltip
 											JFCustomWidget.requestFrameResize(sizeObject);
 											//build images for submission but use tooltips on actual page
