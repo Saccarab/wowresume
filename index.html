@@ -2,63 +2,612 @@
 <html lang = "en">
 
 <head class = "center">
-	<link rel = "stylesheet" type = "text/css" href = "css/styles.css">
+	<meta charset="utf-8">
 	<script src = "https://js.jotform.com/JotFormCustomWidget.min.js"></script>
 	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script src = "src/achievementCodes.js"></script>
-	<script src = "src/getters.js"></script>
-	<script src = "src/helpers.js"></script>
-	<script src = "src/fetchData.js"></script>	
+	<script> var whTooltips = {colorLinks: false, iconizeLinks: true, renameLinks: false, iconSize: "medium"};</script>
+	<script src="https://wow.zamimg.com/widgets/power.js"></script>
+	<link rel = "stylesheet" type = "text/css" href = "css/styles.css">
+	<link rel = "icon" href = "favicon.ico">
 </head>
 		
 	<body>
-		<div class = "background">
+		<div id = "tooltip_block">
+			<a hidden id = "tooltip_guldan" href="http://www.wowhead.com/achievement=10850" rel="achievement=10850"></a>
+			<a hidden id = "tooltip_helya" href="http://www.wowhead.com/achievement=11398" rel="achievement=11398"></a>
+			<a hidden id = "tooltip_xavius" href="http://www.wowhead.com/achievement=10827" rel="achievement=10827"></a>
+			<a hidden id = "tooltip_archimonde" href="http://www.wowhead.com/achievement=10043" rel="achievement=10043"></a>
+			<a hidden id = "tooltip_blackhand" href="http://www.wowhead.com/achievement=8973" rel="achievement=8973"></a>
+			<a hidden id = "tooltip_imperator" href="http://www.wowhead.com/achievement=8965" rel="achievement=8965"></a>
+			<a hidden id = "tooltip_garrosh" href="http://www.wowhead.com/achievement=8482" rel="achievement=8482"></a>
+			<a hidden id = "tooltip_raden" href="http://www.wowhead.com/achievement=8068" rel="achievement=8068"></a>
+			<a hidden id = "tooltip_shaoffear" href="http://www.wowhead.com/achievement=6734" rel="achievement=6734"></a>
+			<a hidden id = "tooltip_shekzeer" href="http://www.wowhead.com/achievement=6730" rel="achievement=6730"></a>
+			<a hidden id = "tooltip_emperor" href="http://www.wowhead.com/achievement=6724" rel="achievement=6724"></a>
+			<a hidden id = "tooltip_deathwing" href="http://www.wowhead.com/achievement=6116" rel="achievement=6116"></a>
+			<a hidden id = "tooltip_ragnaros" href="http://www.wowhead.com/achievement=5803" rel="achievement=5803"></a>
+		</div>
+
+		<div id = "wrapper" class = "background">
 			<div id = "divid1" class = "center" >
-			    Character Name <input type = "text" name = "characterName" id = "char" value = "inrainbows"><br><br>
+				<input type = "text" name = "characterName" id = "char" placeholder = "Character Name"><br><br>
 
-				Locale <select name = "locale" id = "locale"><br><br>
-				 	<option value="EU">EU</option>
-				    <option value="US" >US</option>
+				<select name = "locale" id = "locale" ><br><br>
+					<option value = "EU">EU</option>
+					<option value = "US">US</option>
 				</select><br><br>
 
-				Realm <input type = "text" name = "realm" id = "realm" value = "twisting nether" ><br><br> 
-		  		Main Role <select name = "metric" id = "metric"><br><br>
-				  <option value="hps">Healer</option>
-				  <option value="dps">Damage Dealer</option>
-				  <option value="dps">Tank</option>
-				</select><br><br>
+				<select id = "EU" class = "realm-js">
+					<option value="Aegwynn">Aegwynn</option>
+					<option value="Aerie Peak">Aerie Peak</option>
+					<option value="Agamaggan">Agamaggan</option>
+					<option value="Aggra (Português)">Aggra (Português)</option>
+					<option value="Aggramar">Aggramar</option>
+					<option value="Ahn'Qiraj">Ahn'Qiraj</option>
+					<option value="Al'Akir">Al'Akir</option>
+					<option value="Alexstrasza">Alexstrasza</option>
+					<option value="Alleria">Alleria</option>
+					<option value="Alonsus">Alonsus</option>
+					<option value="Aman'Thul">Aman'Thul</option>
+					<option value="Ambossar">Ambossar</option>
+					<option value="Anachronos">Anachronos</option>
+					<option value="Anetheron">Anetheron</option>
+					<option value="Antonidas">Antonidas</option>
+					<option value="Anub'arak">Anub'arak</option>
+					<option value="Arak-arahm">Arak-arahm</option>
+					<option value="Arathi">Arathi</option>
+					<option value="Arathor">Arathor</option>
+					<option value="Archimonde">Archimonde</option>
+					<option value="Area 52">Area 52</option>
+					<option value="Argent Dawn">Argent Dawn</option>
+					<option value="Arthas">Arthas</option>
+					<option value="Arygos">Arygos</option>
+					<option value="Ashenvale">Ashenvale</option>
+					<option value="Aszune">Aszune</option>
+					<option value="Auchindoun">Auchindoun</option>
+					<option value="Azjol-Nerub">Azjol-Nerub</option>
+					<option value="Azshara">Azshara</option>
+					<option value="Azuregos">Azuregos</option>
+					<option value="Azuremyst">Azuremyst</option>
+					<option value="Baelgun">Baelgun</option>
+					<option value="Balnazzar">Balnazzar</option>
+					<option value="Blackhand">Blackhand</option>
+					<option value="Blackmoore">Blackmoore</option>
+					<option value="Blackrock">Blackrock</option>
+					<option value="Blackscar">Blackscar</option>
+					<option value="Blade's Edge">Blade's Edge</option>
+					<option value="Bladefist">Bladefist</option>
+					<option value="Bloodfeather">Bloodfeather</option>
+					<option value="Bloodhoof">Bloodhoof</option>
+					<option value="Bloodscalp">Bloodscalp</option>
+					<option value="Blutkessel">Blutkessel</option>
+					<option value="Booty Bay">Booty Bay</option>
+					<option value="Borean Tundra">Borean Tundra</option>
+					<option value="Boulderfist">Boulderfist</option>
+					<option value="Bronze Dragonflight">Bronze Dragonflight</option>
+					<option value="Bronzebeard">Bronzebeard</option>
+					<option value="Burning Blade">Burning Blade</option>
+					<option value="Burning Legion">Burning Legion</option>
+					<option value="Burning Steppes">Burning Steppes</option>
+					<option value="C'Thun">C'Thun</option>
+					<option value="Chamber of Aspects">Chamber of Aspects</option>
+					<option value="Chants éternels">Chants éternels</option>
+					<option value="Cho'gall">Cho'gall</option>
+					<option value="Chromaggus">Chromaggus</option>
+					<option value="Colinas Pardas">Colinas Pardas</option>
+					<option value="Confrérie du Thorium">Confrérie du Thorium</option>
+					<option value="Conseil des Ombres">Conseil des Ombres</option>
+					<option value="Crushridge">Crushridge</option>
+					<option value="Culte de la Rive noire">Culte de la Rive noire</option>
+					<option value="Daggerspine">Daggerspine</option>
+					<option value="Dalaran">Dalaran</option>
+					<option value="Dalvengyr">Dalvengyr</option>
+					<option value="Darkmoon Faire">Darkmoon Faire</option>
+					<option value="Darksorrow">Darksorrow</option>
+					<option value="Darkspear">Darkspear</option>
+					<option value="Das Konsortium">Das Konsortium</option>
+					<option value="Das Syndikat">Das Syndikat</option>
+					<option value="Deathguard">Deathguard</option>
+					<option value="Deathweaver">Deathweaver</option>
+					<option value="Deathwing">Deathwing</option>
+					<option value="Deepholm">Deepholm</option>
+					<option value="Defias Brotherhood">Defias Brotherhood</option>
+					<option value="Dentarg">Dentarg</option>
+					<option value="Der Mithrilorden">Der Mithrilorden</option>
+					<option value="Der Rat von Dalaran">Der Rat von Dalaran</option>
+					<option value="Der abyssische Rat">Der abyssische Rat</option>
+					<option value="Destromath">Destromath</option>
+					<option value="Dethecus">Dethecus</option>
+					<option value="Die Aldor">Die Aldor</option>
+					<option value="Die Arguswacht">Die Arguswacht</option>
+					<option value="Die Nachtwache">Die Nachtwache</option>
+					<option value="Die Silberne Hand">Die Silberne Hand</option>
+					<option value="Die Todeskrallen">Die Todeskrallen</option>
+					<option value="Die ewige Wacht">Die ewige Wacht</option>
+					<option value="Doomhammer">Doomhammer</option>
+					<option value="Draenor">Draenor</option>
+					<option value="Dragonblight">Dragonblight</option>
+					<option value="Dragonmaw">Dragonmaw</option>
+					<option value="Drak'thul">Drak'thul</option>
+					<option value="Drek'Thar">Drek'Thar</option>
+					<option value="Dun Modr">Dun Modr</option>
+					<option value="Dun Morogh">Dun Morogh</option>
+					<option value="Dunemaul">Dunemaul</option>
+					<option value="Durotan">Durotan</option>
+					<option value="Earthen Ring">Earthen Ring</option>
+					<option value="Echsenkessel">Echsenkessel</option>
+					<option value="Eitrigg">Eitrigg</option>
+					<option value="Eldre'Thalas">Eldre'Thalas</option>
+					<option value="Elune">Elune</option>
+					<option value="Emerald Dream">Emerald Dream</option>
+					<option value="Emeriss">Emeriss</option>
+					<option value="Eonar">Eonar</option>
+					<option value="Eredar">Eredar</option>
+					<option value="Eversong">Eversong</option>
+					<option value="Executus">Executus</option>
+					<option value="Exodar">Exodar</option>
+					<option value="Festung der Stürme">Festung der Stürme</option>
+					<option value="Fordragon">Fordragon</option>
+					<option value="Forscherliga">Forscherliga</option>
+					<option value="Frostmane">Frostmane</option>
+					<option value="Frostmourne">Frostmourne</option>
+					<option value="Frostwhisper">Frostwhisper</option>
+					<option value="Frostwolf">Frostwolf</option>
+					<option value="Galakrond">Galakrond</option>
+					<option value="Garona">Garona</option>
+					<option value="Garrosh">Garrosh</option>
+					<option value="Genjuros">Genjuros</option>
+					<option value="Ghostlands">Ghostlands</option>
+					<option value="Gilneas">Gilneas</option>
+					<option value="Goldrinn">Goldrinn</option>
+					<option value="Gordunni">Gordunni</option>
+					<option value="Gorgonnash">Gorgonnash</option>
+					<option value="Greymane">Greymane</option>
+					<option value="Grim Batol">Grim Batol</option>
+					<option value="Grom">Grom</option>
+					<option value="Gul'dan">Gul'dan</option>
+					<option value="Hakkar">Hakkar</option>
+					<option value="Haomarush">Haomarush</option>
+					<option value="Hellfire">Hellfire</option>
+					<option value="Hellscream">Hellscream</option>
+					<option value="Howling Fjord">Howling Fjord</option>
+					<option value="Hyjal">Hyjal</option>
+					<option value="Illidan">Illidan</option>
+					<option value="Jaedenar">Jaedenar</option>
+					<option value="Kael'thas">Kael'thas</option>
+					<option value="Karazhan">Karazhan</option>
+					<option value="Kargath">Kargath</option>
+					<option value="Kazzak">Kazzak</option>
+					<option value="Kel'Thuzad">Kel'Thuzad</option>
+					<option value="Khadgar">Khadgar</option>
+					<option value="Khaz Modan">Khaz Modan</option>
+					<option value="Khaz'goroth">Khaz'goroth</option>
+					<option value="Kil'jaeden">Kil'jaeden</option>
+					<option value="Kilrogg">Kilrogg</option>
+					<option value="Kirin Tor">Kirin Tor</option>
+					<option value="Kor'gall">Kor'gall</option>
+					<option value="Krag'jin">Krag'jin</option>
+					<option value="Krasus">Krasus</option>
+					<option value="Kul Tiras">Kul Tiras</option>
+					<option value="Kult der Verdammten">Kult der Verdammten</option>
+					<option value="Laughing Skull">Laughing Skull</option>
+					<option value="Les Clairvoyants">Les Clairvoyants</option>
+					<option value="Les Sentinelles">Les Sentinelles</option>
+					<option value="Lich King">Lich King</option>
+					<option value="Lightbringer">Lightbringer</option>
+					<option value="Lightning's Blade">Lightning's Blade</option>
+					<option value="Lordaeron">Lordaeron</option>
+					<option value="Los Errantes">Los Errantes</option>
+					<option value="Lothar">Lothar</option>
+					<option value="Madmortem">Madmortem</option>
+					<option value="Magtheridon">Magtheridon</option>
+					<option value="Mal'Ganis">Mal'Ganis</option>
+					<option value="Malfurion">Malfurion</option>
+					<option value="Malorne">Malorne</option>
+					<option value="Malygos">Malygos</option>
+					<option value="Mannoroth">Mannoroth</option>
+					<option value="Marécage de Zangar">Marécage de Zangar</option>
+					<option value="Mazrigos">Mazrigos</option>
+					<option value="Medivh">Medivh</option>
+					<option value="Minahonda">Minahonda</option>
+					<option value="Moonglade">Moonglade</option>
+					<option value="Mug'thol">Mug'thol</option>
+					<option value="Nagrand">Nagrand</option>
+					<option value="Nathrezim">Nathrezim</option>
+					<option value="Naxxramas">Naxxramas</option>
+					<option value="Nazjatar">Nazjatar</option>
+					<option value="Nefarian">Nefarian</option>
+					<option value="Nemesis">Nemesis</option>
+					<option value="Neptulon">Neptulon</option>
+					<option value="Ner'zhul">Ner'zhul</option>
+					<option value="Nera'thor">Nera'thor</option>
+					<option value="Nethersturm">Nethersturm</option>
+					<option value="Nordrassil">Nordrassil</option>
+					<option value="Norgannon">Norgannon</option>
+					<option value="Nozdormu">Nozdormu</option>
+					<option value="Onyxia">Onyxia</option>
+					<option value="Outland">Outland</option>
+					<option value="Pozzo dell'Eternità">Pozzo dell'Eternità</option>
+					<option value="Proudmoore">Proudmoore</option>
+					<option value="Quel'Thalas">Quel'Thalas</option>
+					<option value="Ragnaros">Ragnaros</option>
+					<option value="Rajaxx">Rajaxx</option>
+					<option value="Rashgarroth">Rashgarroth</option>
+					<option value="Ravencrest">Ravencrest</option>
+					<option value="Ravenholdt">Ravenholdt</option>
+					<option value="Razuvious">Razuvious</option>
+					<option value="Rexxar">Rexxar</option>
+					<option value="Runetotem">Runetotem</option>
+					<option value="Sanguino">Sanguino</option>
+					<option value="Sargeras">Sargeras</option>
+					<option value="Saurfang">Saurfang</option>
+					<option value="Scarshield Legion">Scarshield Legion</option>
+					<option value="Sen'jin">Sen'jin</option>
+					<option value="Shadowsong">Shadowsong</option>
+					<option value="Shattered Halls">Shattered Halls</option>
+					<option value="Shattered Hand">Shattered Hand</option>
+					<option value="Shattrath">Shattrath</option>
+					<option value="Shen'dralar">Shen'dralar</option>
+					<option value="Silvermoon">Silvermoon</option>
+					<option value="Sinstralis">Sinstralis</option>
+					<option value="Skullcrusher">Skullcrusher</option>
+					<option value="Soulflayer">Soulflayer</option>
+					<option value="Spinebreaker">Spinebreaker</option>
+					<option value="Sporeggar">Sporeggar</option>
+					<option value="Steamwheedle Cartel">Steamwheedle Cartel</option>
+					<option value="Stormrage">Stormrage</option>
+					<option value="Stormreaver">Stormreaver</option>
+					<option value="Stormscale">Stormscale</option>
+					<option value="Sunstrider">Sunstrider</option>
+					<option value="Suramar">Suramar</option>
+					<option value="Sylvanas">Sylvanas</option>
+					<option value="Taerar">Taerar</option>
+					<option value="Talnivarr">Talnivarr</option>
+					<option value="Tarren Mill">Tarren Mill</option>
+					<option value="Teldrassil">Teldrassil</option>
+					<option value="Temple noir">Temple noir</option>
+					<option value="Terenas">Terenas</option>
+					<option value="Terokkar">Terokkar</option>
+					<option value="Terrordar">Terrordar</option>
+					<option value="The Maelstrom">The Maelstrom</option>
+					<option value="The Sha'tar">The Sha'tar</option>
+					<option value="The Venture Co">The Venture Co</option>
+					<option value="Theradras">Theradras</option>
+					<option value="Thermaplugg">Thermaplugg</option>
+					<option value="Thrall">Thrall</option>
+					<option value="Throk'Feroth">Throk'Feroth</option>
+					<option value="Thunderhorn">Thunderhorn</option>
+					<option value="Tichondrius">Tichondrius</option>
+					<option value="Tirion">Tirion</option>
+					<option value="Todeswache">Todeswache</option>
+					<option value="Trollbane">Trollbane</option>
+					<option value="Turalyon">Turalyon</option>
+					<option value="Twilight's Hammer">Twilight's Hammer</option>
+					<option value="Twisting Nether">Twisting Nether</option>
+					<option value="Tyrande">Tyrande</option>
+					<option value="Uldaman">Uldaman</option>
+					<option value="Ulduar">Ulduar</option>
+					<option value="Uldum">Uldum</option>
+					<option value="Un'Goro">Un'Goro</option>
+					<option value="Varimathras">Varimathras</option>
+					<option value="Vashj">Vashj</option>
+					<option value="Vek'lor">Vek'lor</option>
+					<option value="Vek'nilash">Vek'nilash</option>
+					<option value="Vol'jin">Vol'jin</option>
+					<option value="Wildhammer">Wildhammer</option>
+					<option value="Wrathbringer">Wrathbringer</option>
+					<option value="Xavius">Xavius</option>
+					<option value="Ysera">Ysera</option>
+					<option value="Ysondre">Ysondre</option>
+					<option value="Zenedar">Zenedar</option>
+					<option value="Zirkel des Cenarius">Zirkel des Cenarius</option>
+					<option value="Zul'jin">Zul'jin</option>
+					<option value="Zuluhed">Zuluhed</option>			
+				</select>
+			
+				<select hidden id = "US" class = "realm-js">
+					<option value="Aegwynn">Aegwynn</option>
+					<option value="Aerie Peak">Aerie Peak</option>
+					<option value="Agamaggan">Agamaggan</option>
+					<option value="Aggramar">Aggramar</option>
+					<option value="Akama">Akama</option>
+					<option value="Alexstrasza">Alexstrasza</option>
+					<option value="Alleria">Alleria</option>
+					<option value="Altar of Storms">Altar of Storms</option>
+					<option value="Alterac Mountains">Alterac Mountains</option>
+					<option value="Aman'Thul">Aman'Thul</option>
+					<option value="Andorhal">Andorhal</option>
+					<option value="Anetheron">Anetheron</option>
+					<option value="Antonidas">Antonidas</option>
+					<option value="Anub'arak">Anub'arak</option>
+					<option value="Anvilmar">Anvilmar</option>
+					<option value="Arathor">Arathor</option>
+					<option value="Archimonde">Archimonde</option>
+					<option value="Area 52">Area 52</option>
+					<option value="Argent Dawn">Argent Dawn</option>
+					<option value="Arthas">Arthas</option>
+					<option value="Arygos">Arygos</option>
+					<option value="Auchindoun">Auchindoun</option>
+					<option value="Azgalor">Azgalor</option>
+					<option value="Azjol-Nerub">Azjol-Nerub</option>
+					<option value="Azralon">Azralon</option>
+					<option value="Azshara">Azshara</option>
+					<option value="Azuremyst">Azuremyst</option>
+					<option value="Baelgun">Baelgun</option>
+					<option value="Balnazzar">Balnazzar</option>
+					<option value="Barthilas">Barthilas</option>
+					<option value="Black Dragonflight">Black Dragonflight</option>
+					<option value="Blackhand">Blackhand</option>
+					<option value="Blackrock">Blackrock</option>
+					<option value="Blackwater Raiders">Blackwater Raiders</option>
+					<option value="Blackwing Lair">Blackwing Lair</option>
+					<option value="Blade's Edge">Blade's Edge</option>
+					<option value="Bladefist">Bladefist</option>
+					<option value="Bleeding Hollow">Bleeding Hollow</option>
+					<option value="Blood Furnace">Blood Furnace</option>
+					<option value="Bloodhoof">Bloodhoof</option>
+					<option value="Bloodscalp">Bloodscalp</option>
+					<option value="Bonechewer">Bonechewer</option>
+					<option value="Borean Tundra">Borean Tundra</option>
+					<option value="Boulderfist">Boulderfist</option>
+					<option value="Bronzebeard">Bronzebeard</option>
+					<option value="Burning Blade">Burning Blade</option>
+					<option value="Burning Legion">Burning Legion</option>
+					<option value="Caelestrasz">Caelestrasz</option>
+					<option value="Cairne">Cairne</option>
+					<option value="Cenarion Circle">Cenarion Circle</option>
+					<option value="Cenarius">Cenarius</option>
+					<option value="Cho'gall">Cho'gall</option>
+					<option value="Chromaggus">Chromaggus</option>
+					<option value="Coilfang">Coilfang</option>
+					<option value="Crushridge">Crushridge</option>
+					<option value="Daggerspine">Daggerspine</option>
+					<option value="Dalaran">Dalaran</option>
+					<option value="Dalvengyr">Dalvengyr</option>
+					<option value="Dark Iron">Dark Iron</option>
+					<option value="Darkspear">Darkspear</option>
+					<option value="Darrowmere">Darrowmere</option>
+					<option value="Dath'Remar">Dath'Remar</option>
+					<option value="Dawnbringer">Dawnbringer</option>
+					<option value="Deathwing">Deathwing</option>
+					<option value="Demon Soul">Demon Soul</option>
+					<option value="Dentarg">Dentarg</option>
+					<option value="Destromath">Destromath</option>
+					<option value="Dethecus">Dethecus</option>
+					<option value="Detheroc">Detheroc</option>
+					<option value="Doomhammer">Doomhammer</option>
+					<option value="Draenor">Draenor</option>
+					<option value="Dragonblight">Dragonblight</option>
+					<option value="Dragonmaw">Dragonmaw</option>
+					<option value="Drak'Tharon">Drak'Tharon</option>
+					<option value="Drak'thul">Drak'thul</option>
+					<option value="Draka">Draka</option>
+					<option value="Drakkari">Drakkari</option>
+					<option value="Dreadmaul">Dreadmaul</option>
+					<option value="Drenden">Drenden</option>
+					<option value="Dunemaul">Dunemaul</option>
+					<option value="Durotan">Durotan</option>
+					<option value="Duskwood">Duskwood</option>
+					<option value="Earthen Ring">Earthen Ring</option>
+					<option value="Echo Isles">Echo Isles</option>
+					<option value="Eitrigg">Eitrigg</option>
+					<option value="Eldre'Thalas">Eldre'Thalas</option>
+					<option value="Elune">Elune</option>
+					<option value="Emerald Dream">Emerald Dream</option>
+					<option value="Eonar">Eonar</option>
+					<option value="Eredar">Eredar</option>
+					<option value="Executus">Executus</option>
+					<option value="Exodar">Exodar</option>
+					<option value="Farstriders">Farstriders</option>
+					<option value="Feathermoon">Feathermoon</option>
+					<option value="Fenris">Fenris</option>
+					<option value="Firetree">Firetree</option>
+					<option value="Fizzcrank">Fizzcrank</option>
+					<option value="Frostmane">Frostmane</option>
+					<option value="Frostmourne">Frostmourne</option>
+					<option value="Frostwolf">Frostwolf</option>
+					<option value="Galakrond">Galakrond</option>
+					<option value="Gallywix">Gallywix</option>
+					<option value="Garithos">Garithos</option>
+					<option value="Garona">Garona</option>
+					<option value="Garrosh">Garrosh</option>
+					<option value="Ghostlands">Ghostlands</option>
+					<option value="Gilneas">Gilneas</option>
+					<option value="Gnomeregan">Gnomeregan</option>
+					<option value="Goldrinn">Goldrinn</option>
+					<option value="Gorefiend">Gorefiend</option>
+					<option value="Gorgonnash">Gorgonnash</option>
+					<option value="Greymane">Greymane</option>
+					<option value="Grizzly Hills">Grizzly Hills</option>
+					<option value="Gul'dan">Gul'dan</option>
+					<option value="Gundrak">Gundrak</option>
+					<option value="Gurubashi">Gurubashi</option>
+					<option value="Hakkar">Hakkar</option>
+					<option value="Haomarush">Haomarush</option>
+					<option value="Hellscream">Hellscream</option>
+					<option value="Hydraxis">Hydraxis</option>
+					<option value="Hyjal">Hyjal</option>
+					<option value="Icecrown">Icecrown</option>
+					<option value="Illidan">Illidan</option>
+					<option value="Jaedenar">Jaedenar</option>
+					<option value="Jubei'Thos">Jubei'Thos</option>
+					<option value="Kael'thas">Kael'thas</option>
+					<option value="Kalecgos">Kalecgos</option>
+					<option value="Kargath">Kargath</option>
+					<option value="Kel'Thuzad">Kel'Thuzad</option>
+					<option value="Khadgar">Khadgar</option>
+					<option value="Khaz Modan">Khaz Modan</option>
+					<option value="Khaz'goroth">Khaz'goroth</option>
+					<option value="Kil'jaeden">Kil'jaeden</option>
+					<option value="Kilrogg">Kilrogg</option>
+					<option value="Kirin Tor">Kirin Tor</option>
+					<option value="Korgath">Korgath</option>
+					<option value="Korialstrasz">Korialstrasz</option>
+					<option value="Kul Tiras">Kul Tiras</option>
+					<option value="Laughing Skull">Laughing Skull</option>
+					<option value="Lethon">Lethon</option>
+					<option value="Lightbringer">Lightbringer</option>
+					<option value="Lightning's Blade">Lightning's Blade</option>
+					<option value="Lightninghoof">Lightninghoof</option>
+					<option value="Llane">Llane</option>
+					<option value="Lothar">Lothar</option>
+					<option value="Madoran">Madoran</option>
+					<option value="Maelstrom">Maelstrom</option>
+					<option value="Magtheridon">Magtheridon</option>
+					<option value="Maiev">Maiev</option>
+					<option value="Mal'Ganis">Mal'Ganis</option>
+					<option value="Malfurion">Malfurion</option>
+					<option value="Malorne">Malorne</option>
+					<option value="Malygos">Malygos</option>
+					<option value="Mannoroth">Mannoroth</option>
+					<option value="Medivh">Medivh</option>
+					<option value="Misha">Misha</option>
+					<option value="Mok'Nathal">Mok'Nathal</option>
+					<option value="Moon Guard">Moon Guard</option>
+					<option value="Moonrunner">Moonrunner</option>
+					<option value="Mug'thol">Mug'thol</option>
+					<option value="Muradin">Muradin</option>
+					<option value="Nagrand">Nagrand</option>
+					<option value="Nathrezim">Nathrezim</option>
+					<option value="Nazgrel">Nazgrel</option>
+					<option value="Nazjatar">Nazjatar</option>
+					<option value="Nemesis">Nemesis</option>
+					<option value="Ner'zhul">Ner'zhul</option>
+					<option value="Nesingwary">Nesingwary</option>
+					<option value="Nordrassil">Nordrassil</option>
+					<option value="Norgannon">Norgannon</option>
+					<option value="Onyxia">Onyxia</option>
+					<option value="Perenolde">Perenolde</option>
+					<option value="Proudmoore">Proudmoore</option>
+					<option value="Quel'Thalas">Quel'Thalas</option>
+					<option value="Quel'dorei">Quel'dorei</option>
+					<option value="Ragnaros">Ragnaros</option>
+					<option value="Ravencrest">Ravencrest</option>
+					<option value="Ravenholdt">Ravenholdt</option>
+					<option value="Rexxar">Rexxar</option>
+					<option value="Rivendare">Rivendare</option>
+					<option value="Runetotem">Runetotem</option>
+					<option value="Sargeras">Sargeras</option>
+					<option value="Saurfang">Saurfang</option>
+					<option value="Scarlet Crusade">Scarlet Crusade</option>
+					<option value="Scilla">Scilla</option>
+					<option value="Sen'jin">Sen'jin</option>
+					<option value="Sentinels">Sentinels</option>
+					<option value="Shadow Council">Shadow Council</option>
+					<option value="Shadowmoon">Shadowmoon</option>
+					<option value="Shadowsong">Shadowsong</option>
+					<option value="Shandris">Shandris</option>
+					<option value="Shattered Halls">Shattered Halls</option>
+					<option value="Shattered Hand">Shattered Hand</option>
+					<option value="Shu'halo">Shu'halo</option>
+					<option value="Silver Hand">Silver Hand</option>
+					<option value="Silvermoon">Silvermoon</option>
+					<option value="Sisters of Elune">Sisters of Elune</option>
+					<option value="Skullcrusher">Skullcrusher</option>
+					<option value="Skywall">Skywall</option>
+					<option value="Smolderthorn">Smolderthorn</option>
+					<option value="Spinebreaker">Spinebreaker</option>
+					<option value="Spirestone">Spirestone</option>
+					<option value="Staghelm">Staghelm</option>
+					<option value="Steamwheedle Cartel">Steamwheedle Cartel</option>
+					<option value="Stonemaul">Stonemaul</option>
+					<option value="Stormrage">Stormrage</option>
+					<option value="Stormreaver">Stormreaver</option>
+					<option value="Stormscale">Stormscale</option>
+					<option value="Suramar">Suramar</option>
+					<option value="Tanaris">Tanaris</option>
+					<option value="Terenas">Terenas</option>
+					<option value="Terokkar">Terokkar</option>
+					<option value="Thaurissan">Thaurissan</option>
+					<option value="The Forgotten Coast">The Forgotten Coast</option>
+					<option value="The Scryers">The Scryers</option>
+					<option value="The Underbog">The Underbog</option>
+					<option value="The Venture Co">The Venture Co</option>
+					<option value="Thorium Brotherhood">Thorium Brotherhood</option>
+					<option value="Thrall">Thrall</option>
+					<option value="Thunderhorn">Thunderhorn</option>
+					<option value="Thunderlord">Thunderlord</option>
+					<option value="Tichondrius">Tichondrius</option>
+					<option value="Tol Barad">Tol Barad</option>
+					<option value="Tortheldrin">Tortheldrin</option>
+					<option value="Trollbane">Trollbane</option>
+					<option value="Turalyon">Turalyon</option>
+					<option value="Twisting Nether">Twisting Nether</option>
+					<option value="Uldaman">Uldaman</option>
+					<option value="Uldum">Uldum</option>
+					<option value="Undermine">Undermine</option>
+					<option value="Ursin">Ursin</option>
+					<option value="Uther">Uther</option>
+					<option value="Vashj">Vashj</option>
+					<option value="Vek'nilash">Vek'nilash</option>
+					<option value="Velen">Velen</option>
+					<option value="Warsong">Warsong</option>
+					<option value="Whisperwind">Whisperwind</option>
+					<option value="Wildhammer">Wildhammer</option>
+					<option value="Windrunner">Windrunner</option>
+					<option value="Winterhoof">Winterhoof</option>
+					<option value="Wyrmrest Accord">Wyrmrest Accord</option>
+					<option value="Ysera">Ysera</option>
+					<option value="Ysondre">Ysondre</option>
+					<option value="Zangarmarsh">Zangarmarsh</option>
+					<option value="Zul'jin">Zul'jin</option>
+					<option value="Zuluhed">Zuluhed</option>
+				</select>
+				<br><br>
 
-				<button onclick="mainPane()">Fetch</button><br>
+
+				<button class = "mainButton" onclick="mainPane()">Get Resume</button><br>
 			</div>
 
-			<div id = "w/e" class = "center">
-				<a href="https://www.worldofwarcraft.com" target="_blank" id = "blizz">
-					<img border="0" alt="armory" src="https://s-media-cache-ak0.pinimg.com/236x/18/f2/c2/18f2c237688c6a4395e0f6a702743a7c.jpg
-			" width="100" height="100"></a>
-				<a href = "https://www.wowprogress.com" target="_blank" id = "progress">
-					<img border="0" alt="wowprogress" src="https://media-curse.cursecdn.com/attachments/238/259/ab2186b65b0528595ada31a0f3054643.png" width="100" height="100"></a>
-				<a href = "https://www.warcraftlogs.com" target="_blank" id = "wlogs">
-					<img border="0" alt="warcraftLogs" src="https://www.warcraftlogs.com/img/common/warcraft-logo.png
-			" width="100" height="100"></a>
-			</div>
+			<div class = "wrapper-js">
 
-			<div id = "artifact" class = "center">
-			</div>
+				<div id = "w/e" class = "center">
+					<a href="https://www.worldofwarcraft.com" target="_blank" id = "blizz">
+						<img border="0" alt="armory" src="https://orig00.deviantart.net/65e3/f/2014/207/e/2/official_wow_icon_by_benashvili-d7sd1ab.png"
+				width="100" height="100"></a>
+					<a href = "https://www.wowprogress.com" target="_blank" id = "progress">
+						<img border="0" alt="wowprogress" src="https://media-curse.cursecdn.com/attachments/238/259/ab2186b65b0528595ada31a0f3054643.png" width="100" height="100"></a>
+					<a href = "https://www.warcraftlogs.com" target="_blank" id = "wlogs">
+						<img border="0" alt="warcraftLogs" src="https://www.warcraftlogs.com/img/common/warcraft-logo.png
+				" width="100" height="100"></a>
+				</div>
 
-			<div id = "alts" class = "center"> <br>
-			</div>
+				<div id = "artifact" class = "center" > 
+				</div>
 
-			<div id = "kills" class = "center"> First Kill Rankings <br><br>
+				<div id = "alts" class = "center"> Alt Characters
+				</div>
+
+				<div id = "kills" class = "center"> First Kill Rankings <br>
+					<div id = "guldan"></div>
+					<div id = "helya"></div>
+					<div id = "xavius"></div>
+					<div id = "archimonde"></div>
+					<div id = "blackhand"></div>
+					<div id = "imperator"></div>
+					<div id = "garrosh"></div>
+					<div id = "raden"></div>
+					<div id = "shaoffear"></div>
+					<div id = "shekzeer"></div>
+					<div id = "emperor"></div>
+					<div id = "deathwing"></div>
+					<div id = "ragnaros"></div>
+				</div>
 			</div>
 
 			<div id= "addAlt" class = "center"> Add another alt <br><br>	
-			    Name <input type = "text" name = "altName" id = "altName" value = "inrainbows">
-			    Realm <input type = "text" name = "altRealm" id = "altRealm" value = "twisting nether"><br><br>
-			    <button id = "tempid">Add alt</button>
+				<input type = "text" name = "altName" id = "altName" placeholder = "Name">
+				<input type = "text" name = "altRealm" id = "altRealm" placeholder = "Realm"><br><br>
+				<button id = "tempid">Add alt</button>
 			</div>
 		</div>	
 		
+		<script src = "src/achievementCodes.js"></script>
+		<script src = "src/getters.js"></script>
+		<script src = "src/helpers.js"></script>
+		<script src = "src/fetchData.js"></script>	
 		<script> document.getElementById("tempid").addEventListener("click",temp);
 		</script>
+
 	</body>
 </html>

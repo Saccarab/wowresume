@@ -5,7 +5,7 @@
 function getClassColor(spec){
 	switch(spec){
 		case "priest":
-			return "#FFFFFF";
+			return "#D3D3D3";
 			break;
 		case "death knight":
 			return "#C41F3B";
@@ -277,43 +277,43 @@ function getBossText(boss) {
 
 	switch(boss){
 		case "ragnaros":
-			bossText = "Ragnaros Heroic rank "
+			bossText = " Rank "
 			break;
 		case "deathwing":
-			bossText = " Deathwing Heroic rank "
+			bossText = " Rank "
 			break;
 		case "emperor":
-			bossText = " Emperor Heroic rank "
+			bossText = " Rank "
 			break;
 		case "shekzeer":
-			bossText = " Shekzeer Heroic rank "
+			bossText = " Rank "
 			break;
 		case "shaoffear":
-			bossText = " Sha of Fear rank "
+			bossText = " Rank "
 			break;
 		case "raden":
-			bossText = " Raden Heroic rank "
+			bossText = " Rank "
 			break;
 		case "garrosh":
-			bossText = "  Garrosh Heroic rank "
+			bossText = " Rank "
 			break;
 		case "guldan": 
-			bossText =  " Gul'dan Mythic world rank "
+			bossText =  " Rank "
 			break;
 		case "helya":
-			bossText = " Helya Mythic world rank "
+			bossText = " Rank "
 			break;
 		case "xavius":
-			bossText =  "   Xavius Mythic world rank ";
+			bossText =  " Rank ";
 			break;
 		case "archimonde":
-			bossText = "   Archimonde Mythic world rank ";
+			bossText = " Rank ";
 			break;	
 		case "blackhand":
-			bossText = "   Blackhand Mythic world rank ";
+			bossText = " Rank ";
 			break;
 		case "imperator":
-			bossText = "   Imperator Mar'gok Mythic world rank ";
+			bossText = " Rank ";
 			break;
 		default :
 			console.log("unknown boss text?");
