@@ -227,7 +227,7 @@ function mainPane(){
 		else{
 			// scrap every single alt and their guilds aswell
 			// run rankings() when all alt guilds are loaded & grabbed into the playerguilds array
-			altsArray.forEach(function(alt){ /
+			altsArray.forEach(function(alt){ 
 				let url = proxy + buildTrackUrl(alt.locale, alt.realm, alt.name);
 				readToon(url, function(){
 					callCount ++;
