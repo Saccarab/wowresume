@@ -14,7 +14,7 @@ euthe%20maelstromScrubBusters
 ussargerasMidwinter
 eumal%20ganissolid%20line
 eunazjatarFor%20the%20Horde
-euarak%20arahmFreak%20Me%20Out
+euarak-arahmFreak%20Me%20Out
 eu%D0%B3%D0%BE%D1%80%D0%B4%D1%83%D0%BD%D0%BD%D0%B8%D0%9F%D1%80%D0%B5%D1%81%D1%82%D0%B8%D0%B6%20%D0%93%D0%B5%D0%B9%D0%BC%D0%B8%D0%BD%D0%B3
 eutwilight%20s%20hammerDepraved
 eublackrockgenuine
@@ -134,7 +134,7 @@ eu%D0%B4%D1%80%D0%B0%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%BE%D1%80%D0%91%D1%8D%D0%B4
 eulaughing%20skullEchoes
 eudragonblightKebab
 euzuluhedstyx
-euazjol%20nerubAct%20IV
+euazjol-nerubAct%20IV
 eueredarLdN%20unplugged
 eu%D0%B0%D0%B7%D1%83%D1%80%D0%B5%D0%B3%D0%BE%D1%81%D0%94%D0%B5%D0%B3%D1%80%D0%B0%D0%B4%D0%B0%D1%86%D0%B8%D1%8F
 eukazzakPsihijatrija
@@ -602,7 +602,7 @@ eumal%20ganisAir
 eubaelgunis%20unstoppable
 eu%D0%BF%D0%B8%D1%80%D0%B0%D1%82%D1%81%D0%BA%D0%B0%D1%8F%20%D0%B1%D1%83%D1%85%D1%82%D0%B0%D0%9A%D0%B0%D1%80%D1%84%D0%B0%D0%B3%D0%B5%D0%BD
 eushattered%20handLIMITLESS
-euazjol%20nerubSemper%20Fidelis
+euazjol-nerubSemper%20Fidelis
 eublades%20edgeDramatic%20Cure
 eublades%20edgeAgrivation
 eukazzakPerception
@@ -1488,7 +1488,7 @@ usturalyonVortex
 usthorium%20brotherhoodForge
 uskel%20thuzadHome%20Brew
 usagamagganRaided%20R
-usazjol%20nerubInfusion
+usazjol-nerubInfusion
 usarthasIt%20Was%20a%20Good%20Day
 usillidanEndless%20Waltz
 usthrallEcho
@@ -1878,7 +1878,7 @@ eutarren%20millPhogelbice
 eu%D0%B3%D0%BE%D1%80%D0%B4%D1%83%D0%BD%D0%BD%D0%B8%D0%9D%D0%BE%D1%87%D0%BD%D0%BE%D0%B9%20%D0%94%D0%BE%D0%B7%D0%BE%D1%80
 eublackrockresolve
 euanub%20arakEch%C3%B8es
-euarak%20arahmChuck%20Norris%20Fan%20Club
+euarak-arahmChuck%20Norris%20Fan%20Club
 eudestromathPer%20Ultionem
 euysondreToulouse%20Raid%20Squad
 eukilroggRage%20Quit
@@ -2514,7 +2514,7 @@ eusunstriderMale
 eu%D1%80%D0%B5%D0%B2%D1%83%D1%89%D0%B8%D0%B9%20%D1%84%D1%8C%D0%BE%D1%80%D0%B4%D0%9E%D0%BC%D0%BD%D0%BE%D0%BC%D0%BD%D0%BE%D0%BC
 eufrostwolfAsyra
 eu%D1%81%D0%B2%D0%B5%D0%B6%D0%B5%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%20%D0%B4%D1%83%D1%88%D0%A6%D0%B0%D0%BF%D0%BB%D1%8F%20%D0%BA%D1%83%D1%80%D0%BB%D1%8B%D0%BA%20%D0%BA%D1%83%D1%80%D0%BB%D1%8B%D0%BA
-euazjol%20nerubActa%20Non%20Verba
+euazjol-nerubActa%20Non%20Verba
 euantonidasShining
 eu%D0%BF%D0%BE%D0%B4%D0%B7%D0%B5%D0%BC%D1%8C%D0%B5%D0%9E%D1%82%20%D0%93%D1%80%D0%BE%D0%BC%D0%B0%20%D0%B4%D0%BE%20%D0%9A%D1%80%D0%B8%D0%BA%D0%B0
 euun%20goroAdeptus%20Astartes
@@ -2887,7 +2887,7 @@ eutarren%20millCerberus
 usblackrockPound%20Town
 usstormrageIntegrity
 usstormreaverBaddies
-usazjol%20nerubDiscerned%20Reality
+usazjol-nerubDiscerned%20Reality
 usblackwater%20raidersGuardians%20of%20Innocence
 usbaelgunFresh
 useredarMonths%20Behind
@@ -2907,7 +2907,7 @@ euarthasFallen%20Stars
 eublackrockEvent%20Horizon
 euysondreInst%C3%AEnct
 eudefias%20brotherhoodDeathsworn%20Verdict
-euazjol%20nerubThe%20Circus
+euazjol-nerubThe%20Circus
 eublackhandUnctura%20Ultima
 euantonidasist%20unschuldig
 eukazzakGearless
@@ -2978,7 +2978,7 @@ euaggraAscension
 euc%20thunDark%20Anthem
 usmug%20tholThreat%20Moves
 usgorefiendSCH
-usazjol%20nerubShard
+usazjol-nerubShard
 usazgalorInfiniti
 usillidanRELOAD
 usmoon%20guardWarforged
@@ -3199,7 +3199,7 @@ euhellscreamSymbiosis
 eudarksorrowCR
 eudie%20silberne%20handLatronum%20Grex
 euforscherligaRequiem%20der%20Klingen
-euazjol%20nerubIncinerate
+euazjol-nerubIncinerate
 eukazzakProgress%20Denied
 eudun%20modrDelerium
 euzul%20jinDelayed%20Penta
@@ -3662,7 +3662,7 @@ usstormrageBane
 usdeathwingP%C3%BAlse
 uskorgathSimplexity
 usmagtheridonThe%20Requiem
-usazjol%20nerubClan%20Battlehammer
+usazjol-nerubClan%20Battlehammer
 uskorgathDark%20Origin
 useonarAscension
 uswyrmrest%20accordBrotherhood%20of%20Blades
@@ -4445,7 +4445,7 @@ eudarksorrowDirty%20Sons%20of%20Liches
 euchamber%20of%20aspectsCaligatio
 eusilvermoonSinners
 eu%D1%82%D0%B5%D1%80%D0%BC%D0%BE%D1%88%D1%82%D0%B5%D0%BF%D1%81%D0%B5%D0%BB%D1%8C%D0%A1%D1%83%D0%BC%D0%B5%D1%80%D0%B5%D1%87%D0%BD%D1%8B%D0%B5%20%D0%BE%D1%85%D0%BE%D1%82%D0%BD%D0%B8%D0%BA%D0%B8
-euazjol%20nerubWipe%20It
+euazjol-nerubWipe%20It
 euder%20abyssische%20ratPhase%20Zwei
 eudun%20moroghKuhKlauKlan
 eublackhandand%20Friends
@@ -5066,7 +5066,7 @@ eukrasusDust
 euysondreLittle%20Guardians
 euzul%20jinRising%20Force
 usborean%20tundraThe%20Lost%20Ones
-usazjol%20nerubKnights%20of%20the%20Runes
+usazjol-nerubKnights%20of%20the%20Runes
 usragnarosMalditosBastardos
 uskirin%20torMissunderstood
 usarea%2052Rising%20Storm
@@ -5473,7 +5473,7 @@ eublades%20edgePantheon%20of%20Azeroth
 eumal%20ganisbad%20voodoo
 usmishaEquinox
 usbleeding%20hollowGroup%20A
-usazjol%20nerubAmnesty
+usazjol-nerubAmnesty
 uskhaz%20gorothTemplars%20Verdict
 eukael%20thasBetaTest
 usfarstridersThe%20Hellfire%20Angels

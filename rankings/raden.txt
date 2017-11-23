@@ -254,7 +254,7 @@ eufrostwolfArt%20of%20Gaming
 eusaurfangNidor%20Amo%20Nex
 euzenedarHigh%20Tempest
 euearthen%20ringAeon
-euazjol%20nerubSemper%20Fidelis
+euazjol-nerubSemper%20Fidelis
 euxaviusDeus%20Ex%20Machina
 eustormreaverSWAG
 eu%D0%B2%D0%B5%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%B5%D1%81%D0%BD%D1%8F%D0%98%D0%BD%D0%B3%D0%B5%D0%BD%D0%B8%D1%83%D0%BC
@@ -337,7 +337,7 @@ eunathrezimElite
 eumal%20ganisVanity
 eugul%20danPredicted
 euthrallW%20H%20F
-euarak%20arahmFreak%20Me%20Out
+euarak-arahmFreak%20Me%20Out
 euburning%20legionGood%20Omen
 eu%D0%B0%D0%B7%D1%83%D1%80%D0%B5%D0%B3%D0%BE%D1%81%D0%A0%D0%BE%D0%BA%D0%BD%D0%A0%D0%BE%D0%BB%D0%BB%D0%B0
 euscarshield%20legionAftermath
@@ -1023,8 +1023,8 @@ eutwisting%20netherFractured
 eu%D1%80%D0%B5%D0%B2%D1%83%D1%89%D0%B8%D0%B9%20%D1%84%D1%8C%D0%BE%D1%80%D0%B4%D0%A4%D0%BE%D0%B1%D0%B8%D1%8F
 eutwisting%20netherTwisted%20RO
 eudestromathPer%20Ultionem
-euazjol%20nerubAct%20IV
-euazjol%20nerubRecursion
+euazjol-nerubAct%20IV
+euazjol-nerubRecursion
 eukazzakSanta%20Maria
 euterokkarImmortality
 eublackmooreShadows%20of%20the%20Dark
@@ -1634,7 +1634,7 @@ eudun%20modrEmotive
 eukazzakSchool%20Bus
 euantonidasDejaVu
 ussargerasEvenfall
-usazjol%20nerubInfusion
+usazjol-nerubInfusion
 usmoon%20guardDemonic%20Hordes
 usfrostmourneSeverity
 eu%D1%80%D0%B5%D0%B2%D1%83%D1%89%D0%B8%D0%B9%20%D1%84%D1%8C%D0%BE%D1%80%D0%B4%D0%A0%D1%83%D0%B1%D0%B8%D0%BA%D0%BE%D0%BD
@@ -1678,7 +1678,7 @@ eublackmooreFact%20or%20Fiction
 usmadoranHordecore
 uswildhammerArbitrary
 uskul%20tirasBroner%20Patrol
-usazjol%20nerubShard
+usazjol-nerubShard
 usdrakkariHolding%20The%20Line
 usdrakkariMonsters
 usquel%20thalasThe%20Burning%20Blood
@@ -2420,7 +2420,7 @@ uscenariusInglourious%20Allies
 eu%D0%B3%D0%BE%D1%80%D0%B4%D1%83%D0%BD%D0%BD%D0%B8%D0%93%D0%B8%D0%BB%D1%8C%D0%B4%D0%B8%D1%8F%20%D0%A0%D0%B0%D1%88%D0%B8%D0%B4%D0%B7%D1%8E
 eu%D0%B3%D0%BE%D1%80%D0%B4%D1%83%D0%BD%D0%BD%D0%B8%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%B0%D1%8F%20%D0%98%D0%BD%D0%BA%D0%B2%D0%B8%D0%B7%D0%B8%D1%86%D0%B8%D1%8F
 eu%D0%B3%D0%BE%D1%80%D0%B4%D1%83%D0%BD%D0%BD%D0%B8Great%20Inquisition
-euarak%20arahmOuikinis
+euarak-arahmOuikinis
 useitriggNonessential%20Personnel
 usragnarosLok%20tar%20Ogar
 eu%D0%B4%D1%80%D0%B0%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%BE%D1%80%D0%9E%D0%BF%D0%BB%D0%BE%D1%82%20%D0%A1%D0%B2%D0%B5%D1%82%D0%B0
@@ -3103,7 +3103,7 @@ eu%D0%B2%D0%B5%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%B5%D1%81%D0%BD%D1%8F%D0%9B%D0
 eumalygosSun%20zu
 eu%D1%80%D0%B0%D0%B7%D1%83%D0%B2%D0%B8%D0%B9%D0%AD%D0%BB%D0%B5%D0%B3%D0%BE%D0%BD
 eu%D1%8F%D1%81%D0%B5%D0%BD%D0%B5%D0%B2%D1%8B%D0%B9%20%D0%BB%D0%B5%D1%81%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%BD%D0%B8%D0%BA%D0%B8%20%D0%9F%D1%83%D1%81%D1%82%D0%BE%D1%88%D0%B5%D0%B9
-euazjol%20nerubReanimate
+euazjol-nerubReanimate
 uskargathShadow%20and%20Light
 eublackhanddUUHm
 eudalaranElyzion
@@ -3644,7 +3644,7 @@ usshadowsongCondemned
 usmal%20ganisThe%20Ninja%20Turtles
 uskorgathWar%20Ensemble
 usmal%20ganisteamLUST
-usazjol%20nerubAmnesty
+usazjol-nerubAmnesty
 ushyjalWarsong
 ushyjalThe%20Sacrifice
 eusilvermoonUnpredictable%20Carnage
@@ -4777,7 +4777,7 @@ uskel%20thuzadIntractable
 eu%D1%8F%D1%81%D0%B5%D0%BD%D0%B5%D0%B2%D1%8B%D0%B9%20%D0%BB%D0%B5%D1%81%D0%9A%D0%BB%D0%B0%D0%BD%20%D0%9F%D1%80%D0%B8%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D0%BE%D0%B9%20%D0%9B%D1%83%D0%BD%D1%8B
 eukirin%20torHeaven%20Dream
 eu%D0%B2%D0%B5%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%B5%D1%81%D0%BD%D1%8F%D0%A2%D0%B5%D0%BD%D0%B8%20%D1%82%D1%8C%D0%BC%D1%8B
-euazjol%20nerubIn%20Aeternum
+euazjol-nerubIn%20Aeternum
 uskargathCollateral%20Damage
 usutherWarforged
 eu%D1%80%D0%B0%D0%B7%D1%83%D0%B2%D0%B8%D0%B9%D0%97%D0%B8%D0%B7%D1%83%D0%BB%D1%8C%D0%BA%D0%B0

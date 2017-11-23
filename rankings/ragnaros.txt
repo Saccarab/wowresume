@@ -178,7 +178,7 @@ eumal%20ganisMyth
 eutrollbaneEminence
 eufrostmaneEVO
 eushattered%20handHindsight
-euarak%20arahmFreak%20Me%20Out
+euarak-arahmFreak%20Me%20Out
 usmagtheridonWHATEVER%20WERE%20AWESOME
 twnightsongAsgard
 eu%D0%BF%D0%BE%D0%B4%D0%B7%D0%B5%D0%BC%D1%8C%D0%B5%D0%AD%D0%BD%D0%B2%D0%B8%D0%B6%D0%BD
@@ -385,7 +385,7 @@ eubladefistImmersion
 eufrostwhisperSluga%20typer%20och%20en%20Naga
 eudie%20ewige%20wachtKonterbier
 eugaronaEchoes
-euazjol%20nerubAct%20IV
+euazjol-nerubAct%20IV
 euysondrePix%20Breaker
 eukael%20thasPix%20Breaker
 euskullcrusherNocens%20Locus
@@ -459,7 +459,7 @@ kreluneTeamOneKill
 eugrim%20batolAurora%20Borealis
 euxaviusEpicfabriken
 eutwisting%20netherOv%C3%A4rda
-euazjol%20nerubSemper%20Fidelis
+euazjol-nerubSemper%20Fidelis
 eudraenorDeus%20Ex%20Machina
 eunera%20thorUltima%20Ratio
 eukirin%20torInside
@@ -2302,7 +2302,7 @@ eulordaeronN%C3%ADghtfall
 eujaedenarHunter%20Stole%20My%20Bike
 twarygos%E5%85%AC%E4%B8%BB%E5%A4%9C%E6%9C%AA%E7%9C%A0
 usalexstraszaContingency
-usazjol%20nerubInfusion
+usazjol-nerubInfusion
 twarthas%E7%A6%AE%E6%8B%9C%E5%A0%82
 twnightsong%E5%82%B2%E9%AD%82
 euragnarosCthulhu
@@ -3607,7 +3607,7 @@ eukazzakStargaze
 eukazzakInviction
 usstormscaleReviction
 usstormreaverReviction
-euarak%20arahmChuck%20Norris%20Fan%20Club
+euarak-arahmChuck%20Norris%20Fan%20Club
 eueldre%20thalasFrozen%20Moon
 eusanguinoNo%20Brats
 usdragonmawDIRTY%20DEEDS
@@ -3711,13 +3711,13 @@ eudie%20arguswachtEhrengarde%20des%20Lichts
 eufrostmaneHoly%20Warriors
 euazsharaSeelensturm
 eurunetotemCreatures%20of%20Honor
-euazjol%20nerubPandemonium
+euazjol-nerubPandemonium
 euder%20abyssische%20ratRat%20der%20Silberklingen
 usfrostmourneSerenity%20Ex
 eu%D1%81%D0%B2%D0%B5%D0%B6%D0%B5%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%20%D0%B4%D1%83%D1%88%D0%AD%D1%80%D0%BE%D1%81%D1%83%D0%B7
 eunazjatarLate%20Night
 uscho%20gallMorior%20Invictus
-usazjol%20nerubBlacklist
+usazjol-nerubBlacklist
 eulightbringerEasy
 usjubei%20thosSevere
 eukael%20thasFaravisa
@@ -3793,7 +3793,7 @@ usskullcrusherReckless
 usdrendenRequiem
 usspirestoneConflux
 usshattered%20handDisciples%20of%20the%20Blade
-usazjol%20nerubShard
+usazjol-nerubShard
 usarthasSY
 usstormreaverReincarnate
 usstormreaverCold%20Logic
@@ -3964,7 +3964,7 @@ eudraenorDark%20Company
 eumalfurionMidnight%20Scare
 eules%20sentinellesWaargh
 eushattered%20handRelapse
-euazjol%20nerubFinding%20Emo
+euazjol-nerubFinding%20Emo
 eudun%20modrEmbestida
 eu%D1%81%D0%B2%D0%B5%D0%B6%D0%B5%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%20%D0%B4%D1%83%D1%88%D0%9F%D1%80%D0%B8%D1%85%D0%BE%D0%B4
 eu%D1%81%D0%B2%D0%B5%D0%B6%D0%B5%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%20%D0%B4%D1%83%D1%88%D0%92%D1%8B%D1%81%D0%BE%D0%BA%D0%BE%D0%B5%20%D0%9D%D0%B0%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5
@@ -4107,7 +4107,7 @@ usspirestoneKillin%20Time
 euder%20abyssische%20ratBloodsoaked
 eustormscalePaper%20Airplanes
 twshadowmoon%E8%89%BE%E5%87%A1%E9%81%94
-usazjol%20nerubDiscerned%20Reality
+usazjol-nerubDiscerned%20Reality
 useonarInternet%20Dragonslayers
 usazralonFlux
 uskil%20jaedenSuboptimal
@@ -4129,7 +4129,7 @@ eu%D0%B0%D0%B7%D1%83%D1%80%D0%B5%D0%B3%D0%BE%D1%81%D0%A1%D0%B2%D0%BE%D0%B9%20%D0
 eu%D0%B0%D0%B7%D1%83%D1%80%D0%B5%D0%B3%D0%BE%D1%81%D0%91%D0%B0%D0%BD%D0%B4%D0%B0
 eunathrezimPopplers
 eufrostmaneGief%20Pie%20Or%20Die
-euazjol%20nerubThe%20Circus
+euazjol-nerubThe%20Circus
 eualonsusEclipse
 eubronzebeardEcho
 eushattered%20handB%20R%20A%20V%20O
@@ -4394,7 +4394,7 @@ eutodeswacheDarkSouls
 eurunetotemThe%20HeartLess
 euwell%20of%20eternityWhoMadeWho
 eukazzakReFlux
-euazjol%20nerubActa%20Non%20Verba
+euazjol-nerubActa%20Non%20Verba
 eutwisting%20netherIntense%20Parachute
 euarchimonder%20e%20s%20t%20r%20i%20c%20t%20e%20d
 euarchimondeRestricte%C3%90
@@ -4759,7 +4759,7 @@ eutwisting%20netherTrigger%20the%20Tempest
 eudoomhammerThe%20Lost%20Chapter
 euravencrestLost%20Chapter
 eustormrageBe%20Grand
-euazjol%20nerubValkyr%C3%ACe
+euazjol-nerubValkyr%C3%ACe
 eufrostmaneValkyrie
 eudentargCollision
 eublades%20edgeAgrivation
@@ -4855,7 +4855,7 @@ eufrostmourneCasuals%20at%20Work
 eutwisting%20netherAntikrundan
 eufrostwolfC%20A%20L%20Y%20P%20S%20O
 eudragonblightShadow%20Wolves
-euarak%20arahmOrient
+euarak-arahmOrient
 eudun%20moroghCasanostra
 eudunemaulCold%20Blooded
 eutrollbaneLingering
@@ -5012,7 +5012,7 @@ usragnarosRise
 eu%D1%81%D0%B2%D0%B5%D0%B6%D0%B5%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%20%D0%B4%D1%83%D1%88%D0%AD%D0%BF%D0%B8%D0%BA%D1%81
 twsilverwing%20holdEternal%20Flame
 twcrystalpine%20stinger%E7%84%A1%E6%95%B5%E8%81%AF%E7%9B%9F
-euarak%20arahmHad%C3%A9s
+euarak-arahmHad%C3%A9s
 usdragonmawReady%20Check
 eudun%20modrAbism%C3%B8
 euzirkel%20des%20cenariusEhrenbund%20der%20Allianz
@@ -5104,7 +5104,7 @@ eustormrageJoonbe
 eustormrageSymbiotic
 euterenasV%C3%ADci
 eu%D0%B3%D0%B0%D0%BB%D0%B0%D0%BA%D1%80%D0%BE%D0%BD%D0%B4%D0%9A%D0%BB%D1%83%D0%B1%D0%BD%D0%B8%D0%BA%D0%B0%20%D1%81%D0%BE%20%D0%BB%D1%8C%D0%B4%D0%BE%D0%BC
-euazjol%20nerubIncinerate
+euazjol-nerubIncinerate
 eulightbringerHollow%20Point
 eusunstriderHollow%20Point
 euillidanImperium
@@ -5232,7 +5232,7 @@ eugrim%20batolMoX
 eu%D0%B3%D1%80%D0%BE%D0%BC%D0%A1%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%B4%D1%83%D1%85%D0%BE%D0%BC
 eudun%20modrProminence
 euconseil%20des%20ombresEquilibrium
-euazjol%20nerubThe%20Wolf%20Pack
+euazjol-nerubThe%20Wolf%20Pack
 usakamaLearning%20Curve
 usalterac%20mountainsOne%20too%20Many
 eufrostmaneHypnosis
@@ -5599,7 +5599,7 @@ eu%D0%B2%D0%B5%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%B5%D1%81%D0%BD%D1%8F%D0%A2%D0
 usmal%20ganisBeep%20Beep%20Derivery
 eu%D0%B4%D1%80%D0%B0%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%BE%D1%80%D0%A7%D0%B5%D1%80%D0%BD%D1%8B%D0%B5%20%D1%80%D1%8B%D1%86%D0%B0%D1%80%D0%B8
 euc%20thunDisturbed
-euazjol%20nerubThe%20Grimtor
+euazjol-nerubThe%20Grimtor
 eusylvanasLegion%20XI
 eufrostwolfHigh%20Society
 eu%D1%82%D0%BA%D0%B0%D1%87%20%D1%81%D0%BC%D0%B5%D1%80%D1%82%D0%B8%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B2%D0%B5%D0%BD%D1%86%D0%B8%D1%8F
@@ -5800,7 +5800,7 @@ euvol%20jinIlluminati
 usalterac%20mountainsFocused%20Aggression
 usshadowmoonCoercion
 eu%D1%80%D0%B0%D0%B7%D1%83%D0%B2%D0%B8%D0%B9%D0%92%D0%BE%D0%B8%D0%BD%D1%8B%20%D0%A1%D1%83%D0%BC%D0%B5%D1%80%D0%B5%D0%BA
-euazjol%20nerubVox%20Populi
+euazjol-nerubVox%20Populi
 euarchimondeSubWarZone
 ussargerasServer%20First
 eukazzakApathy
@@ -6055,7 +6055,7 @@ euperenoldeHi%20no%20Hikari
 usthrallKILLTHEME
 usthrallEighty%20Six
 usarea%2052Take%20it%20to%20Eighty%20Eight
-usazjol%20nerubIrregardless
+usazjol-nerubIrregardless
 uszangarmarshRefridgeraiders
 usdalaranCrimson%20Moon%20Rising
 usblade%20s%20edgePhase%20Two
@@ -6168,7 +6168,7 @@ euanub%20arakDer%20w%C3%BCtende%20Mob
 euwrathbringerStonetrees
 eudie%20nachtwacheEnrage%20INC
 eudefias%20brotherhoodParadox
-euarak%20arahmOuikinis
+euarak-arahmOuikinis
 eudie%20aldorConnection%20Lost
 euoutlandWingin%20It
 euneptulonThe%20Dark%20Templars
@@ -6201,7 +6201,7 @@ eucho%20gallExode
 eudunemaulEminence
 eulotharKoosai
 euner%20zhulTyrannie
-euarak%20arahmEnj%C3%B8y
+euarak-arahmEnj%C3%B8y
 eu%D1%81%D1%82%D1%80%D0%B0%D0%B6%20%D1%81%D0%BC%D0%B5%D1%80%D1%82%D0%B8%D0%90%D0%B2%D1%80%D0%BE%D1%80%D0%B0
 usarthasRapture
 eu%D0%B3%D0%BE%D1%80%D0%B4%D1%83%D0%BD%D0%BD%D0%B8%D0%90%D0%BB%D0%BB%D0%B5%D1%8F%20%D0%93%D0%B5%D1%80%D0%BE%D0%B5%D0%B2
@@ -6928,7 +6928,7 @@ euquel%20thalasSons%20of%20Oblivion
 ussargerasCognitive%20Dissonance
 eu%D0%B2%D0%B5%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%B5%D1%81%D0%BD%D1%8F%D0%9D%D0%BE%D1%81%D1%84%D0%B5%D1%80%D0%B0%D1%82%D1%83
 usillidanForsaken%20Angels
-usazjol%20nerubBonsai
+usazjol-nerubBonsai
 eu%D0%B3%D0%BE%D1%80%D0%B4%D1%83%D0%BD%D0%BD%D0%B8%D0%9F%D0%BE%D1%87%D1%83%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%20%D0%9D%D0%B0%D1%88%D1%83%20%D0%9B%D1%8E%D0%B1%D0%BE%D0%B2%D1%8C
 euantonidasLegion%20des%20Phoenix
 uskirin%20torDoomsday
@@ -7245,7 +7245,7 @@ eukargathinsert%20scary%20name%20here
 euravencrestBrethren
 euarchimondeLux%20Invictus
 eu%D0%BF%D0%BE%D0%B4%D0%B7%D0%B5%D0%BC%D1%8C%D0%B5%D0%9E%D1%82%20%D0%93%D1%80%D0%BE%D0%BC%D0%B0%20%D0%B4%D0%BE%20%D0%9A%D1%80%D0%B8%D0%BA%D0%B0
-euarak%20arahmM%C3%A5jestic
+euarak-arahmM%C3%A5jestic
 eusargerasla%20Meute
 euvek%20nilashCosmos
 eules%20clairvoyantsLegendary
@@ -7517,7 +7517,7 @@ euarygosExsolutio
 euturalyonMotion
 euhellscreamSempher%20Fi
 euburning%20legionGuldan%20Army
-euazjol%20nerubPius
+euazjol-nerubPius
 eukargathDas%20wird%20weggeheilt
 eugrim%20batolGelu%20Angelus
 eutwisting%20netherMagister%20dixit

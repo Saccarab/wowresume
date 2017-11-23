@@ -5,9 +5,9 @@
 // async.await ??
 // fix all the patchwerk/bandaid solutions
 // issues
+// cnazjolnerubKismet cn hyphen realm format? manualed to cnazjol-nerubKismet
 // guild migrate causes multiple bugs
 // character data is mostly non existant prior to july 2012 //ragnaros deathwing wont work most of the time
-
 // ------------- First kill rankings algorithm
 // Check if the player killed the given world of warcraft boss by blizz achievement api
 // If no return else get killtimestamp
@@ -106,9 +106,9 @@ function mainPane(){
 	// let kills = document.getElementById('kills').appendChild(load)
 	charName = fixName(document.getElementById('char').value);
 	locale = document.getElementById('locale').value;
-	realm = toTitleCase(document.getElementById(locale).value).trim();
+	realm = document.getElementById(locale).value.trim();
 	let img = document.createElement("img");
-	let url = proxy + buildTrackUrl(locale, toTitleCase(realm.replace("-", "%20")), charName);
+	let url = proxy + buildTrackUrl(locale, realm.replace("-", "%20"), charName);
 
 	// ?? unsure why implemented this probably due to late rendering on wowhead tooltips
 	//    or main div disappearin
@@ -476,11 +476,15 @@ function rankings(){
 			guildRank(data, "blackhand", blackhandPersonal)
 			guildRank(data, "imperator", imperatorPersonal)
 
-			guildRequestList.sort(function(a, b){ //sort guildRequestList by boss no
-				return b.boss - a.boss 
+			guildRequestList.sort(function(a, b){ //sort guildRequestList date join to prevent old guild collision
+				return b.dateJoin - a.dateJoin
 			});
 
 			fill();
+		},
+		error: function(){
+			clicked = false;	  		
+		  	process = false;
 		}
 	});
 }
@@ -614,7 +618,6 @@ function loopThrough(){
 						let boss = getBossName(guild.boss)
 						let guildAch = eval(boss+'Guild'); //patchwerk
 						let guildStamp = getStamp(guildAch, grab.guildData) // if -1
-
 						let stamp = eval('stamps.'+boss+'Stamp')
 						if (Math.abs(stamp - guildStamp) <= 150000){ // my first Kill is within 5 minutes of guilds kill 
 							let deleteItem = list.indexOf(guild.boss) //patchwerk
@@ -641,11 +644,16 @@ function loopThrough(){
 									//keep the oldrealm as an attribute so if merging is done between migrated guilds we keep track of the actual guild that kills is taken
 									if (guild.oldRealm !== undefined)
 										guildMigrateBlocker = guild.oldRealm;
-
+									//%27 quote %20 space
+									// lightning-s-blade(lightning%20s%20blade) wprogress realm format 
+									// bnet lightning's blade (lightning%20s%27blade) wont match the above one
+									// so cover up for that one
+									let noQuotes = guildMigrateBlocker.replace('%27','%20') 
 									for (i=0 ; i < lineCount ; i++){
 										//rank check for migrated guild names as well. 
 										//can put this out in a cleaner way sometime
-										if (lines[i].trim() === guild.guildLocale + guildMigrateBlocker + guild.guildName){ //temp fix??
+										//Fix text so no need to trim
+										if (lines[i].trim() === guild.guildLocale + noQuotes + guild.guildName){ //temp fix??
 											// -------------------- TO DO ----------------
 											// if even though all conditions met but it wont manage to execute this if
 											// either wprogress rankings are missing this guild 
@@ -662,16 +670,20 @@ function loopThrough(){
 											div.appendChild(tooltip)
 											tooltip.removeAttribute('hidden')
 
-											let txt = " " + upperCaseFirstL(boss) + getBossText(boss) + rank + " in " + blizzspaceToSpace(guild.guildName) + "-" + blizzspaceToSpace(guildMigrateBlocker);
-											let txt2 = getBossText(boss) + rank + " in " + blizzspaceToSpace(guild.guildName) + "-" + blizzspaceToSpace(guildMigrateBlocker);
+											let txt = " " + upperCaseFirstL(boss) + getBossText(boss) + rank + " in " + blizzspaceToSpace(guild.guildName) + " - " + conv(guildMigrateBlocker);
+											let txt2 = getBossText(boss) + rank + " in " + blizzspaceToSpace(guild.guildName) + " - " + conv(guildMigrateBlocker);
 											let text =  document.createTextNode(txt)
 											let text2 = document.createTextNode(txt2)
 
 											bufferDiv.appendChild(text)
 											submitHtml.appendChild(bufferDiv) //div that is gonna be submitted (that has no zamimg wowhead tooltips!)
 											div.appendChild(text2) //actual page with zamimg tooltips
+											
+											break;
 										}
 									}
+									if (i == lineCount)
+										console.log(boss + " kill exists within guild " + guild.guildName + " - " + guildMigrateBlocker + " so most likely this first kill wasnt listed in the rankings.txt, you can report it to be added" )
 								},
 								error: function(){ 
 									console.log("Guild Request fail for " + guild.guildName + " " + guild.guildRealm);
@@ -696,10 +708,7 @@ function loopThrough(){
 //blizz achievements arent kept on previous realm when a guild migrates to a new realm
 //if there are identical local&name guilds within the array fresh
 //merge them and add a new property named oldRealm to the new array
-//TO DO => currently It wont handle triple merges so the oldest guild kills are lost
-//e.g method-tarren mill method-twisting nether method-xavius
-//Tarren mill and TN gets merged but xavius is floating around w/o achievements lying inside
-//=> xavius data goes missing
+//fixed triple merge aswell for guilds that migrated more than once e.g.(method-xavius,twnether,tarrenmill)
 function guildMigrate(){
 	fresh.forEach(function(guild, idx){ //iterate self
 		for (let i = 0; i < fresh.length; i++){

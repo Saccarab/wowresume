@@ -369,7 +369,7 @@ eugorgonnashUnic
 eusylvanasiPuG
 eusylvanasUnknown%20Entity
 eufrostwolfAccelerated
-euazjol%20nerubConsilium
+euazjol-nerubConsilium
 euhyjalMaze
 euhyjalMillenium
 euysondreWa%C3%ADt%20for%20it
@@ -549,7 +549,7 @@ eu%D1%80%D0%B5%D0%B2%D1%83%D1%89%D0%B8%D0%B9%20%D1%84%D1%8C%D0%BE%D1%80%D0%B4%D0
 euravenholdtRR%20Inc
 euterokkarWasted%20Talent
 eutwisting%20netherApex
-euazjol%20nerubCartoons
+euazjol-nerubCartoons
 eunagrandQuelm
 euantonidasAstounding
 eublackhandAstounding
@@ -2215,7 +2215,7 @@ eushattrathSequel
 eubalnazzarStardust
 eudrak%20thulDedicated%20Casuals
 euc%20thunNoth
-euazjol%20nerubMomentum
+euazjol-nerubMomentum
 eukazzakVi%20Luminis
 eudefias%20brotherhoodTactical%20Magic
 euthe%20maelstromIntervention

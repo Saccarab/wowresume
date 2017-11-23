@@ -206,7 +206,7 @@ usshattered%20handApophasis
 eufrostwolfCasual
 eu%D1%80%D0%B5%D0%B2%D1%83%D1%89%D0%B8%D0%B9%20%D1%84%D1%8C%D0%BE%D1%80%D0%B4%D0%97%D0%B0%D0%B9%D1%86%D1%8B
 eukazzakSPARKS
-euazjol%20nerubConsilium
+euazjol-nerubConsilium
 eusargerasWraith
 usragnarosBad%20Karma
 usproudmooreFormality
@@ -241,7 +241,7 @@ uszul%20jinExiled%20Legion
 usarea%2052Ladies%20Only
 cnshadowmoon%E9%BB%8E%E6%98%8E
 cngrim%20batolVenusNone
-euarak%20arahmFreak%20Me%20Out
+euarak-arahmFreak%20Me%20Out
 twsundown%20marsh%E9%9B%B2%E6%B7%A1%E9%A3%8E%E8%BC%95
 cnmalganis%E9%83%A8%E8%90%BD%E8%AD%A6%E5%AF%9F%E5%B1%80
 eushattered%20handE%20V%20O
@@ -945,7 +945,7 @@ euulduarRawR
 eukhaz%20gorothEndzeit
 eu%D1%80%D0%B5%D0%B2%D1%83%D1%89%D0%B8%D0%B9%20%D1%84%D1%8C%D0%BE%D1%80%D0%B4%D0%AD%D0%B3%D1%80%D0%B5%D0%B3%D0%BE%D1%80
 eumalygosCelestial%20Defenders
-euazjol%20nerubCartoons
+euazjol-nerubCartoons
 eudun%20moroghErzritter
 euterokkarContingency
 eukazzakOrder%20of%20Sargeras
@@ -1360,7 +1360,7 @@ eukirin%20torEpsilon
 eusilvermoonThe%20Highborns
 usbleeding%20hollowStreet%20Corner%20Horde
 usdestromathDelusional
-usazjol%20nerubInfusion
+usazjol-nerubInfusion
 cnkelthuzad%E7%99%BD%E9%93%B6%E9%AA%91%E5%A3%AB%E5%9B%A2
 cnlordaeron%E6%B2%81%E5%84%92%E8%8C%B6%E7%A4%BE
 cnstorm%20peaks%E9%87%8D%20%E9%80%A2
@@ -2040,7 +2040,7 @@ eu%D1%80%D0%B5%D0%B2%D1%83%D1%89%D0%B8%D0%B9%20%D1%84%D1%8C%D0%BE%D1%80%D0%B4%D0
 eudraenorMalaxnytt
 euproudmooreNightstalker
 euonyxiaDarksiders
-euazjol%20nerubAsgard
+euazjol-nerubAsgard
 eutarren%20millSpectrum
 usragnarosLok%20tar%20Ogar
 usmal%20ganisOverwatch
@@ -2185,7 +2185,7 @@ eu%D1%80%D0%B5%D0%B2%D1%83%D1%89%D0%B8%D0%B9%20%D1%84%D1%8C%D0%BE%D1%80%D0%B4%D0
 euoutlandImatmyMax
 usthrallIndominus
 usmishaSteel%20Dawn
-usazjol%20nerubCoup%20de%20Gr%C3%A2ce
+usazjol-nerubCoup%20de%20Gr%C3%A2ce
 usstormrageDamage%20Networks
 eutwisting%20netherNocturnal%20Supremacy
 usbronzebeardInsidious
@@ -2513,7 +2513,7 @@ twsilverwing%20holdSweet%20Heart
 cnthe%20masters%20glaiveMatrix
 eu%D0%B3%D0%BE%D1%80%D0%B4%D1%83%D0%BD%D0%BD%D0%B8%D0%90%D0%BA%D0%B2%D0%B8%D0%BB%D0%BE%D0%BD
 eugrim%20batolAbsolutum%20Dominium
-euarak%20arahmLe%20Concl%C3%A2ve%20des%20Ombres
+euarak-arahmLe%20Concl%C3%A2ve%20des%20Ombres
 eudraenorHeretic
 eudalaranAllmighties
 usfrostmaneReclamations
@@ -3777,7 +3777,7 @@ euthrallDevastation
 usstormrageAnte%20Meridiem
 eudrak%20thulBlack%20Division
 eueredarExquisite
-euazjol%20nerubValhall
+euazjol-nerubValhall
 euantonidasALIRA%20Die%20K%C3%B6nigsflamme
 eumagtheridonAthena
 eu%D1%81%D0%B2%D0%B5%D0%B6%D0%B5%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%20%D0%B4%D1%83%D1%88%D0%91%D1%83%D1%82%D0%B8%D0%BA%20%D0%94%D1%8F%D0%B4%D1%8E%D1%88%D0%BA%D0%B8%20%D0%A0%D0%BE%D1%8F
@@ -4153,7 +4153,7 @@ eu%D0%B4%D1%80%D0%B0%D0%BA%D0%BE%D0%BD%D0%BE%D0%BC%D0%BE%D1%80%D0%9D%D0%B0%D0%BF
 usshu%20haloAspect
 cnargus%E7%8E%AB%E7%91%B0%E6%88%98%E4%BA%89
 euragnarosNever%20Easy
-euarak%20arahmAlone
+euarak-arahmAlone
 usblade%20s%20edgeDisorderly%20Conduct
 uskel%20thuzadRed%20Stag
 twfrostmane%E9%AD%85%E5%BD%B1
@@ -4345,7 +4345,7 @@ cnchillwind%20point%E4%BA%B2%E7%88%B1%E7%9A%84
 cnmagtheridon%E9%93%81%E8%A1%80%E4%B9%8B%E5%9F%8E
 eusilvermoondragon%20world
 eu%D0%B2%D0%B5%D1%87%D0%BD%D0%B0%D1%8F%20%D0%BF%D0%B5%D1%81%D0%BD%D1%8F%D0%B5%D0%A5%D0%B5
-euazjol%20nerubFlare
+euazjol-nerubFlare
 eusanguinoUnlight
 uscenariusPwny%20Express
 cnrhoninThe%20Innocence
@@ -4382,7 +4382,7 @@ cnicecrown%E8%AE%B0%E5%BF%86%E7%9A%84%E8%B6%B3%E8%BF%B9
 cnbleeding%20hollow%E5%85%89%E5%8D%8E
 eunozdormuSchattendrachen
 eukazzakTaHrPa
-euazjol%20nerubTranquil
+euazjol-nerubTranquil
 euaggraExtant
 usblackwater%20raidersGuardians%20of%20Innocence
 usstormrageACORNS
@@ -4445,7 +4445,7 @@ usmal%20ganisCloseness
 eutarren%20millSemper%20Danica
 euburning%20legionMaiori%20Cede
 cnbaelgun%E6%84%8F%E8%AD%98%E6%B5%81
-usazjol%20nerubOathsworn
+usazjol-nerubOathsworn
 usturalyonDivine%20Carnage
 usarea%2052Common%20Affliction
 ussilver%20handKingsmen

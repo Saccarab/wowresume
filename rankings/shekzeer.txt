@@ -12,7 +12,7 @@ euauchindounEnvy
 eukazzakEnvy
 euwrathbringerWhy%20Me
 eueredarRefuge
-euarak%20arahmFreak%20Me%20Out
+euarak-arahmFreak%20Me%20Out
 eu%D1%80%D0%B0%D0%B7%D1%83%D0%B2%D0%B8%D0%B9%D0%9A%D1%80%D0%B0%D1%88%D0%A2%D0%B5%D1%81%D1%82
 euburning%20legionAccidentally
 ussargerasMidwinter
@@ -116,7 +116,7 @@ eu%D1%82%D0%B5%D1%80%D0%BC%D0%BE%D1%88%D1%82%D0%B5%D0%BF%D1%81%D0%B5%D0%BB%D1%8C
 euthrallI%20vooDoo%20I
 eu%D1%81%D0%B2%D0%B5%D0%B6%D0%B5%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%20%D0%B4%D1%83%D1%88%D0%98%D0%BD%D0%B2%D0%B8%D0%BA%D1%82%D1%83%D1%81
 euargent%20dawnPinnacle
-euazjol%20nerubAct%20IV
+euazjol-nerubAct%20IV
 eu%D1%81%D0%B2%D0%B5%D0%B6%D0%B5%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%20%D0%B4%D1%83%D1%88%D0%A6%D0%B5%D0%BD%D1%82%D1%83%D1%80%D0%B8%20%D0%A2%D1%80%D0%B0%D0%B9%D0%B1
 eulotharNext
 eudurotancritical%20luders
@@ -697,7 +697,7 @@ eutarren%20millHuhuholics
 euarygosRis%C3%ADng
 eufrostwolfImpressive
 euonyxiaconnected
-euazjol%20nerubSemper%20Fidelis
+euazjol-nerubSemper%20Fidelis
 eueredarreshape
 euburning%20legionError%20Code
 eu%D1%87%D0%B5%D1%80%D0%BD%D1%8B%D0%B9%20%D1%88%D1%80%D0%B0%D0%BC%D0%98%D0%BD%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F
@@ -900,7 +900,7 @@ eumedivhCursed
 usstormrageReconciliation
 usblackrockKlondike%20Five
 usmannorothInfinity
-usazjol%20nerubInfusion
+usazjol-nerubInfusion
 usfenrisFrustration
 usmal%20ganisShining%20Force
 usutherAkai%20Soubi
@@ -1240,7 +1240,7 @@ euthe%20maelstromKarskdrekkarlaget
 eulos%20errantesLegends
 euarchimondeRupture
 euhyjalBloodthirster
-euarak%20arahmChuck%20Norris%20Fan%20Club
+euarak-arahmChuck%20Norris%20Fan%20Club
 eueredarI%20superior%20I
 euzenedarEpidemic
 eudie%20ewige%20wachtSynergy
@@ -1352,7 +1352,7 @@ usthrallValence
 usemerald%20dreamShattered%20Oath
 uskael%20thasKarma
 usturalyonDaybreak
-euazjol%20nerubIncinerate
+euazjol-nerubIncinerate
 usarthasDSLB
 usblade%20s%20edgeExile
 ussargerasExsilium
@@ -1512,7 +1512,7 @@ euanub%20arakFettesNeed
 eugrim%20batolRiseOfTheFallenHeroes
 euthe%20maelstromTenshi%20no%20Ramen
 eudraenorEye%20of%20the%20Tigger
-euazjol%20nerubActa%20Non%20Verba
+euazjol-nerubActa%20Non%20Verba
 usarthasMatt%20Damon
 usner%20zhulTurbo%20Cyborg%20Ninjas
 usthrallDystopia
@@ -1844,7 +1844,7 @@ eukel%20thuzadManasturm
 usblackrockHell
 usstormrageRageborn
 usshadow%20councilExodus
-usazjol%20nerubShard
+usazjol-nerubShard
 usarea%2052Evil%20Deeds%20Inc
 usdethecusNo%20Sugar%20Added
 usragnarosL%C3%B6ckD%C3%B6wn

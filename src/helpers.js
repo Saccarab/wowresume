@@ -71,3 +71,12 @@ function guildEquals(obj1, obj2){
 	else
 		return false
 }
+
+function convertQuotes(str){
+	return str.replace('%27', "'")
+}
+
+function conv(str){
+	str = blizzspaceToSpace(str)
+	return convertQuotes(str)
+}
