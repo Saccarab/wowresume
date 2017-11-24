@@ -3,6 +3,7 @@
 // dont send the character achievement request data billion times for every single boss lookup!
 // implement kr cn ru ?
 // async.await ??
+// break into smaller modules
 // fix all the patchwerk/bandaid solutions
 // --------------issues
 // Aggra Portuguese needs further url customization for every different API and request
@@ -249,6 +250,7 @@ function mainPane(){
 		JFCustomWidget.requestFrameResize(sizeObject);
 	  	$("#wrapper-js").html(divClone); 
 	  	process = false;
+	  	notLoading()
 	  	alert("Invalid Character");// if (fail == 0){
 	  }
 	});
