@@ -53,14 +53,11 @@ let uniqueRequest; //filters playerGuilds on it's way to array 'fresh'
 let stamps; //array including player kill stamps for every boss -1 if havent killed that boss
 let lost = false // player has a disbanded guild 
 let process = false; // currently fetching data
-const UA = navigator.userAgent,
 
-iOS = !!(UA.match(/iPad|iPhone/i));
-if (iOS) {
-   $(document).on('touchstart', function (e) {
-       e.target.click();
-   });
-}
+var ua = navigator.userAgent,
+event = (ua.match(/iPad/i) || ua.match(/iPhone/)) ? "touchstart" : "click";
+
+jQuery("body").on(event, '.clickable_element', mainPane());
 
 $(document).ready(function(){
 
