@@ -10,6 +10,7 @@
 // cnazjolnerubKismet cn hyphen realm format? manualed to cnazjol-nerubKismet
 // guild migrate causes multiple bugs
 // character data is mostly non existant prior to july 2012 //ragnaros deathwing wont work most of the time
+// request extra frame size on JF when on a mobile device
 // 
 // ------------- First kill rankings algorithm
 // Check if the player killed the given world of warcraft boss by blizz achievement api
@@ -30,6 +31,7 @@ let divClone; //html reset resetter
 let tooltipClone; //wowhead tooltips block resetter
 let clicked; // Switch button to see if widget currently is ready to submit data to Jotform
 let firstClick = true; // ??
+let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 
 //global loads
 let charName;
@@ -54,15 +56,6 @@ let stamps; //array including player kill stamps for every boss -1 if havent kil
 let lost = false // player has a disbanded guild 
 let process = false; // currently fetching data
 
-var UA = navigator.userAgent,
-iOS = !!(UA.match(/iPad|iPhone/i));
-
-if (iOS) {
-   $(document).on('touchstart', function (e) {
-       e.target.click();
-   });
-}
-
 $(document).ready(function(){
 
 	//Pick the realm list depending on Locale choice
@@ -84,6 +77,7 @@ $(document).ready(function(){
 });
 
 $(window).on("load", function(){
+	$('button').on(touchEvent, mainPane);
 	divClone = $(".wrapper-js").html();
 	//Clone to reset page later on
 });
