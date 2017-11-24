@@ -57,7 +57,7 @@ let lost = false // player has a disbanded guild
 let process = false; // currently fetching data
 
 $(document).ready(function(){
-
+	$('.mainButton').on(touchEvent, mainPane);
 	//Pick the realm list depending on Locale choice
 	$('#locale').bind('change', function () {
         var value = $(this).val();
