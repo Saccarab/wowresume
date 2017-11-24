@@ -558,6 +558,8 @@
 					<br><br>
 					<input class = "mainButton buttonAnim" type="submit" value="Submit"><br>
 				</form>
+				<script> document.getElementById('mainB').addEventListener('submit', function(event){event.preventDefault();mainPane();});
+				</script>
 			</div>
 		
 			<div class = "wrapper-js">
@@ -597,9 +599,12 @@
 
 			<div id= "addAlt" class = "center"> Add another alt <br><br>
 				<form id = "altB">	
-				<input type = "text" name = "altName" id = "altName" placeholder = "Name">
-				<input type = "text" name = "altRealm" id = "altRealm" placeholder = "Realm"><br><br>
-				<input class = "altButton buttonAnim" id = "tempid" type="submit" value="Add alt"><br>
+					<input type = "text" name = "altName" id = "altName" placeholder = "Name">
+					<input type = "text" name = "altRealm" id = "altRealm" placeholder = "Realm"><br><br>
+					<input class = "altButton buttonAnim" id = "tempid" type="submit" value="Add alt"><br>
+				</form>
+				<script> document.getElementById('altB').addEventListener('submit', function(event){event.preventDefault();temp();});
+				</script>
 			</div>
 		</div>
 		

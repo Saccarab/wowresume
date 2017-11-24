@@ -59,23 +59,11 @@ let process = false; // currently fetching data
 $(document).ready(function(){
 	//Pick the realm list depending on Locale choice
 	$('#locale').bind('change', function () {
-        var value = $(this).val();
-         $('.realm-js').not('#' + value).hide();
-         $('#' + value).show()
+		var value = $(this).val();
+		$('.realm-js').not('#' + value).hide();
+		$('#' + value).show()
 
-    }).trigger('change'); // Setup the initial states
-
-    $('#mainB').submit(function(e) {
-		e.preventDefault()
-		mainPane();
-		return false;
-	});
-
-	$('#altB').submit(function(e) {
-		e.preventDefault()
-		temp();
-		return false;
-	});
+	}).trigger('change'); // Setup the initial states
 
 	JFCustomWidget.subscribe("ready", function(){
 		// implement jotform options
