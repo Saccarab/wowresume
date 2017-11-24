@@ -56,18 +56,6 @@ let stamps; //array including player kill stamps for every boss -1 if havent kil
 let lost = false // player has a disbanded guild 
 let process = false; // currently fetching data
 
-$('#mainB').submit(function(e) {
-	e.preventDefault()
-	mainPane();
-	return false;
-});
-
-$('#altB').submit(function(e) {
-	e.preventDefault()
-	temp();
-	return false;
-});
-
 $(document).ready(function(){
 	//Pick the realm list depending on Locale choice
 	$('#locale').bind('change', function () {
@@ -76,6 +64,18 @@ $(document).ready(function(){
          $('#' + value).show()
 
     }).trigger('change'); // Setup the initial states
+
+    $('#mainB').submit(function(e) {
+		e.preventDefault()
+		mainPane();
+		return false;
+	});
+
+	$('#altB').submit(function(e) {
+		e.preventDefault()
+		temp();
+		return false;
+	});
 
 	JFCustomWidget.subscribe("ready", function(){
 		// implement jotform options
