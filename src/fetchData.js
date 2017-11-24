@@ -101,11 +101,6 @@ function mainPane(){
 
 
 // // [[[[--------------------------------Html-Grab-----------------------------------------------]]]]
-	let load = document.createElement("img");
-	load.setAttribute("id", "loading");
-	load.src = 'https://github.com/Saccarab/WoW-Resume/blob/master/images/Loading.gif?raw=true'
-	load.alt = 'Loading'
-	let kills = document.getElementById('kills').appendChild(load)
 	charName = fixName(document.getElementById('char').value);
 	locale = document.getElementById('locale').value;
 	realm = document.getElementById(locale).value.trim();
@@ -124,6 +119,12 @@ function mainPane(){
 
 	if (firstClick)
 		firstClick = false;
+
+	let load = document.createElement("img");
+	load.setAttribute("id", "loading");
+	load.src = 'https://github.com/Saccarab/WoW-Resume/blob/master/images/Loading.gif?raw=true'
+	load.alt = 'Loading'
+	let kills = document.getElementById('kills').appendChild(load)
 
 // // [[[[--------------------------------Scraping-----------------------------------------------]]]]
 	$.ajax({
@@ -488,6 +489,7 @@ function rankings(){
 		error: function(){
 			clicked = false;	  		
 		  	process = false;
+		  	notLoading()
 		}
 	});
 }
@@ -625,16 +627,16 @@ function loopThrough(){
 						if (Math.abs(stamp - guildStamp) <= 150000){ // my first Kill is within 5 minutes of guilds kill 
 							let deleteItem = list.indexOf(guild.boss) //patchwerk
 							delete list[deleteItem]
+							if (first){
+								first = false
+								notLoading()
+							}
 							$.ajax({
 								async: true,
 								type: 'GET',
 								guild : guild,
 								url: "rankings/" + boss + ".txt",
 								success: function(sData){
-									if (first){
-										first = false
-										document.getElementById("loading").parentNode.removeChild("loading");
-									}
 									let div = document.getElementById(boss);
 									let bufferDiv = document.createElement("div")
 									let rankings = document.getElementById(boss);
@@ -693,19 +695,18 @@ function loopThrough(){
 								}
 							})
 						}	
-						else return;
 					} // Hellfire
 				}
 			});
 		}
-		else return;
 	});
 	if (lost){ //unreachable
 		alert('Data might be lost due to disbanded guild.')
 		lost = false;
 	}
-
+	notLoading()
 	process = false; //end process
+
 }
 
 //blizz achievements arent kept on previous realm when a guild migrates to a new realm

@@ -28,6 +28,12 @@ function toTitleCase(str){
 	});
 }
 
+function notLoading(){ //hardcode
+	let load = document.getElementById("loading")
+	if (load)
+		load.parentNode.removeChild(load);
+}
+
 function upperCaseFirstL(word){
 	return word.charAt(0).toUpperCase() + word.slice(1);
 }
