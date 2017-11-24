@@ -54,12 +54,14 @@ let stamps; //array including player kill stamps for every boss -1 if havent kil
 let lost = false // player has a disbanded guild 
 let process = false; // currently fetching data
 
-var ua = navigator.userAgent, 
-pickclick = (ua.match(/iPad/i) || ua.match(/iPhone/)) ? "touchstart" : "click";
+var UA = navigator.userAgent,
+iOS = !!(UA.match(/iPad|iPhone/i));
 
-$('.clickable_element').on(pickclick, function(e) {
-     mainPane()
-});
+if (iOS) {
+   $(document).on('touchstart', function (e) {
+       e.target.click();
+   });
+}
 
 $(document).ready(function(){
 
