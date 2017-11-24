@@ -18,6 +18,7 @@
 
 .background{
     background: url("../images/background-wow-top.jpg");
+    cursor: pointer;
 }
 
 input{ 
@@ -53,10 +54,12 @@ option{
 
 .mainButton{
     width : 150px;
+    cursor : pointer!important;
 }
 
 button{
     background-color: rgba(0,0,0,.4);
+    cursor : pointer!important;
     border-color: #c77e19;
     color: #f8b700;
     padding:5px 14px;
