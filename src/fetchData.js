@@ -31,7 +31,6 @@ let divClone; //html reset resetter
 let tooltipClone; //wowhead tooltips block resetter
 let clicked; // Switch button to see if widget currently is ready to submit data to Jotform
 let firstClick = true; // ??
-let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 
 //global loads
 let charName;
@@ -57,7 +56,7 @@ let lost = false // player has a disbanded guild
 let process = false; // currently fetching data
 
 $(document).ready(function(){
-	$('.mainButton').on(touchEvent, mainPane);
+	$(".mainButton").on('click touchstart', mainPane)
 	//Pick the realm list depending on Locale choice
 	$('#locale').bind('change', function () {
         var value = $(this).val();
@@ -77,7 +76,6 @@ $(document).ready(function(){
 });
 
 $(window).on("load", function(){
-	$('button').on(touchEvent, mainPane);
 	divClone = $(".wrapper-js").html();
 	//Clone to reset page later on
 });
