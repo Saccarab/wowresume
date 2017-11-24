@@ -554,11 +554,10 @@
 					<option value="Zuluhed">Zuluhed</option>
 				</select>
 				<br><br>
-				<button class = "mainButton" onclick="mainPane()">Get Resume</button><br>
+				<button class = "mainButton" onTap="mainPane()">Get Resume</button><br>
 			</div>
 
 			<div class = "wrapper-js">
-
 				<div id = "w/e" class = "center">
 					<a href="https://www.worldofwarcraft.com" target="_blank" id = "blizz">
 						<img border="0" alt="armory" src="https://orig00.deviantart.net/65e3/f/2014/207/e/2/official_wow_icon_by_benashvili-d7sd1ab.png"
@@ -592,19 +591,17 @@
 					<div id = "ragnaros"></div>
 				</div>
 			</div>
+
 			<div id= "addAlt" class = "center"> Add another alt <br><br>	
 				<input type = "text" name = "altName" id = "altName" placeholder = "Name">
 				<input type = "text" name = "altRealm" id = "altRealm" placeholder = "Realm"><br><br>
-				<button id = "tempid">Add alt</button>
+				<button id = "tempid" onTap ="temp()">Add alt</button>
 			</div>
-		</div>	
+		</div>
 		
 		<script src = "src/achievementCodes.js"></script>
 		<script src = "src/getters.js"></script>
 		<script src = "src/helpers.js"></script>
 		<script src = "src/fetchData.js"></script>	
-		<script> document.getElementById("tempid").addEventListener("click",temp);
-		</script>
-
 	</body>
 </html>
