@@ -80,3 +80,8 @@ function conv(str){
 	str = blizzspaceToSpace(str)
 	return convertQuotes(str)
 }
+
+function removeParanthesis(str){
+	return str.replace('(', "").replace(')', "")
+}
+
