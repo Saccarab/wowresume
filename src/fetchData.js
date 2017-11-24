@@ -46,6 +46,7 @@ let guildRequestList = []; //playerguilds branched depending if given boss's sta
 let altsArray = [] //alt toons
 let fresh = []; //unique guild request data to avoid requesting same calls over and over
 
+let altsHtml
 let submitHtml = document.createElement('div')
 let callbackCount = 0 //total call back count needed
 let callCount = 0 //current call back count
@@ -55,8 +56,19 @@ let stamps; //array including player kill stamps for every boss -1 if havent kil
 let lost = false // player has a disbanded guild 
 let process = false; // currently fetching data
 
+$('#mainB').submit(function(e) {
+	e.preventDefault()
+	mainPane();
+	return false;
+});
+
+$('#altB').submit(function(e) {
+	e.preventDefault()
+	temp();
+	return false;
+});
+
 $(document).ready(function(){
-	$(".mainButton").on('click touchstart', mainPane)
 	//Pick the realm list depending on Locale choice
 	$('#locale').bind('change', function () {
         var value = $(this).val();
@@ -80,7 +92,8 @@ $(window).on("load", function(){
 	//Clone to reset page later on
 });
 
-function mainPane(){
+function mainPane(event){
+
 	if (process){
 		alert('no spamerino plx');
 		return;

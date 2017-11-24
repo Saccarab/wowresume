@@ -18,7 +18,6 @@
 
 .background{
     background: url("../images/background-wow-top.jpg");
-    cursor: pointer;
 }
 
 input{ 
@@ -54,11 +53,7 @@ option{
 
 .mainButton{
     width : 150px;
-}
-
-button{
     background-color: rgba(0,0,0,.4);
-    cursor: pointer;
     border-color: #c77e19;
     color: #f8b700;
     padding:5px 14px;
@@ -68,16 +63,27 @@ button{
     font-family: sans-serif;
 }
 
-button:active{
+.altButton{
+    background-color: rgba(0,0,0,.4);
+    border-color: #c77e19;
+    color: #f8b700;
+    padding:5px 14px;
+    box-shadow: 0 0 0 1px #000;
+    border-radius: 0;
+    border-width: 0.1px;
+    font-family: sans-serif;
+}
+
+.buttonAnim:active{
     color: #ffffff;
     background-color: #5DBCD2;
 }
 
-button:focus{
+.buttonAnim:focus{
     outline:0;
 }
 
-button:hover{
+.buttonAnim:hover{
     color: #ffffff;
     background-color: #B06701;
 }
