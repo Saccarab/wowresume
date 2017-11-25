@@ -11,6 +11,7 @@
 // guild migrate causes multiple bugs
 // character data is mostly non existant prior to july 2012 //ragnaros deathwing wont work most of the time
 // request extra frame size on JF when on a mobile device
+// some of the ios devices wont register onClick or onSubmit events
 // 
 // ------------- First kill rankings algorithm
 // Check if the player killed the given world of warcraft boss by blizz achievement api
@@ -20,7 +21,20 @@
 // compare player killstamp with guild's to see if player actually got the achievement within that guild (150k flex approx to 5 mins due to minimal delays on  possible playerstamps)
 // get the guilds ranking from the relevant boss.txt
 // 10.14.2017 usin async data load then loop through loaded data from now on to do less requests overall
+route.start(true);
 
+let charName;
+let realm;
+let locale;
+
+route(function(locale, realm, character) {
+	if (locale) document.getElementById('locale').value = locale
+	if (realm) document.getElementById('char').value = character
+	if (character) document.getElementById(locale).value = realm
+	if (locale && realm && character)
+		mainPane()
+})
+	
 // [[[[--------------------------------Constants--------------------------------------------------------]]]]
 const battleNetApiKey = "b7pycu6727tfgrnzawp6sn5bxeerh92z"; // Battle Net Api Key
 const warcraftLogsApiKey = "bff965ef8c377f175a671dacdbdbc822"; // Warcraftlogs Api Key
@@ -33,13 +47,7 @@ let clicked; // Switch button to see if widget currently is ready to submit data
 let firstClick = true; // ??
 
 //global loads
-let charName;
-let realm;
-let locale;
 
-let sizeObject = { //Jotform structure to request frame size
-	height : 0
-}
 
 let playerGuilds = []; //whole list including every single guild player was in with join and leave timestamps
 let guildRequestList = []; //playerguilds branched depending if given boss's stamp fall between that guild's leave and join
@@ -64,15 +72,6 @@ $(document).ready(function(){
 		$('#' + value).show()
 
 	}).trigger('change'); // Setup the initial states
-
-	JFCustomWidget.subscribe("ready", function(){
-		// implement jotform options
-		// fontSize = parseInt(JFCustomWidget.getWidgetSetting('fontSize'));
-		// fontFamily = JFCustomWidget.getWidgetSetting('fontFamily');
-		// fontColor = JFCustomWidget.getWidgetSetting('fontColor');
-	});	
-
-	clicked = false;
 });
 
 $(window).on("load", function(){
@@ -82,7 +81,7 @@ $(window).on("load", function(){
 
 function mainPane(event){
 	if (process){
-		alert('no spamerino plx');
+		console.log('no spamerino plx');
 		return;
 	}
 
@@ -96,11 +95,8 @@ function mainPane(event){
 	stamps = [];
 	callCount = 0;
 	callbackCount = 0;
-	sizeObject.height = 549;
 	submitHtml.innerHTML = "\n----------------First Kill Rankings----------------\n"
 	altsHtml = "\n----------------Alt Characters----------------\n"
-	JFCustomWidget.requestFrameResize(sizeObject);
-
 
 // // [[[[--------------------------------Html-Grab-----------------------------------------------]]]]
 	charName = fixName(document.getElementById('char').value);
@@ -108,6 +104,7 @@ function mainPane(event){
 	realm = document.getElementById(locale).value.trim();
 	let img = document.createElement("img");
 	route([locale, realm, charName].join('/'));
+	
 	let url = proxy + buildTrackUrl(locale, realm.replace("-", "%20"), charName);
 	// realm = removeParanthesis(realm) //thank aggra (portuguese)  =)
 
@@ -248,12 +245,10 @@ function mainPane(event){
 	  },
 	  error: function (){ // Reset on fail // Proxy fallback 	
   		clicked = false;
-  		sizeObject.height = 549;
-		JFCustomWidget.requestFrameResize(sizeObject);
 	  	$("#wrapper-js").html(divClone); 
 	  	process = false;
 	  	notLoading()
-	  	alert("Invalid Character");// if (fail == 0){
+	  	console.log("Invalid Character");// if (fail == 0){
 	  }
 	});
 	// [[[[--------------------------------ARTIFACT PANE-----------------------------------------------]]]]
@@ -286,27 +281,6 @@ function mainPane(event){
 	document.getElementById("wlogs").href = wlogsBody;
 	document.getElementById("blizz").href = armoryText;
 	document.getElementById("progress").href = wowProgressText;
-
-	let blizzString = document.getElementById("blizz").children[0].text;
-
-	//jotform submit event
-	JFCustomWidget.subscribe("submit", function(){
-	
-		//grab current outerhtml
-		let blizzString = document.getElementById("blizz").outerHTML;		
-		let progressString = document.getElementById("progress").outerHTML;
-		let wlogsString = document.getElementById("wlogs").outerHTML;
-		let artifactString = document.getElementById("artifact").outerHTML;
-			
-		let result = {}
-		result.valid = false;
-		 
-		if(clicked) /// successfull request in order to be valid JF data
-			result.valid = true;
-
-		result.value = blizzString + progressString + wlogsString + artifactString + submitHtml.outerHTML + altsHtml ;
-		JFCustomWidget.sendSubmit(result);
-	});
 }
 
 
@@ -336,8 +310,6 @@ function getItemLevel(locale, realm, name ,func){ // getItemLevel(locale, grabRe
 }
 
 function addAltx(locale, realm, name, obj){ //, divid
-	sizeObject.height = sizeObject.height + 18.5; //request extra jotform frame size for each alt
-	JFCustomWidget.requestFrameResize(sizeObject);
 	name = upperCaseFirstL(name);
 	realm = toTitleCase(realm.toString());
 
@@ -660,8 +632,6 @@ function loopThrough(){
 											// either wprogress rankings are missing this guild 
 											// or guild has the wrong realmName in rankings.txt due to migrate 
 											// ask user to report this guild so rankings.txt can be modified appropriately
-											sizeObject.height = sizeObject.height + 44.1 //JF frame size request for a wowhead tooltip
-											JFCustomWidget.requestFrameResize(sizeObject);
 											//build images for submission but use tooltips on actual page
 											img.src = "https://raw.githubusercontent.com/Saccarab/WoW-Resume/master/images/" + boss + ".jpg";
 											img.alt = boss
