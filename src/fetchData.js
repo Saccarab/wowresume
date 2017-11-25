@@ -12,7 +12,7 @@
 // character data is mostly non existant prior to july 2012 //ragnaros deathwing wont work most of the time
 // request extra frame size on JF when on a mobile device
 // some of the ios devices wont register onClick or onSubmit events
-// 
+// mainPane() firing twice due to route?
 // ------------- First kill rankings algorithm
 // Check if the player killed the given world of warcraft boss by blizz achievement api
 // If no return else get killtimestamp
@@ -27,7 +27,7 @@ let charName;
 let realm;
 let locale;
 
-route(function(locale, realm, character) {
+route(function(locale, requestsalm, character) {
 	if (locale) document.getElementById('locale').value = locale
 	if (realm) document.getElementById('char').value = character
 	if (character) document.getElementById(locale).value = realm
@@ -45,7 +45,7 @@ let divClone; //html reset resetter
 let tooltipClone; //wowhead tooltips block resetter
 let clicked; // Switch button to see if widget currently is ready to submit data to Jotform
 let firstClick = true; // ??
-
+let single = false
 //global loads
 
 
@@ -79,7 +79,7 @@ $(window).on("load", function(){
 	//Clone to reset page later on
 });
 
-function mainPane(event){
+function mainPane(){
 	if (process){
 		console.log('no spamerino plx');
 		return;
@@ -102,7 +102,6 @@ function mainPane(event){
 	charName = fixName(document.getElementById('char').value);
 	locale = document.getElementById('locale').value;
 	realm = document.getElementById(locale).value.trim();
-	let img = document.createElement("img");
 	route([locale, realm, charName].join('/'));
 	
 	let url = proxy + buildTrackUrl(locale, realm.replace("-", "%20"), charName);
@@ -120,11 +119,14 @@ function mainPane(event){
 	if (firstClick)
 		firstClick = false;
 
-	let load = document.createElement("img");
-	load.setAttribute("id", "loading");
-	load.src = 'https://github.com/Saccarab/WoW-Resume/blob/master/images/Loading.gif?raw=true'
-	load.alt = 'Loading'
-	let kills = document.getElementById('kills').appendChild(load)
+	if (!single){
+		let load = document.createElement("img");
+		load.setAttribute("id", "loading");
+		load.src = 'https://github.com/Saccarab/WoW-Resume/blob/master/images/Loading.gif?raw=true'
+		load.alt = 'Loading'
+		let kills = document.getElementById('kills').appendChild(load)
+	}
+	single = true
 
 // // [[[[--------------------------------Scraping-----------------------------------------------]]]]
 	$.ajax({
@@ -248,7 +250,7 @@ function mainPane(event){
 	  	$("#wrapper-js").html(divClone); 
 	  	process = false;
 	  	notLoading()
-	  	console.log("Invalid Character");// if (fail == 0){
+	  	alert("Invalid Character");
 	  }
 	});
 	// [[[[--------------------------------ARTIFACT PANE-----------------------------------------------]]]]
