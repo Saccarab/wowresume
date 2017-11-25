@@ -81,7 +81,6 @@ $(window).on("load", function(){
 });
 
 function mainPane(event){
-
 	if (process){
 		alert('no spamerino plx');
 		return;
@@ -108,6 +107,7 @@ function mainPane(event){
 	locale = document.getElementById('locale').value;
 	realm = document.getElementById(locale).value.trim();
 	let img = document.createElement("img");
+	route([locale, realm, charName].join('/'));
 	let url = proxy + buildTrackUrl(locale, realm.replace("-", "%20"), charName);
 	// realm = removeParanthesis(realm) //thank aggra (portuguese)  =)
 
@@ -309,14 +309,6 @@ function mainPane(event){
 	});
 }
 
-function temp(){ //manual add alt helper
-	let altDiv = document.getElementById("alts");
-	let altName = document.getElementById('altName').value;
-	altName = upperCaseFirstL(altName);
-	let locale = document.getElementById('locale').value;
-	let altRealm = toTitleCase(document.getElementById('altRealm').value);
-	getItemLevel( locale, altRealm, altName, addAltx); //(altDiv)
-}
 
 function getItemLevel(locale, realm, name ,func){ // getItemLevel(locale, grabRealm, name, addAltx) is sent from the mainPane
 	// grab ilvl&class then pass onto addaltx
