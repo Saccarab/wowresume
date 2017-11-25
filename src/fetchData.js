@@ -27,7 +27,7 @@ let charName;
 let realm;
 let locale;
 
-route(function(locale, requestsalm, character) {
+route(function(locale, realm, character) {
 	if (locale) document.getElementById('locale').value = locale
 	if (realm) document.getElementById('char').value = character
 	if (character) document.getElementById(locale).value = realm
