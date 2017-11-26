@@ -438,6 +438,8 @@ function rankings(){
 				return b.dateJoin - a.dateJoin
 			});
 
+			confirmMigrate()
+
 			fill();
 		},
 		error: function(){
@@ -455,7 +457,7 @@ function guildRank(fdata, boss, personalAchiev){
 	if (index != -1){  // make this a function to avoid bracket hell or use if == -1 return else do ur stuff (which could look way more elegant)
 		let stamp = fdata.achievements.achievementsCompletedTimestamp[index]; //hoist the colors
 		//order descending by dateJoin
-		playerGuilds.sort(function(a, b){ //sort guildRequestList date join to prevent old guild collision
+		playerGuilds.sort(function(a, b){ //?? migrate helper??
 			return a.dateJoin - b.dateJoin
 		});
 
@@ -537,7 +539,7 @@ function asyncGet(guildElement, index, callback){
 
 		error: function() {
             console.log('error for ' + guildElement.guildName); // error for undefined?
-            lost = true;
+                        lost = true;
             callback();
         }
 	});
@@ -640,15 +642,16 @@ function loopThrough(){
 											break;
 										}
 									}
-									if (i == lineCount)
+									if (i == lineCount){
 										console.log(boss + " kill exists within guild " + guild.guildName + " - " + guildMigrateBlocker + "this first kill wasnt listed in the rankings.txt, you can report it to be added" )
+										let tooltip = document.getElementById('button_1')
+										let prev = document.getElementById('button_1').getAttribute('data-content')
+										let insert = prev + "Data might be lost due to disbanded guild!" + '<br>'
+										tooltip.setAttribute('data-content', insert)
+									}
 								},
 								error: function(){ 
 									console.log("Guild Request fail for " + guild.guildName + " - " + guild.guildRealm)
-									let tooltip = document.getElementById('button_1')
-									let prev = document.getElementById('button_1').getAttribute('data-content')
-									let insert = prev + "Guild Request fail for " + guild.guildName + " - " + guild.guildRealm + '<br>'
-									tooltip.setAttribute('data-content', insert)
 								}
 							})
 						}	
@@ -659,6 +662,11 @@ function loopThrough(){
 	});
 	if (lost){ //unreachable
 		console.log('Data might be lost due to disbanded guild.')
+		let tooltip = document.getElementById('button_1')
+		let prev = document.getElementById('button_1').getAttribute('data-content')
+		let insert = prev + "Data might be lost due to disbanded guild!" + '<br>'
+		tooltip.setAttribute('data-content', insert)
+
 		lost = false;
 	}
 	notLoading()
@@ -668,9 +676,12 @@ function loopThrough(){
 }
 
 function confirmMigrate(){
-	playerguilds.forEach(function(guild, idx){ //iterate all guilds seek for a guild migrate
+	playerGuilds.forEach(function(guild, idx){ //iterate all guilds seek for a guild migrate
 		for (let i = 0; i < fresh.length; i++){
-			if (guild.guildName === fresh[i].guildName && guild.guildRealm !== fresh[i].guildRealm){
+			let found = fresh.some(function(elem){
+				return elem.guildName === guild.guildName && elem.guildRealm === guild.guildRealm
+			});
+			if (!found && guild.guildName === fresh[i].guildName && guild.guildRealm !== fresh[i].guildRealm){
 				copyObject(guild, fresh)
 			}
 		}
@@ -689,7 +700,7 @@ function guildMigrate(){
 					if (fresh[i].guildData.completedArray.length > guild.guildData.completedArray.length){
 						let tooltip = document.getElementById('button_1')
 						let prev = tooltip.getAttribute('data-content')
-						let a = prev + `Assuming your guild ${guild.guildName} - ${blizzspaceToSpace(guild.guildRealm)} migrated to ${fresh[i].guildName} - ${blizzspaceToSpace(fresh[i].guildRealm)}<br>`
+						let a = prev + `${guild.guildName} - ${blizzspaceToSpace(guild.guildRealm)} migrated to ${fresh[i].guildName} - ${blizzspaceToSpace(fresh[i].guildRealm)}.<br>`
 						tooltip.setAttribute('data-content', a)
 						guildRequestList.forEach(function(replace){
 							if (replace.guildName === fresh[i].guildName && replace.guildRealm === guild.guildRealm){
