@@ -4,12 +4,14 @@
 <head class = "center">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src = "https://cdn.jsdelivr.net/npm/riot-route@3.1.2/dist/route.min.js"></script>
-	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script> var whTooltips = {colorLinks: false, iconizeLinks: true, renameLinks: false, iconSize: "medium"};</script>
-	<script src = "https://wow.zamimg.com/widgets/power.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 	<link rel = "stylesheet" type = "text/css" href = "css/styles.css">
 	<link rel = "icon" href = "favicon.ico">
+	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src = "https://cdn.jsdelivr.net/npm/riot-route@3.1.2/dist/route.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script> var whTooltips = {colorLinks: false, iconizeLinks: true, renameLinks: false, iconSize: "medium"};</script>
+	<script src = "https://wow.zamimg.com/widgets/power.js"></script>
 </head>
 		
 	<body>
@@ -556,7 +558,7 @@
 						<option value="Zuluhed">Zuluhed</option>
 					</select>
 					<br><br>
-					<input class = "mainButton buttonAnim" type="submit" value="Submit"><br>
+					<input class = "mainButton buttonAnim" type = "submit" value = "Submit"><br>
 				</form>
 				<script> document.getElementById('mainB').addEventListener('submit', function(event){event.preventDefault();mainPane();});
 				</script>
@@ -565,13 +567,12 @@
 			<div class = "wrapper-js">
 				<div id = "w/e" class = "center">
 					<a href="https://www.worldofwarcraft.com" target="_blank" id = "blizz">
-						<img border="0" alt="armory" src="https://orig00.deviantart.net/65e3/f/2014/207/e/2/official_wow_icon_by_benashvili-d7sd1ab.png"
+						<img border="0" alt="armory" src="images/blizzImage.png"
 				width="100" height="100"></a>
 					<a href = "https://www.wowprogress.com" target="_blank" id = "progress">
-						<img border="0" alt="wowprogress" src="https://media-curse.cursecdn.com/attachments/238/259/ab2186b65b0528595ada31a0f3054643.png" width="100" height="100"></a>
+						<img border="0" alt="wowprogress" src="images/progressImage.png" width="100" height="100"></a>
 					<a href = "https://www.warcraftlogs.com" target="_blank" id = "wlogs">
-						<img border="0" alt="warcraftLogs" src="https://www.warcraftlogs.com/img/common/warcraft-logo.png
-				" width="100" height="100"></a>
+						<img border="0" alt="warcraftLogs" src="images/warcraft-logo.png" width="100" height="100"></a>
 				</div>
 
 				<div id = "artifact" class = "center" > 
@@ -580,7 +581,15 @@
 				<div id = "alts" class = "center"> Alt Characters
 				</div>
 
-				<div id = "kills" class = "center"> First Kill Rankings <br><br>
+				<div id = "kills" class = "center">
+					<div style = "position: relative">
+						<span style = "display: inline-block;">First Kill Rankings</span>
+						<button data-toggle = "popover" data-html="true" data-content="" type = "button" id="button_1" data-placement="bottom">
+							<span id="span_2"><i id="i_3"></i></span></div>
+						</button>
+					<br>
+					</div>
+
 					<div id = "guldan"></div>
 					<div id = "helya"></div>
 					<div id = "xavius"></div>

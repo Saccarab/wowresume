@@ -1,4 +1,4 @@
-
+// to do guild prototype methods
 
 // [[[[--------------------------------Helper Functions ---------------------------------------]]]]
 // [[[[--------------------------------Helper Functions ---------------------------------------]]]]
@@ -26,12 +26,6 @@ function toTitleCase(str){
 	return str.replace(/\w\S*/g, function(txt){
 		return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
 	});
-}
-
-function notLoading(){ //hardcode
-	let load = document.getElementById("loading")
-	if (load)
-		load.parentNode.removeChild(load);
 }
 
 function upperCaseFirstL(word){
@@ -64,20 +58,6 @@ function blizzspaceToSpace(convertMe){
 	return convertMe.replace("%20", " ");
 }
 
-// [[[[--------------------------------Build/Equality--------------------------]]]]
-
-function removeDiv(tag){
-	let elem = document.getElementById(tag.id);
-	elem.parentNode.parentNode.removeChild(tag.parentNode);
-}
-
-function guildEquals(obj1, obj2){
-	if (obj1.guildName === obj2.guildName && obj1.guildLocale === obj2.guildLocale && obj1.guildRealm === obj2.guildRealm)
-		return true
-	else
-		return false
-}
-
 function convertQuotes(str){
 	return str.replace('%27', "'")
 }
@@ -91,3 +71,36 @@ function removeParanthesis(str){
 	return str.replace('(', "").replace(')', "")
 }
 
+// [[[[--------------------------------Build/Equality--------------------------]]]]
+
+function guildEquals(obj1, obj2){
+	if (obj1.guildName === obj2.guildName && obj1.guildLocale === obj2.guildLocale && obj1.guildRealm === obj2.guildRealm)
+		return true
+	else
+		return false
+}
+
+function copyObject(initObj, arrayToPush){
+	let temp = initObj.dateJoin
+	let temp2 = initObj.dateLeave
+	delete initObj.dateJoin //patchwerk solution
+	delete initObj.dateLeave
+	if (initObj.boss) delete initObj.boss
+	arrayToPush.push(JSON.parse(JSON.stringify(initObj)))
+	initObj.dateJoin = temp
+	initObj.dateLeave = temp2
+}
+
+function loading(){
+	let load = document.createElement("img");
+	load.setAttribute("id", "loading");
+	load.src = 'https://github.com/Saccarab/WoW-Resume/blob/master/images/Loading.gif?raw=true'
+	load.alt = 'Loading'
+	let kills = document.getElementById('kills').appendChild(load)
+}
+
+function notLoading(){ //hardcode
+	let load = document.getElementById("loading")
+	if (load)
+		load.parentNode.removeChild(load);
+}

@@ -6,7 +6,7 @@
     padding: 10px;
     color: rgba(255,255,255,.7);
     font-weight: bold;
-    font-family: sans-serif !important;
+    font-family: sans-serif;
     border-bottom-width: 1px solid;
     border-top-width: 0px;
     border-left-width :0px;
@@ -20,9 +20,12 @@
     background: url("../images/background-wow-top.jpg");
 }
 
-input{ 
-    text-align: center; 
-}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none
+;}
 
 select:required:invalid{
     color: gray;
@@ -31,47 +34,22 @@ select:required:invalid{
 option[value=""][disabled]{
     display: none;
 }
+
 option{
     color: white;
 }
 
-::-webkit-input-placeholder{
-    text-align: center;
-}
-
-:-moz-placeholder{ /* Firefox 18- */
-    text-align: center;  
-}
-
-::-moz-placeholder{  /* Firefox 19+ */
-    text-align: center;  
-}
-
-:-ms-input-placeholder{  
-    text-align: center; 
-}
-
 .mainButton{
-    width : 150px;
+    width : 150px!important;
+    outline: none;
     background-color: rgba(0,0,0,.4);
     border-color: #c77e19;
     color: #f8b700;
     padding:5px 14px;
+    font-size: 0.75rem;
     box-shadow: 0 0 0 1px #000;
     border-radius: 0;
-    border-width: 0.1px;
-    font-family: sans-serif;
-}
-
-.altButton{
-    background-color: rgba(0,0,0,.4);
-    border-color: #c77e19;
-    color: #f8b700;
-    padding:5px 14px;
-    box-shadow: 0 0 0 1px #000;
-    border-radius: 0;
-    border-width: 0.1px;
-    font-family: sans-serif;
+    font-family: sans-serif!important;
 }
 
 .buttonAnim:active{
@@ -84,20 +62,90 @@ option{
 }
 
 .buttonAnim:hover{
+    cursor: pointer;
     color: #ffffff;
     background-color: #B06701;
 }
 
 input, textarea{
+    text-align: center;
+    font-size: 0.75rem; 
     background-color : black; 
     color: white;
     border: 1px solid #504137;
     font-family: sans-serif;
 }
 
+input:focus,input:hover{
+    outline-width: 0;
+    border: 1px solid rgb(199, 126, 25);
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0px 9999px black;
+    -webkit-text-fill-color: white;
+}
+
 select{    
     background-color : black; 
     color: white;
+    font-size: 0.75rem;
     font-family: sans-serif;
     border: 1px solid #504137;
+}
+
+select:hover,select:focus{
+    outline-width: 0;
+    border: 1px solid rgb(199, 126, 25);
+}
+
+#button_1 {
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 1px;
+    color: rgb(248, 183, 0);
+    display:inline-block;
+    cursor: pointer;
+    right: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 32px;
+    word-wrap: break-word;
+    background: rgba(0, 0, 0, 0.4) none repeat scroll 0% 0% / auto padding-box border-box;
+    border: 1px solid rgb(199, 126, 25);
+    outline: rgb(248, 183, 0) none 0px;
+}
+
+#span_2 {
+    display: flex;
+    height: 16px;
+    justify-content: center;
+}
+
+#i_3 {
+    width: 16px;
+    background: rgba(0, 0, 0, 0) url("../images/icon-sprites-16-wow-gold.png") no-repeat scroll -64px -256px / auto padding-box border-box;   
+}
+
+#button_1:hover {
+    background: rgb(176, 102, 1) none repeat scroll 0% 0% / auto padding-box border-box;
+}
+
+#i_3:hover {
+    background: rgba(0, 0, 0, 0) url("../images/icon-sprites-16-white.png") no-repeat scroll -64px -256px / auto padding-box border-box;
+}
+
+.popover {
+    background-clip: padding-box;
+    background-color: #272e3b;
+    border: 1px solid #000;
+    box-shadow: 0 0 0 1px #3d434f inset, 0 1px 5px rgba(0, 0, 0, .5);
+    color: rgba(255, 255, 255, .7);
+    display: block;
+    padding: 12px;
+    max-width: 300px;
+    z-index: 1001;
+}
+
+.popover-content {
+    font-size: 0.4rem;
+    word-wrap: break-word
 }

@@ -26,12 +26,13 @@ route.start(true);
 let charName;
 let realm;
 let locale;
+let clicked = false
 
 route(function(locale, realm, character) {
+	if (character) document.getElementById('char').value = character
 	if (locale) document.getElementById('locale').value = locale
-	if (realm) document.getElementById('char').value = character
-	if (character) document.getElementById(locale).value = realm
-	if (locale && realm && character)
+	if (realm) document.getElementById(locale).value = blizzspaceToSpace(realm)
+	if (locale && realm && character && !clicked)
 		mainPane()
 })
 	
@@ -43,7 +44,6 @@ const proxy = "https://cors-anywhere.herokuapp.com/"; // proxy alternates ??
 // [[[[--------------------------------Initialize-------------------------------------------------------]]]]
 let divClone; //html reset resetter
 let tooltipClone; //wowhead tooltips block resetter
-let clicked; // Switch button to see if widget currently is ready to submit data to Jotform
 let firstClick = true; // ??
 let single = false
 //global loads
@@ -65,6 +65,7 @@ let lost = false // player has a disbanded guild
 let process = false; // currently fetching data
 
 $(document).ready(function(){
+	
 	//Pick the realm list depending on Locale choice
 	$('#locale').bind('change', function () {
 		var value = $(this).val();
@@ -72,14 +73,18 @@ $(document).ready(function(){
 		$('#' + value).show()
 
 	}).trigger('change'); // Setup the initial states
+	$('[data-toggle="popover"]').popover();   
 });
 
 $(window).on("load", function(){
 	divClone = $(".wrapper-js").html();
+	if (process)
+		loading()
 	//Clone to reset page later on
 });
 
 function mainPane(){
+
 	if (process){
 		console.log('no spamerino plx');
 		return;
@@ -88,13 +93,13 @@ function mainPane(){
 // [[[[--------------------------------Reset--Variables------------------------------------------]]]]
 	process = true; 
 	fresh = []
-	playerGuilds = [];
-	altsArray = [];
-	guildRequestList = [];
-	uniqueRequest = [];
-	stamps = [];
-	callCount = 0;
-	callbackCount = 0;
+	playerGuilds = []
+	altsArray = []
+	guildRequestList = []
+	uniqueRequest = []
+	stamps = []
+	callCount = 0
+	callbackCount = 0
 	submitHtml.innerHTML = "\n----------------First Kill Rankings----------------\n"
 	altsHtml = "\n----------------Alt Characters----------------\n"
 
@@ -102,8 +107,8 @@ function mainPane(){
 	charName = fixName(document.getElementById('char').value);
 	locale = document.getElementById('locale').value;
 	realm = document.getElementById(locale).value.trim();
-	route([locale, realm, charName].join('/'));
-	
+	clicked = true
+	route([locale, spaceToBlizzspace(realm), charName].join('/'));
 	let url = proxy + buildTrackUrl(locale, realm.replace("-", "%20"), charName);
 	// realm = removeParanthesis(realm) //thank aggra (portuguese)  =)
 
@@ -114,26 +119,17 @@ function mainPane(){
 		//so just keep them in a hidden block within index.html and clone for later use
 		$("#tooltip_block").html(tooltipClone);
 		$(".wrapper-js").html(divClone);
+		loading()
 	}
 
 	if (firstClick)
 		firstClick = false;
-
-	if (!single){
-		let load = document.createElement("img");
-		load.setAttribute("id", "loading");
-		load.src = 'https://github.com/Saccarab/WoW-Resume/blob/master/images/Loading.gif?raw=true'
-		load.alt = 'Loading'
-		let kills = document.getElementById('kills').appendChild(load)
-	}
-	single = true
 
 // // [[[[--------------------------------Scraping-----------------------------------------------]]]]
 	$.ajax({
 	  url: url,
 	  async: true,
 	  success: function(data){
-
 	  	clicked = true;
 	  	let loc;
 		let name;
@@ -250,7 +246,7 @@ function mainPane(){
 	  	$("#wrapper-js").html(divClone); 
 	  	process = false;
 	  	notLoading()
-	  	alert("Invalid Character");
+	  	alert("Invalid Character")
 	  }
 	});
 	// [[[[--------------------------------ARTIFACT PANE-----------------------------------------------]]]]
@@ -319,18 +315,6 @@ function addAltx(locale, realm, name, obj){ //, divid
 	let link = document.createElement("a");
 	let text = document.createElement('td1');
 	let div = document.createElement("div"); 
-	let button = document.createElement("img");
-
-	button.style.border = "1.7px solid #000000"
-	button.src = "images/remove2.png";
-	button.id = "button";
-	button.width = "11";
-	button.height = "11";
-
-	button.addEventListener("click", function(e){
-		removeDiv(this);
-	});
-
 	text.innerHTML = " " + obj.characterilvl + " item level                               	"; //ilvl api
 
 	link.setAttribute('target', '_blank');
@@ -340,7 +324,6 @@ function addAltx(locale, realm, name, obj){ //, divid
 	div.appendChild(link);
 	div.appendChild(text);
 	altsHtml = altsHtml + div.outerHTML + "\n";
-	div.appendChild(button);  //no button on submission object
 	alts.appendChild(div);
 }
 
@@ -399,7 +382,7 @@ function readToon(url, callback){
 					let mergeName = mergeGrab[0].slice(0, -1)
 					let mergeRealm = merge[3]
 					let mergeLocale = merge[2]
-					if (!(mergeName === charName && mergeLocale === locale && mergeRealm === realm))
+					if (!(mergeName === charName && mergeLocale === locale && mergeRealm === blizzspaceToSpace(realm)))
 						getItemLevel(mergeLocale, mergeRealm, mergeName, addAltx)
 				}
 			}
@@ -436,6 +419,7 @@ function rankings(){
 
 			playerStamps(obj)
 
+			//most pointless modularity attempt ever
 			guildRank(data, "ragnaros", ragnarosPersonal)
 			guildRank(data, "deathwing", deathwingPersonal)
 			guildRank(data, "emperor", emperorPersonal)
@@ -470,19 +454,19 @@ function guildRank(fdata, boss, personalAchiev){
 	let index = fdata.achievements.achievementsCompleted.indexOf(personalAchiev);
 	if (index != -1){  // make this a function to avoid bracket hell or use if == -1 return else do ur stuff (which could look way more elegant)
 		let stamp = fdata.achievements.achievementsCompletedTimestamp[index]; //hoist the colors
+		//order descending by dateJoin
+		playerGuilds.sort(function(a, b){ //sort guildRequestList date join to prevent old guild collision
+			return a.dateJoin - b.dateJoin
+		});
+
 		playerGuilds.forEach(function (guildIter, i){
 			if (stamp < guildIter.dateLeave && stamp > guildIter.dateJoin){
 				guildIter.boss = getBossOrder(boss);
 				guildRequestList.push(JSON.parse(JSON.stringify(guildIter)))
-				let temp = guildIter.dateJoin
-				let temp2 = guildIter.dateLeave
-				delete guildIter.dateJoin //patchwerk
-				delete guildIter.dateLeave
-				delete guildIter.boss
-				uniqueRequest.push(JSON.parse(JSON.stringify(guildIter)))
-				guildIter.dateJoin = temp
-				guildIter.dateLeave = temp2
+				copyObject(guildIter, uniqueRequest)
 			}
+			//if same guild is in 
+
 		});
 		// filter uniqueRequest to a new array called fresh
 		// only request the unique guilds inside the array fresh later on
@@ -575,7 +559,7 @@ function fill(){
 	});
 }
 				
-//Loops over the guildrequestList 
+//Loop over the guildrequestList 
 
 function loopThrough(){
 
@@ -607,6 +591,7 @@ function loopThrough(){
 								guild : guild,
 								url: "rankings/" + boss + ".txt",
 								success: function(sData){
+
 									let div = document.getElementById(boss);
 									let bufferDiv = document.createElement("div")
 									let rankings = document.getElementById(boss);
@@ -656,10 +641,14 @@ function loopThrough(){
 										}
 									}
 									if (i == lineCount)
-										console.log(boss + " kill exists within guild " + guild.guildName + " - " + guildMigrateBlocker + " so most likely this first kill wasnt listed in the rankings.txt, you can report it to be added" )
+										console.log(boss + " kill exists within guild " + guild.guildName + " - " + guildMigrateBlocker + "this first kill wasnt listed in the rankings.txt, you can report it to be added" )
 								},
 								error: function(){ 
-									console.log("Guild Request fail for " + guild.guildName + " " + guild.guildRealm);
+									console.log("Guild Request fail for " + guild.guildName + " - " + guild.guildRealm)
+									let tooltip = document.getElementById('button_1')
+									let prev = document.getElementById('button_1').getAttribute('data-content')
+									let insert = prev + "Guild Request fail for " + guild.guildName + " - " + guild.guildRealm + '<br>'
+									tooltip.setAttribute('data-content', insert)
 								}
 							})
 						}	
@@ -669,12 +658,23 @@ function loopThrough(){
 		}
 	});
 	if (lost){ //unreachable
-		alert('Data might be lost due to disbanded guild.')
+		console.log('Data might be lost due to disbanded guild.')
 		lost = false;
 	}
 	notLoading()
 	process = false; //end process
+	clicked = false
 
+}
+
+function confirmMigrate(){
+	playerguilds.forEach(function(guild, idx){ //iterate all guilds seek for a guild migrate
+		for (let i = 0; i < fresh.length; i++){
+			if (guild.guildName === fresh[i].guildName && guild.guildRealm !== fresh[i].guildRealm){
+				copyObject(guild, fresh)
+			}
+		}
+	});
 }
 
 //blizz achievements arent kept on previous realm when a guild migrates to a new realm
@@ -682,11 +682,15 @@ function loopThrough(){
 //merge them and add a new property named oldRealm to the new array
 //fixed triple merge aswell for guilds that migrated more than once e.g.(method-xavius,twnether,tarrenmill)
 function guildMigrate(){
-	fresh.forEach(function(guild, idx){ //iterate self
+	fresh.forEach(function(guild, idx){ 	//iterate self
 		for (let i = 0; i < fresh.length; i++){
 			if (i !== idx){ //ignore self
 				if (guild.guildName === fresh[i].guildName && guild.guildRealm !== fresh[i].guildRealm){
 					if (fresh[i].guildData.completedArray.length > guild.guildData.completedArray.length){
+						let tooltip = document.getElementById('button_1')
+						let prev = tooltip.getAttribute('data-content')
+						let a = prev + `Assuming your guild ${guild.guildName} - ${blizzspaceToSpace(guild.guildRealm)} migrated to ${fresh[i].guildName} - ${blizzspaceToSpace(fresh[i].guildRealm)}<br>`
+						tooltip.setAttribute('data-content', a)
 						guildRequestList.forEach(function(replace){
 							if (replace.guildName === fresh[i].guildName && replace.guildRealm === guild.guildRealm){
 								replace.oldRealm = replace.guildRealm;
@@ -695,15 +699,6 @@ function guildMigrate(){
 							}			
 						});
 					}
-					else{
-						guildRequestList.forEach(function(replace){
-							if (replace.guildName === guild.guildName && replace.guildRealm === fresh[i].guildRealm){
-								replace.oldRealm = replace.guildRealm;
-								replace.guildName = guild.guildName; //useless?
-								replace.guildRealm = guild.guildRealm;
-							}
-						});
-					}	
 				}
 			}
 		}
