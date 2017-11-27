@@ -244,7 +244,7 @@ function mainPane(){
 	  	$("#wrapper-js").html(divClone); 
 	  	process = false;
 	  	notLoading()
-	  	alert("Invalid Character")
+	  	document.getElementById("invalid").removeAttribute("hidden")
 	  }
 	});
 	// [[[[--------------------------------ARTIFACT PANE-----------------------------------------------]]]]

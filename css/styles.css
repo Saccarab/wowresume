@@ -151,3 +151,32 @@ select:hover,select:focus{
     font-size: :12px;
     word-wrap: break-word
 }
+
+#invalid {
+    box-sizing: border-box;
+    text-align: center;
+    color: rgb(169, 68, 66);
+    text-decoration: none solid rgb(169, 68, 66);
+    text-size-adjust: 100%;
+    column-rule-color: rgb(169, 68, 66);
+    perspective-origin: 365.15px 25px;
+    transform-origin: 365.15px 25px;
+    caret-color: rgb(169, 68, 66);
+    background: rgb(242, 222, 222) none repeat scroll 0% 0% / auto padding-box border-box;
+    font: normal normal 400 normal 16px / 24px -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif;
+    margin: 16px 0px;
+    padding: 12px 20px;
+}/*#DIV_1*/
+
+#error {
+    box-sizing: border-box;
+    color: rgb(169, 68, 66);
+    text-decoration: none solid rgb(169, 68, 66);
+    text-size-adjust: 100%;
+    column-rule-color: rgb(169, 68, 66);
+    caret-color: rgb(169, 68, 66);
+    border: 0px none rgb(169, 68, 66);
+    font: normal normal 700 normal 16px / 24px -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+    outline: rgb(169, 68, 66) none 0px;
+}/*#STRONG_2*/
+
