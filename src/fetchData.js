@@ -73,7 +73,6 @@ $(document).ready(function(){
 		$('.realm-js').not('#' + value).hide();
 		$('#' + value).show()
 	}).trigger('change');
-	$('[data-toggle="popover"]').popover();
 });
 
 $(window).on("load", function(){
@@ -691,8 +690,10 @@ function loopThrough(){
 	notLoading()
 	process = false; //end process
 	clicked = false
-	if (tooltip)
-		document.getElementById('button_1').style.display = "inline-block"
+	if (tooltip){
+		document.getElementById('button_1').style.display = "inline-block";
+		$('[data-toggle="popover"]').popover();
+	}
 
 }
 
