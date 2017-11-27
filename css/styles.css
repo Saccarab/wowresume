@@ -102,7 +102,7 @@ select:hover,select:focus{
 #button_1 {
     box-shadow: rgb(0, 0, 0) 0px 0px 0px 1px;
     color: rgb(248, 183, 0);
-    display:inline-block;
+    display: hidden;
     cursor: pointer;
     right: 0;
     position: absolute;
@@ -130,6 +130,7 @@ select:hover,select:focus{
 }
 
 #i_3:hover {
+    cursor: pointer;
     background: rgba(0, 0, 0, 0) url("../images/icon-sprites-16-white.png") no-repeat scroll -64px -256px / auto padding-box border-box;
 }
 
@@ -141,12 +142,12 @@ select:hover,select:focus{
     color: rgba(255, 255, 255, .7);
     display: block;
     padding: 12px;
-    max-width: 300px;
+    max-width: 500px;
     position:absolute;
     z-index: 1001;
 }
 
 .popover-content {
-    font-size: 0.4rem;
+    font-size: :12px;
     word-wrap: break-word
 }

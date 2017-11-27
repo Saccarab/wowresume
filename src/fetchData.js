@@ -61,6 +61,7 @@ let callCount = 0 //current call back count
 let uniqueRequest; //filters playerGuilds on it's way to array 'fresh'
 
 let stamps; //array including player kill stamps for every boss -1 if havent killed that boss
+let tooltip = false;
 let lost = false // player has a disbanded guild 
 let process = false; // currently fetching data
 
@@ -71,9 +72,8 @@ $(document).ready(function(){
 		var value = $(this).val();
 		$('.realm-js').not('#' + value).hide();
 		$('#' + value).show()
-
-	}).trigger('change'); // Setup the initial states
-	$('[data-toggle="popover"]').popover();   
+	}).trigger('change');
+	$('[data-toggle="popover"]').popover();
 });
 
 $(window).on("load", function(){
@@ -84,7 +84,6 @@ $(window).on("load", function(){
 });
 
 function mainPane(){
-
 	if (process){
 		console.log('no spamerino plx');
 		return;
@@ -611,6 +610,7 @@ function loopThrough(){
 									// bnet lightning's blade (lightning%20s%27blade) wont match the above one
 									// so cover up for that one
 									let noQuotes = guildMigrateBlocker.replace('%27','%20') 
+									let remQuotes = guild.guildRealm.replace('%27','%20') 
 									for (i=0 ; i < lineCount ; i++){
 										//rank check for migrated guild names as well. 
 										//can put this out in a cleaner way sometime
@@ -637,21 +637,43 @@ function loopThrough(){
 
 											bufferDiv.appendChild(text)
 											submitHtml.appendChild(bufferDiv) //div that is gonna be submitted (that has no zamimg wowhead tooltips!)
-											div.appendChild(text2) //actual page with zamimg tooltips
-											
+											div.appendChild(text2) //actual page with zamimg tooltips		
+											break;
+										}
+										if (lines[i].trim() === guild.guildLocale + remQuotes + guild.guildName){ 
+										//temp fix?? doublecheck with both gnames wof owprogress realms change for no reason
+										//sloppy but w/e
+											img.src = "https://raw.githubusercontent.com/Saccarab/WoW-Resume/master/images/" + boss + ".jpg";
+											img.alt = boss
+											bufferDiv.appendChild(img)
+											rank = i + 1
+											let tooltip = eval('tooltip_' + boss)
+											div.appendChild(tooltip)
+											tooltip.removeAttribute('hidden')
+
+											let txt = " " + upperCaseFirstL(boss) + getBossText(boss) + rank + " in " + blizzspaceToSpace(guild.guildName) + " - " + conv(guild.guildRealm);
+											let txt2 = getBossText(boss) + rank + " in " + blizzspaceToSpace(guild.guildName) + " - " + conv(guild.guildRealm);
+											let text =  document.createTextNode(txt)
+											let text2 = document.createTextNode(txt2)
+
+											bufferDiv.appendChild(text)
+											submitHtml.appendChild(bufferDiv) //div that is gonna be submitted (that has no zamimg wowhead tooltips!)
+											div.appendChild(text2) //actual page with zamimg tooltips		
 											break;
 										}
 									}
 									if (i == lineCount){
-										console.log(boss + " kill exists within guild " + guild.guildName + " - " + guildMigrateBlocker + "this first kill wasnt listed in the rankings.txt, you can report it to be added" )
+										let tooltipText = boss + " kill exists within guild " + guild.guildName + " - " + guildMigrateBlocker + " first kill wasnt listed in the rankings.txt, you can report it to be added"
+										console.log(tooltipText)
 										let tooltip = document.getElementById('button_1')
 										let prev = document.getElementById('button_1').getAttribute('data-content')
-										let insert = prev + "Data might be lost due to disbanded guild!" + '<br>'
+										let insert = prev + "- " + tooltipText + '<br>'
 										tooltip.setAttribute('data-content', insert)
 									}
 								},
 								error: function(){ 
 									console.log("Guild Request fail for " + guild.guildName + " - " + guild.guildRealm)
+									//look for oldrealm
 								}
 							})
 						}	
@@ -662,16 +684,15 @@ function loopThrough(){
 	});
 	if (lost){ //unreachable
 		console.log('Data might be lost due to disbanded guild.')
-		let tooltip = document.getElementById('button_1')
-		let prev = document.getElementById('button_1').getAttribute('data-content')
-		let insert = prev + "Data might be lost due to disbanded guild!" + '<br>'
-		tooltip.setAttribute('data-content', insert)
-
+		triggerTooltip("Data might be lost due to disbanded guild")
+		tooltip = true
 		lost = false;
 	}
 	notLoading()
 	process = false; //end process
 	clicked = false
+	if (tooltip)
+		document.getElementById('button_1').style.display = "inline-block"
 
 }
 
@@ -698,10 +719,8 @@ function guildMigrate(){
 			if (i !== idx){ //ignore self
 				if (guild.guildName === fresh[i].guildName && guild.guildRealm !== fresh[i].guildRealm){
 					if (fresh[i].guildData.completedArray.length > guild.guildData.completedArray.length){
-						let tooltip = document.getElementById('button_1')
-						let prev = tooltip.getAttribute('data-content')
-						let a = prev + `${guild.guildName} - ${blizzspaceToSpace(guild.guildRealm)} migrated to ${fresh[i].guildName} - ${blizzspaceToSpace(fresh[i].guildRealm)}.<br>`
-						tooltip.setAttribute('data-content', a)
+						triggerTooltip(`${guild.guildName} - ${blizzspaceToSpace(guild.guildRealm)} migrated to ${fresh[i].guildName} - ${blizzspaceToSpace(fresh[i].guildRealm)}`)
+						tooltip = true;
 						guildRequestList.forEach(function(replace){
 							if (replace.guildName === fresh[i].guildName && replace.guildRealm === guild.guildRealm){
 								replace.oldRealm = replace.guildRealm;

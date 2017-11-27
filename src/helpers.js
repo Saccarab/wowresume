@@ -104,3 +104,10 @@ function notLoading(){ //hardcode
 	if (load)
 		load.parentNode.removeChild(load);
 }
+
+function triggerTooltip(text){
+	let tooltip = document.getElementById('button_1')
+	let prev = tooltip.getAttribute('data-content')
+	let insert = prev + `- ${text}.<br>`
+	tooltip.setAttribute('data-content', insert)
+}
