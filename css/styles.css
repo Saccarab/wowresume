@@ -40,7 +40,7 @@ option{
 }
 
 .mainButton{
-    width : 150px!important;
+    width : 150px;
     outline: none;
     background-color: rgba(0,0,0,.4);
     border-color: #c77e19;
@@ -166,7 +166,7 @@ select:hover,select:focus{
     font: normal normal 400 normal 16px / 24px -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif;
     margin: 16px 0px;
     padding: 12px 20px;
-}/*#DIV_1*/
+}
 
 #error {
     box-sizing: border-box;
@@ -178,5 +178,5 @@ select:hover,select:focus{
     border: 0px none rgb(169, 68, 66);
     font: normal normal 700 normal 16px / 24px -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
     outline: rgb(169, 68, 66) none 0px;
-}/*#STRONG_2*/
+}
 
