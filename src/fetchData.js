@@ -450,6 +450,7 @@ function rankings(){
 			clicked = false;	  		
 		  	process = false;
 		  	notLoading()
+		  	document.getElementById("invalid").removeAttribute("hidden")
 		}
 	});
 }
