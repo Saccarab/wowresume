@@ -111,3 +111,20 @@ function triggerTooltip(text){
 	let insert = prev + `- ${text}.<br>`
 	tooltip.setAttribute('data-content', insert)
 }
+
+function openers(){
+	process = true;
+	tooltip = true
+	fresh = []
+	playerGuilds = []
+	altsArray = []
+	guildRequestList = []
+	uniqueRequest = []
+	stamps = []
+	callCount = 0
+	callbackCount = 0
+	submitHtml.innerHTML = "\n----------------First Kill Rankings----------------\n"
+	altsHtml = "\n----------------Alt Characters----------------\n"
+	clicked = true
+}
+

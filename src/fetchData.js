@@ -12,7 +12,6 @@
 // character data is mostly non existant prior to july 2012 //ragnaros deathwing wont work most of the time
 // request extra frame size on JF when on a mobile device
 // some of the ios devices wont register onClick or onSubmit events
-// mainPane() firing twice due to route?
 // ------------- First kill rankings algorithm
 // Check if the player killed the given world of warcraft boss by blizz achievement api
 // If no return else get killtimestamp
@@ -82,6 +81,7 @@ $(window).on("load", function(){
 	//Clone to reset page later on
 });
 
+
 function mainPane(){
 	if (process){
 		console.log('no spamerino plx');
@@ -89,23 +89,13 @@ function mainPane(){
 	}
 
 // [[[[--------------------------------Reset--Variables------------------------------------------]]]]
-	process = true; 
-	fresh = []
-	playerGuilds = []
-	altsArray = []
-	guildRequestList = []
-	uniqueRequest = []
-	stamps = []
-	callCount = 0
-	callbackCount = 0
-	submitHtml.innerHTML = "\n----------------First Kill Rankings----------------\n"
-	altsHtml = "\n----------------Alt Characters----------------\n"
+	
+	openers()
 
 // // [[[[--------------------------------Html-Grab-----------------------------------------------]]]]
 	charName = fixName(document.getElementById('char').value);
 	locale = document.getElementById('locale').value;
 	realm = document.getElementById(locale).value.trim();
-	clicked = true
 	route([locale, spaceToBlizzspace(realm), charName].join('/'));
 	let url = proxy + buildTrackUrl(locale, realm.replace("-", "%20"), charName);
 	// realm = removeParanthesis(realm) //thank aggra (portuguese)  =)
@@ -569,7 +559,6 @@ function fill(){
 //Loop over the guildrequestList 
 
 function loopThrough(){
-
 	let first = true
 	tooltipClone = $("#tooltip_block").html(); //wowhead tooltips clone
 	guildMigrate();
@@ -692,7 +681,7 @@ function loopThrough(){
 		console.log('Data might be lost due to disbanded guild.')
 		triggerTooltip("Data might be lost due to disbanded guild")
 		tooltip = true
-		lost = false;
+		lost = false
 	}
 	notLoading()
 	process = false; //end process
