@@ -113,8 +113,8 @@ function triggerTooltip(text){
 }
 
 function openers(){
-	process = true;
-	tooltip = true
+	process = true
+	tooltip = false
 	fresh = []
 	playerGuilds = []
 	altsArray = []

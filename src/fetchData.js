@@ -6,6 +6,7 @@
 // break into smaller modules
 // fix all the patchwerk/bandaid solutions
 // --------------issues
+// fix Mal'Ganis -- broken links on single quoted realms
 // Aggra Portuguese needs further url customization for every different API and request
 // cnazjolnerubKismet cn hyphen realm format? manualed to cnazjol-nerubKismet
 // guild migrate causes multiple bugs
@@ -45,8 +46,7 @@ let divClone; //html reset resetter
 let tooltipClone; //wowhead tooltips block resetter
 let firstClick = true; // ??
 let single = false
-//global loads
-
+//global loads -- global namespace these at some point
 
 let playerGuilds = []; //whole list including every single guild player was in with join and leave timestamps
 let guildRequestList = []; //playerguilds branched depending if given boss's stamp fall between that guild's leave and join
@@ -65,7 +65,6 @@ let lost = false // player has a disbanded guild
 let process = false; // currently fetching data
 
 $(document).ready(function(){
-	
 	//Pick the realm list depending on Locale choice
 	$('#locale').bind('change', function () {
 		var value = $(this).val();
