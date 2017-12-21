@@ -4,6 +4,7 @@
 // implement kr cn ru ?
 // async.await ??
 // break into smaller modules
+// catch server error on 503 Service unavailable
 // fix all the patchwerk/bandaid solutions
 // --------------issues
 // fix Mal'Ganis -- broken links on single quoted realms
