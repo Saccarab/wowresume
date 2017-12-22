@@ -103,6 +103,7 @@ select:hover,select:focus{
     box-shadow: rgb(0, 0, 0) 0px 0px 0px 1px;
     color: rgb(248, 183, 0);
     display: hidden;
+    margin-right: 5%;
     cursor: pointer;
     right: 0;
     position: absolute;

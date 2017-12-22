@@ -88,7 +88,6 @@ function mainPane(){
 	}
 
 // [[[[--------------------------------Reset--Variables------------------------------------------]]]]
-	
 	openers()
 
 // // [[[[--------------------------------Html-Grab-----------------------------------------------]]]]
@@ -697,6 +696,7 @@ function loopThrough(){
 }
 
 function confirmMigrate(){
+	//guilds with same names but different realms a.k.a. migrate candidates??
 	playerGuilds.forEach(function(guild, idx){ //iterate all guilds seek for a guild migrate
 		for (let i = 0; i < fresh.length; i++){
 			let found = fresh.some(function(elem){
