@@ -9,11 +9,9 @@
 // fix all the patchwerk/bandaid solutions
 // --------------issues
 // fix Mal'Ganis -- broken links on single quoted realms
-// Aggra Portuguese needs further url customization for every different API and request
+// Aggra Portuguese needs further url customization for every different API encoding
 // cnazjolnerubKismet cn hyphen realm format? manualed to cnazjol-nerubKismet
-// guild migrate causes multiple bugs
-// character data is mostly non existant prior to july 2012 //ragnaros deathwing wont work most of the time
-// request extra frame size on JF when on a mobile device
+// character data is mostly non existant prior to july 2012/2011
 // some of the ios devices wont register onClick or onSubmit events
 // ------------- First kill rankings algorithm
 // Check if the player killed the given world of warcraft boss by blizz achievement api
