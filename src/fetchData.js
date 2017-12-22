@@ -1,4 +1,5 @@
 // ------------- to do
+// extendability on bosses??
 // get rid of globals
 // dont send the character achievement request data billion times for every single boss lookup!
 // implement kr cn ru ?
@@ -127,7 +128,7 @@ function mainPane(){
 		let ilvl;
 		let lines = data.split("\n");
 		let lineLength = lines.length;
-		let merge = 0; // dont really use this anymore but could be needed when figuring out how to excludr merged character url request on alt character guild pushes
+		let merge = 0; // dont really use this anymore but could be needed when figuring out how to exclude merged character url request on alt character guild pushes
 		let k = 0;
 		
 		for (i = 0; i < lineLength; i++){
