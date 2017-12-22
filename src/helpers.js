@@ -8,14 +8,22 @@
 
 function buildArmoryLink(locale, realm, character){
 	locale = localeTransform(locale);
-	let armory = "https://worldofwarcraft.com/en-" + locale + "character/" + realm.replace(/\s+/g, '-') + "/" + character;
+	let armory = "https://worldofwarcraft.com/en-" + locale + "character/" + realm.replace(/\s+/g, '-').replace('\'', '') + "/" + character;
 	return armory;
 }
 
-function buildTrackUrl(locale, realm, character){ 
+function buildTrackUrl(locale, realm, character){ //link or url pick a naming convention
 	realm = realm.replace("-", "%20")
 	let track = "https://wowtrack.org/characters" + "/" + locale + "/"	 + realm + "/" + character; 
 	return track;
+}
+
+function buildProgressLink(locale, realm, character){
+	return "https://www.wowprogress.com/character/" + locale + "/" + realm.replace(/\s+/g, '-').replace('\'', '-') + "/" + charName
+}
+
+function buildWlogsLink(locale, realm, character){
+	return "https://www.warcraftlogs.com/character/" + locale + "/" + realm.replace(/\s+/g, '-').replace('\'', '') + "/" + charName 
 }
 
 function fixName(name){
