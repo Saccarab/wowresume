@@ -4,6 +4,7 @@
 // dont send the character achievement request data billion times for every single boss lookup!
 // implement kr cn ru ?
 // async.await ??
+// remove submitHtml-JF submit // structure
 // break into smaller modules
 // catch server error on 503 Service unavailable
 // fix all the patchwerk/bandaid solutions
@@ -629,8 +630,8 @@ function loopThrough(){
 											div.appendChild(tooltip)
 											tooltip.removeAttribute('hidden')
 
-											let txt = " " + upperCaseFirstL(boss) + getBossText(boss) + rank + " in " + blizzspaceToSpace(guild.guildName) + " - " + conv(guildMigrateBlocker);
-											let txt2 = getBossText(boss) + rank + " in " + blizzspaceToSpace(guild.guildName) + " - " + conv(guildMigrateBlocker);
+											let txt = " " + upperCaseFirstL(boss) + getBossText(boss) + rank + " in " + decodeURI(guild.guildName) + " - " + decodeURI(guildMigrateBlocker);
+											let txt2 = getBossText(boss) + rank + " in " + decodeURI(guild.guildName) + " - " + decodeURI(guildMigrateBlocker);
 											let text =  document.createTextNode(txt)
 											let text2 = document.createTextNode(txt2)
 
@@ -650,8 +651,8 @@ function loopThrough(){
 											div.appendChild(tooltip)
 											tooltip.removeAttribute('hidden')
 
-											let txt = " " + upperCaseFirstL(boss) + getBossText(boss) + rank + " in " + blizzspaceToSpace(guild.guildName) + " - " + conv(guild.guildRealm);
-											let txt2 = getBossText(boss) + rank + " in " + blizzspaceToSpace(guild.guildName) + " - " + conv(guild.guildRealm);
+											let txt = " " + upperCaseFirstL(boss) + getBossText(boss) + rank + " in " + decodeURI(guild.guildName) + " - " + decodeURI(guild.guildRealm);
+											let txt2 = getBossText(boss) + rank + " in " + decodeURI(guild.guildName) + " - " + decodeURI(guild.guildRealm);
 											let text =  document.createTextNode(txt)
 											let text2 = document.createTextNode(txt2)
 

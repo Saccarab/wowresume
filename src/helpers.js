@@ -58,6 +58,7 @@ function formatDate(string){ // convert to timestamp from Mar 06 2016 format
 	return (new Date(formattedJoin).getTime());
 }
 
+//use encode/decode instead these 2
 function spaceToBlizzspace(convertMe){
 	return convertMe.replace(" ", "%20");
 }
