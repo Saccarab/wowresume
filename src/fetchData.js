@@ -417,6 +417,7 @@ function rankings(){
 			guildRank(data, "shaoffear", shaoffearPersonal)
 			guildRank(data, "raden", radenPersonal)
 			guildRank(data, "garrosh", garroshPersonal)
+			guildRank(data, "kiljaeden", kiljaedenPersonal)
 			guildRank(data, "guldan", guldanPersonal)
 			guildRank(data, "helya", helyaPersonal)
 			guildRank(data, "xavius", xaviusPersonal)
@@ -498,6 +499,7 @@ function playerStamps(obj){
 		radenStamp : getStamp(radenPersonal, obj),
 		garroshStamp : getStamp(garroshPersonal, obj),
 		guldanStamp : getStamp(guldanPersonal, obj),
+		kiljaedenStamp : getStamp(kiljaedenPersonal, obj),
 		helyaStamp : getStamp(helyaPersonal, obj),
 		xaviusStamp : getStamp(xaviusPersonal, obj),
 		archimondeStamp : getStamp(archimondePersonal, obj),
@@ -564,7 +566,7 @@ function loopThrough(){
 	let first = true
 	tooltipClone = $("#tooltip_block").html(); //wowhead tooltips clone
 	guildMigrate();
-	let list = [1,2,3,4,5,6,7,8,9,10,11,12,13]; //prevent overlapping on the same boss
+	let list = [1,2,3,4,5,6,7,8,9,10,11,12,13,14]; //prevent overlapping on the same boss
 	// remove recurring boss requests when it is found
 	guildRequestList.forEach(function(guild){
 		let check = guild.boss;

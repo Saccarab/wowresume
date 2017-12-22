@@ -129,6 +129,9 @@ function getBossName(boss){
 	let bossName;
 
 	switch(boss){
+		case 14:
+			bossName = "kiljaeden"
+			break
 		case 13:
 			bossName = "ragnaros"
 			break;
@@ -178,6 +181,9 @@ function getBossOrder(boss){
 	let bossNo;
 
 	switch(boss){
+		case "kiljaeden":
+			bossNo = 14
+			break;
 		case "ragnaros":
 			bossNo = 13
 			break;
@@ -227,6 +233,9 @@ function guildCode(boss){
 	let code;
 
 	switch(boss){
+		case 14:
+			code = kiljaedenGuild
+			break;
 		case 13:
 			code = ragnarosGuild
 			break;
@@ -274,8 +283,11 @@ function guildCode(boss){
 
 function getBossText(boss) {
 	let bossText;
-
+	//scrapped out
 	switch(boss){
+		case "kiljaeden":
+			bossText = " Rank "
+			break;
 		case "ragnaros":
 			bossText = " Rank "
 			break;

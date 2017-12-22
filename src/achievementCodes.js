@@ -42,3 +42,6 @@ const helyaGuild = 11404
 // ---- Guldan // 6
 const guldanPersonal = 10850
 const guldanGuild = 11239
+// ---- Kil'Jaeden // 14
+const kiljaedenPersonal = 11781
+const kiljaedenGuild = 11784
