@@ -261,8 +261,8 @@ function mainPane(){
 	});
 	// [[[[--------------------------------Hyperlinks-----------------------------------------------]]]]
 
-	let wlogsBody = "https://www.warcraftlogs.com/character/" + locale + "/" + realm.replace(/\s+/g, '-') + "/" + charName 
-	let wowProgressText = "https://www.wowprogress.com/character/" + locale + "/" + realm.replace(/\s+/g, '-') + "/" + charName;
+	let wlogsBody = buildWlogsLink(locale, realm, charName)
+	let wowProgressText = buildProgressLink(locale, realm, charName)
 	let armoryText = buildArmoryLink(locale, realm, charName);
 
 	document.getElementById("wlogs").href = wlogsBody;
@@ -292,7 +292,11 @@ function getItemLevel(locale, realm, name ,func){ // getItemLevel(locale, grabRe
 				characterilvl: averageilvl
 			}
 			func(locale, realm, name, obj)   //call to addAlt 
-		}	
+		},
+		error: function(){ 
+			// toon request fail
+			console.log("Toon Request fail for " + request)
+		}
 	});
 }
 
