@@ -36,7 +36,7 @@ let locale;
 let clicked = false
 
 route(function(locale, realm, character) {
-	if (character) document.getElementById('char').value = character.decodeURI()
+	if (character) document.getElementById('char').value = decodeURI(character)
 	if (locale) document.getElementById('locale').value = locale
 	if (realm) document.getElementById(locale).value = blizzspaceToSpace(realm)
 	if (locale && realm && character && !clicked)
