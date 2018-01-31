@@ -1,14 +1,18 @@
 // ------------- to do
+// index html user input order in locale-realm-charname so user can press use key enter instead button push
 // extendability on bosses??
 // get rid of globals
 // dont send the character achievement request data billion times for every single boss lookup!
 // implement kr cn ru ?
+// decode/encode guildnames before pushing to lists
 // async.await ??
 // remove submitHtml-JF submit // structure
 // break into smaller modules
 // catch server error on 503 Service unavailable
+// special character encode route will cause broken charactername
 // fix all the patchwerk/bandaid solutions
 // --------------issues
+// !!alts div didnt reset
 // fix Mal'Ganis -- broken links on single quoted realms
 // Aggra Portuguese needs further url customization for every different API encoding
 // cnazjolnerubKismet cn hyphen realm format? manualed to cnazjol-nerubKismet
@@ -22,6 +26,8 @@
 // compare player killstamp with guild's to see if player actually got the achievement within that guild (150k flex approx to 5 mins due to minimal delays on  possible playerstamps)
 // get the guilds ranking from the relevant boss.txt
 // 10.14.2017 usin async data load then loop through loaded data from now on to do less requests overall
+// non-tested
+// decoded character name forwarding
 route.start(true);
 
 let charName;
@@ -92,7 +98,7 @@ function mainPane(){
 	openers()
 
 // // [[[[--------------------------------Html-Grab-----------------------------------------------]]]]
-	charName = fixName(document.getElementById('char').value);
+	charName = fixName(document.getElementById('char').value.decodeURI();
 	locale = document.getElementById('locale').value;
 	realm = document.getElementById(locale).value.trim();
 	route([locale, spaceToBlizzspace(realm), charName].join('/'));
