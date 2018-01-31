@@ -98,7 +98,7 @@ function mainPane(){
 	openers()
 
 // // [[[[--------------------------------Html-Grab-----------------------------------------------]]]]
-	charName = fixName(document.getElementById('char'))
+	charName = fixName(document.getElementById('char').value)
 	locale = document.getElementById('locale').value;
 	realm = document.getElementById(locale).value.trim();
 	route([locale, spaceToBlizzspace(realm), charName].join('/'));
