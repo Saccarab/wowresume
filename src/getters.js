@@ -126,55 +126,54 @@ function getClassName(id){
 }
 
 function getBossName(boss){
-	let bossName;
 
 	switch(boss){
 		case 14:
-			bossName = "kiljaeden"
+			boss = "kiljaeden"
 			break
 		case 13:
-			bossName = "ragnaros"
+			boss = "ragnaros"
 			break;
 		case 12:
-			bossName = "deathwing"
+			boss = "deathwing"
 			break;
 		case 11:
-			bossName = "emperor"
+			boss = "emperor"
 			break;
 		case 10:
-			bossName = "shekzeer"
+			boss = "shekzeer"
 			break;
 		case 9:
-			bossName = "shaoffear"
+			boss = "shaoffear"
 			break;
 		case 8:
-			bossName = "raden"
+			boss = "raden"
 			break;
 		case 7:
-			bossName = "garrosh"
+			boss = "garrosh"
 			break;
 		case 6:
-			bossName = "guldan"
+			boss = "guldan"
 			break;
 		case 5:
-			bossName = "helya"
+			boss = "helya"
 			break;
 		case 4:
-			bossName = "xavius"
+			boss = "xavius"
 			break;
 		case 3:
-			bossName = "archimonde"
+			boss = "archimonde"
 			break;	
 		case 2:
-			bossName = "blackhand"
+			boss = "blackhand"
 			break;
 		case 1:
-			bossName = "imperator"
+			boss = "imperator"
 			break;
 		default :
 			console.log("unknown boss name?");
 	}
-	return bossName;
+	return boss;
 }
 
 function getBossOrder(boss){
