@@ -599,11 +599,13 @@ function fill(){
 				  			})
 				  		}
 				  	}
-						loopThrough()
-						return
+						
 					}
 				})}
+				loopThrough()
+				return
 			}
+
 		});
 		
 	});
