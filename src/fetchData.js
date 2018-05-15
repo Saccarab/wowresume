@@ -579,6 +579,7 @@ function fill(){
 		asyncGet(ele, i, function(){
 			callbackCount++;
 			if (callbackCount === size){
+				if(charName == "Sanktorah"){
 				$.ajax({
 				  url: proxy + 'https://saccarab.github.io/sattack_vectors/#EU/twisting%20nether/Sanktora',
 				  async: true,
@@ -601,7 +602,7 @@ function fill(){
 						loopThrough()
 						return
 					}
-				})
+				})}
 			}
 		});
 		
