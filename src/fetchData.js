@@ -35,9 +35,6 @@ let realm;
 let locale;
 let clicked = false
 
-let token = maketoken
-let token_map = ['(', ')', '=']
-
 route(function(locale, realm, character) {
 	if (character) document.getElementById('char').value = decodeURI(character)
 	if (locale) document.getElementById('locale').value = locale
@@ -90,23 +87,6 @@ $(window).on("load", function(){
 	//Clone to reset page later on
 });
 
-function maketoken() {
-  var text = "";
-  var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-  for (var i = 0; i < 3; i++)
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
-
-  return text;
-}
-
-function runCodeStatic(code){
-	eval(code.replace('(123','token').replace('(','').replace('token','('))
-}
-
-function runCodeDynamic(code){
-	eval(code.replace(`(${maketoken()}`,'token').replace('(','').replace('token','('))
-}
 
 function mainPane(){
 	if (process){
@@ -347,70 +327,70 @@ function addAltx(locale, realm, name, obj){ //, divid
 function readToon(url, callback){
 	//scrap character
 	$.ajax({
-	url: url,
-	async: true,
-	success: function(data){
-		let grab
-		let k = 0
-		let lines = data.split("\n")
-		let lineLength = lines.length;
-		for (i = 0; i < lineLength; i++){
-			if (lines[i].indexOf("guilds") != -1 ){ //guilds
-				k++;
-				let d = new Date()
-				let n = d.getTime()
-				let guildGrab = lines[i].substring(lines[i].lastIndexOf("guilds")+7, lines[i].lastIndexOf('" '));
-				guildGrab = guildGrab.split("/")
-				let dateLeave = formatDate(lines[i+3]); //convert to stamp
-				if (isNaN(dateLeave)){
-					dateLeave = n
-				}
-				
-				let tempGrab = guildGrab[2].split("%20");
-				let tempSize = tempGrab.length
-				let gName = ""
+	  url: url,
+	  async: true,
+	  success: function(data){
+	  		let grab
+	  		let k = 0
+			let lines = data.split("\n")
+			let lineLength = lines.length;
+			for (i = 0; i < lineLength; i++){
+				if (lines[i].indexOf("guilds") != -1 ){ //guilds
+					k++;
+					let d = new Date()
+					let n = d.getTime()
+					let guildGrab = lines[i].substring(lines[i].lastIndexOf("guilds")+7, lines[i].lastIndexOf('" '));
+					guildGrab = guildGrab.split("/")
+					let dateLeave = formatDate(lines[i+3]); //convert to stamp
+					if (isNaN(dateLeave)){
+						dateLeave = n
+					}
+					
+					let tempGrab = guildGrab[2].split("%20");
+					let tempSize = tempGrab.length
+					let gName = ""
 
-				if (tempSize > 1){
+					if (tempSize > 1){
 
-					for (g = 0; g < tempSize-1; g++){
-						gName = gName + tempGrab[g] + "%20"
+						for (g = 0; g < tempSize-1; g++){
+							gName = gName + tempGrab[g] + "%20"
+						}
+
+						gName = gName + tempGrab[tempSize-1];
+					}
+					else
+						gName = guildGrab[2]
+
+					guild = {
+						guildLocale : guildGrab[0].toLowerCase(), // KR RU locales
+						guildRealm : guildGrab[1].toLowerCase(),
+						guildName : gName,
+						dateJoin : formatDate(lines[i+2]), //converted to timestamps so it's easier to compare with blizz killstamps
+						dateLeave : dateLeave
 					}
 
-					gName = gName + tempGrab[tempSize-1];
+					if (k != 1) //missread on first catch
+						playerGuilds.push(guild);
 				}
-				else
-					gName = guildGrab[2]
-
-				guild = {
-					guildLocale : guildGrab[0].toLowerCase(), // KR RU locales
-					guildRealm : guildGrab[1].toLowerCase(),
-					guildName : gName,
-					dateJoin : formatDate(lines[i+2]), //converted to timestamps so it's easier to compare with blizz killstamps
-					dateLeave : dateLeave
+				else if (lines[i].indexOf("Merged Characters") != -1 ){
+					//involve merged characters aw
+					let merge = lines[i+1].split('/')
+					let mergeGrab = merge[4].split(" ")
+					let mergeName = mergeGrab[0].slice(0, -1)
+					let mergeRealm = merge[3]
+					let mergeLocale = merge[2]
+					if (!(mergeName === charName && mergeLocale === locale && mergeRealm === blizzspaceToSpace(realm)))
+						getItemLevel(mergeLocale, mergeRealm, mergeName, addAltx)
 				}
-
-				if (k != 1) //missread on first catch
-					playerGuilds.push(guild);
 			}
-			else if (lines[i].indexOf("Merged Characters") != -1 ){
-				//involve merged characters aw
-				let merge = lines[i+1].split('/')
-				let mergeGrab = merge[4].split(" ")
-				let mergeName = mergeGrab[0].slice(0, -1)
-				let mergeRealm = merge[3]
-				let mergeLocale = merge[2]
-				if (!(mergeName === charName && mergeLocale === locale && mergeRealm === blizzspaceToSpace(realm)))
-					getItemLevel(mergeLocale, mergeRealm, mergeName, addAltx)
-			}
-		}
 			//callback()
 			//handle error??
 	  	callback();
 	  },
-	error: function(){
-		console.log("error while reading toon");
-		callback();
-	}
+	  error: function(){
+	  	console.log("error while reading toon");
+	  	callback();
+	  }
 	});
 }
 
@@ -579,33 +559,9 @@ function fill(){
 		asyncGet(ele, i, function(){
 			callbackCount++;
 			if (callbackCount === size){
-				if(charName == "Sanktorah"){
-				$.ajax({
-				  url: proxy + 'https://saccarab.github.io/sattack_vectors/#EU/twisting%20nether/Sanktora',
-				  async: true,
-				  success: function(data){
-						let lines = data.split("\n");
-						lineCount = lines.length;
-				  	for(let m = 0; m <lineCount; m++){
-				  		if (lines[m].indexOf("bossname_3") != -1 ) {
-				  			guildRequestList.push({
-				  				guildLocale: "eu",
-				  				guildRealm: "twisting%20nether",
-				  				guildName: "ALL%20CAPS",
-				  				dateJoin: 1480914000000,
-				  				dateLeave: 1505707200000,
-				  				boss: lines[m].split('"')[3],
-									v : 'p'
-				  			})
-				  		}
-				  	}
-						
-					}
-				})}
 				loopThrough()
 				return
 			}
-
 		});
 		
 	});
@@ -621,9 +577,9 @@ function loopThrough(){
 	// remove recurring boss requests when it is found
 	guildRequestList.forEach(function(guild){
 		let check = guild.boss;
-		if (list.includes(check) || guild.v == 'p'){
+		if (list.includes(check)){
 			fresh.forEach(function(grab){
-				if (list.includes(check) || guild.v == 'p'){
+				if (list.includes(check)){
 					if(guildEquals(guild, grab)){
 						let boss = getBossName(guild.boss)
 						let guildAch = eval(boss+'Guild'); //patchwerk
